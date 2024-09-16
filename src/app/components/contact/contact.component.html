@@ -9,7 +9,7 @@
 
       @for (contact of contacts; track contact.name){
         <div class="contact-item">
-          <a [href]="contact.link" [title]="contact.title">
+          <a [href]="contact.link" [title]="contact.title" target="_blank" rel="noopener">
             <i [class]="contact.iconStyle"></i>
           </a>
         </div>

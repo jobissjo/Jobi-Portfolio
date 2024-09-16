@@ -155,7 +155,7 @@ export class HelperService {
       startedDate: new Date('2022-06-15'),
       endedDate: new Date('2022-08-15'),
       workAchievements: [
-        "Build a E-commerce project with django"
+         "Built an e-commerce project using Django."
       ]
     },
     {
@@ -164,7 +164,7 @@ export class HelperService {
       startedDate: new Date('2023-03-06'),
       endedDate: new Date('2023-04-15'),
       workAchievements: [
-        "Experience with implementing Movie Recommendation System",
+        "Implemented a movie recommendation system."
       ]
     },
     {
@@ -173,8 +173,8 @@ export class HelperService {
       startedDate: new Date('2024-05-13'),
       endedDate: new Date(),
       workAchievements: [
-        'Worked in E-commerce project with backend with Django and DRF',
-        'Collaborate with Angular and React Developers'
+        "Worked on the backend of an e-commerce project using Django and DRF.",
+        "Collaborated with Angular and React developers."
       ]
     },
 

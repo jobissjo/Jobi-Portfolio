@@ -14,7 +14,7 @@ export class HeaderComponent {
   sections: string[] = [
     'about',
     'experience',
-    'skills',
+    'skill',
     'contact'
   ]
 
