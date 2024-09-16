@@ -1,0 +1,17 @@
+#about {
+    padding: 100px 0;
+}
+
+.about-img-div img {
+    margin: 0 auto;
+}
+
+.about-border {
+    position: absolute;
+    border: 10px solid #425BB5;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    left: 50px;
+    z-index: 1
+}

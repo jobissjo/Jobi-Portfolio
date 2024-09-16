@@ -1,0 +1,10 @@
+<header class="navbar-fixed-top">
+    <nav aria-label="Main Navbar">
+        <ul>
+            @for(section of sections; track section){
+                <li><a (click)="scrollToSection(section)"> {{section | titlecase}}</a></li>
+            }
+
+        </ul>
+    </nav>
+</header>

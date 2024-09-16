@@ -1,0 +1,77 @@
+#contact {
+  padding: 50px 0;
+}
+
+/* Align the Contact Me heading to the left */
+h1.size-50 {
+  text-align: left;
+}
+
+/* Flexbox for contact icons */
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-item {
+  display: inline-block;
+  margin: 10px;
+}
+
+.contact-item a {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #425BB5;
+}
+
+/* Flexbox styling for larger screens */
+@media (min-width: 768px) {
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between contact items */
+  }
+}
+
+/* Resume button styling and centering */
+.resume-container {
+  display: flex;
+  justify-content: center; /* Centers the download button */
+  margin-top: 5px;
+}
+
+.contact-item a.download-button {
+  display: inline-block;
+  background-color: #425BB5;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.contact-item a.download-button:hover {
+  background-color: #3a54b1;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .contact-item {
+    margin-bottom: 20px;
+  }
+}
