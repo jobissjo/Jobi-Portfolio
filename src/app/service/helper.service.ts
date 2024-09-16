@@ -152,8 +152,8 @@ export class HelperService {
     {
       position: 'Full Stack Python Developer Intern',
       companyName:'Inmakes Infotech Pvt Ltd',
-      startedDate: new Date('2022-06-15'),
-      endedDate: new Date('2022-08-15'),
+      startedDate: new Date('2022-06-22'),
+      endedDate: new Date('2022-09-22'),
       workAchievements: [
          "Built an e-commerce project using Django."
       ]
