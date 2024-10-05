@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./components/home/home.component";
+import { inject } from "@vercel/analytics"
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ import { HomeComponent } from "./components/home/home.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'jobi-portfolio';
+  ngOnInit(): void {
+    inject(); // Initialize Vercel Analytics here
+  }
 }
