@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Contact, Resume } from '../../datatypes.types';
 import { CommonModule } from '@angular/common';
 import { HelperService } from '../../service/helper.service';
@@ -11,7 +11,7 @@ import { HelperService } from '../../service/helper.service';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit{
-
+  @Input() darkMode:boolean = false;
   contacts: Contact[] = []
   resume!: Resume;
   private helperService:HelperService = inject(HelperService);

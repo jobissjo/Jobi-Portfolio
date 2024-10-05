@@ -26,8 +26,8 @@
                     <div class="skill-container" data-aos="fade-up">
                         @for (skill of skills; track skill.name){
                             <div class="skill">
-                                <a class="skill-item">
-                                    <img [src]="skill.imageUrl" [alt]="skill.name" class="skill-logo" />
+                                <a class="skill-item" [ngClass]="{'dark-mode-color': darkMode}">
+                                    <img [src]="skill.imageUrl" [alt]="skill.name" class="skill-logo" [ngClass]="{'dark-mode-color': darkMode}" />
                                     <div class="skill-item-hover">
                                         <div class="portfolio-border">
                                             <div class="skill-info">

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Experience } from '../../datatypes.types';
 import { HelperService } from '../../service/helper.service';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent implements OnInit{
-
+  @Input() darkMode:boolean = false;
   experiences: Experience[] = [];
   todayDate = new Date();
   private helperService:HelperService = inject(HelperService);

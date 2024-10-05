@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { HelperService } from '../../service/helper.service';
 import { Skill, SkillCategory } from '../../datatypes.types';
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skill.component.scss'
 })
 export class SkillComponent {
+  @Input() darkMode: boolean = false;
   skills:Skill[] = [];
   private helperService:HelperService = inject(HelperService);
   selectedSkillCategory = 'all'
