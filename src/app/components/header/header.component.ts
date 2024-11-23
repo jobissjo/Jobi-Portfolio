@@ -22,7 +22,7 @@ export class HeaderComponent {
     this.helperService.scrollToElement(section)
   }
 
-  darkMode:boolean = false;
+  darkMode:boolean = true;
 
  modeChange = output<boolean>();
 
