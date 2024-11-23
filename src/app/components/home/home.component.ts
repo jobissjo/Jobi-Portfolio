@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  isDarkMode:boolean = false;
+  isDarkMode:boolean = true;
   modeChanged(isDarkMode:boolean){
     this.isDarkMode = isDarkMode;
   }

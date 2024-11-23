@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, output } from '@angular/core';
+import { Component, inject,  output } from '@angular/core';
 import { HelperService } from '../../service/helper.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { HelperService } from '../../service/helper.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent{
   private helperService:HelperService = inject(HelperService)
   sections: string[] = [
     'about',
@@ -25,6 +25,7 @@ export class HeaderComponent {
   darkMode:boolean = true;
 
  modeChange = output<boolean>();
+
 
   toggleDarkMode(){
     this.darkMode = !this.darkMode
