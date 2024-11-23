@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Contact, Experience, Resume, Skill, SkillCategory } from '../datatypes.types';
+import { Contact, Experience, Project, Resume, Skill, SkillCategory } from '../datatypes.types';
 import { ViewportScroller } from '@angular/common';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class HelperService {
   }
 
   getProjects(){
-    return []
+    return this.projects
   }
 
 
@@ -31,6 +31,8 @@ export class HelperService {
   getResume(){
     return this.resume;
   }
+
+  
 
   getSkills(category:string):Skill[]{
     if (category == 'all')
@@ -212,4 +214,35 @@ export class HelperService {
     name: 'Jobi Resume',
     file: 'jobiss.pdf'
   }
+
+  private projects: Project[] = [
+    {
+      name: "MERN Real Time Chat Project",
+      githubUrl : "https://github.com/jobissjo/mern-real-time-chat",
+      gitIconUrl: "fa-brands fa-github",
+      demoIcon: "fa-solid fa-arrow-up-right-from-square",
+      hostingUrl : "http://localhost",
+      description: "This Job Portal project is a using frontend react and backend for Express js",
+      features: [
+        "Mobile responsive",
+        "React with Vite tooling"
+      ],
+      startDate: "November 2024",
+      endDate: "Present",
+    },
+    {
+    name: "Job Portal Project",
+    githubUrl : "https://github.com/jobissjo/job-sera",
+    gitIconUrl: "fa-brands fa-github",
+    demoIcon: "fa-solid fa-arrow-up-right-from-square",
+    hostingUrl : "http://localhost",
+    description: "This Job Portal project is a using frontend angular and backend fastapi",
+    features: [
+      "Angular 16 to Angular 18 upgraded",
+      "Mobile responsive"
+    ],
+    startDate: "January 2023",
+    endDate: "June 2023",
+  },
+]
 }

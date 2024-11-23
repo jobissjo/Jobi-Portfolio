@@ -42,6 +42,8 @@ export interface Project {
     description: string,
     features: string[],
     gitIconUrl:string,
-    demoIcon:string
+    demoIcon:string,
+    startDate: string,
+    endDate: string,
 
 }
