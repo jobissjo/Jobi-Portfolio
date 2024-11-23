@@ -6,7 +6,13 @@
             }
 
         </ul>
-        
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" (click)="toggleDarkMode()"
+        [ngClass]="{'bg-change-black': darkMode}">
+        @if (darkMode){
+            ☀️
+        }@else {
+            🌙
+        }</button>
     </nav>
     
 </header>

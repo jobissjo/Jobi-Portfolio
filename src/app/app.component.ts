@@ -13,6 +13,6 @@ import { inject } from "@vercel/analytics"
 export class AppComponent implements OnInit{
   title = 'jobi-portfolio';
   ngOnInit(): void {
-    inject(); // Initialize Vercel Analytics here
+    inject(); 
   }
 }

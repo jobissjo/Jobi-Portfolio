@@ -1,0 +1,33 @@
+<div class="section" id="projects" [ngClass]="{'dark-mode-color': darkMode}">
+    <div class="container">
+      <div class="col-md-12">
+        <h1 class="size-50">My <br /> Projects</h1>
+        <!-- <div class="h-50"></div> -->
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <!-- Loop through projects -->
+          @for (project of projects; track project.name) {
+            <div class="col-md-4 col-sm-6">
+              <div class="project-card">
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+                <ul class="features-list">
+                  @for (feature of project.features; track feature) {
+                    <li>{{ feature }}</li>
+                  }
+                </ul>
+                <div class="project-links">
+                  <a [href]="project.githubUrl" target="_blank">GitHub <i [class]="project.gitIconUrl"></i></a> <br>
+                  <a [href]="project.hostingUrl" target="_blank">Live Demo <i [class]="project.demoIcon"></i></a>
+                </div>
+              </div>
+            </div>
+          } @empty {
+            <p>No projects available.</p>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  

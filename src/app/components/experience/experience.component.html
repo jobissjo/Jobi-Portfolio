@@ -12,7 +12,7 @@
                         <label class="timeline-event-icon"></label>
                         <div class="timeline-event-copy">
                             <p class="timeline-event-thumbnail">{{experience.startedDate | date : 'MMMM yyyy'}} - 
-                                @if (experience.endedDate.getTime() == todayDate.getTime()){
+                                @if (experience.endedDate.getMonth() == todayDate.getMonth()){
                                     Present
                                 }
                                 @else{

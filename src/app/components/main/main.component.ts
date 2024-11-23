@@ -8,13 +8,6 @@ import { Component, output } from '@angular/core';
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
-  darkMode:boolean = false;
-
- modeChange = output<boolean>();
-
-  toggleDarkMode(){
-    this.darkMode = !this.darkMode
-    this.modeChange.emit(this.darkMode);
-  }
+  
  
 }

@@ -4,6 +4,7 @@ header {
     transition: all .5s;
     height: 65px;
     margin-bottom: 1rem;
+    position: relative; /* Ensure positioning works for the button */
 }
 
 nav ul {
@@ -27,15 +28,34 @@ nav li a {
     font-size: 11px;
     font-weight: bold;
     cursor: pointer;
+}
 
-    &:hover{
-        color: #425BB5;
-    }
+nav li a:hover {
+    color: #425BB5;
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #e1e1e1;
 }
 
 .bg-nav {
     background: #fff;
-    border-bottom: 1px solid #f3f3f3
+    border-bottom: 1px solid #f3f3f3;
 }
 
 .bg-nav ul {
@@ -54,4 +74,12 @@ a:hover {
 
 a.active {
     color: #425BB5;
+}
+
+.bg-change-black {
+    background-color: rgb(10, 10, 10) !important;
+}
+
+.bg-change-black:hover {
+    background-color: #121212 !important;
 }

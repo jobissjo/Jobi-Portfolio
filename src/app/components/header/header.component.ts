@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { HelperService } from '../../service/helper.service';
 
 @Component({
@@ -20,6 +20,15 @@ export class HeaderComponent {
 
   scrollToSection(section:string){
     this.helperService.scrollToElement(section)
+  }
+
+  darkMode:boolean = false;
+
+ modeChange = output<boolean>();
+
+  toggleDarkMode(){
+    this.darkMode = !this.darkMode
+    this.modeChange.emit(this.darkMode);
   }
 
 }

@@ -1,0 +1,101 @@
+#projects {
+    padding: 100px 0;
+    background: #f3f3f3;
+  }
+  
+  .project-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .project-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0 20px;
+  }
+  
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .features-list li {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .features-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    color: #425BB5;
+  }
+  
+  .project-links a {
+    display: inline-block;
+    font-size: 14px;
+    color: white;
+    background: #425BB5;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 5px;
+    transition: background 0.3s;
+  }
+  
+  .project-links a:hover {
+    background: #1d387e;
+  }
+  
+  .dark-mode-color {
+    background-color: #121212 !important;
+    color: antiquewhite;
+  }
+  
+  .dark-mode-color .project-card {
+    background: #1e1e1e;
+    color: antiquewhite;
+  }
+  
+  .dark-mode-color .features-list li::before {
+    color: antiquewhite;
+  }
+  
+  .dark-mode-color .project-links a {
+    background: #333;
+  }
+  
+  .dark-mode-color .project-links a:hover {
+    background: #555;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .project-card {
+      margin: 20px auto;
+    }
+  }
+  

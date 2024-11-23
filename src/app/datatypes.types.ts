@@ -34,3 +34,14 @@ export interface Resume{
     name:string,
     file:string
 }
+
+export interface Project {
+    name: string,
+    githubUrl: string,
+    hostingUrl: string,
+    description: string,
+    features: string[],
+    gitIconUrl:string,
+    demoIcon:string
+
+}
