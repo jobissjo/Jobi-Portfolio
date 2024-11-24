@@ -9,9 +9,9 @@
         <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" (click)="toggleDarkMode()"
         [ngClass]="{'bg-change-black': darkMode}">
         @if (darkMode){
-            ☀️
+            <mat-icon aria-hidden="false"  fontIcon="wb_sunny"></mat-icon>
         }@else {
-            🌙
+            <mat-icon aria-hidden="false"  fontIcon="dark_mode"></mat-icon>
         }</button>
     </nav>
     
