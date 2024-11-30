@@ -65,6 +65,16 @@
     margin: 5px;
     transition: background 0.3s;
   }
+
+  .heading-project-link {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(98, 98, 98); /* Adjust color to fit the design */
+  }
+  .dark-heading-project-link{
+    color: #cecece;
+  }
   
   .project-links a:hover {
     background: #1d387e;
@@ -91,7 +101,13 @@
   .dark-mode-color .project-links a:hover {
     background: #555;
   }
-  
+  .expansion-panel{
+    background-color: whitesmoke !important;
+    color: #000;
+  }
+  .dark-expansion-panel{
+    background: #555 !important;
+  }
   /* Responsive */
   @media (max-width: 768px) {
     .project-card {

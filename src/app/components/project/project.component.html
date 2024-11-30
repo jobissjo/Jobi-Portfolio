@@ -17,10 +17,20 @@
                     <li>{{ feature }}</li>
                   }
                 </ul>
-                <div class="project-links">
-                  <a [href]="project.githubUrl" target="_blank">GitHub <i [class]="project.gitIconUrl"></i></a>
-                  <a [href]="project.hostingUrl" target="_blank">Live Demo <i [class]="project.demoIcon"></i></a>
-                </div>
+                <mat-accordion class="accordion">
+                  <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)" class="expansion-panel" [ngClass]="{'dark-expansion-panel': darkMode}">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>Project Links</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="project-links">
+                      @for (projectUrl of project.projectUrls; track projectUrl) {
+                        <h4 class="heading-project-link" [ngClass]="{'dark-heading-project-link': darkMode}" >{{ projectUrl.title }}</h4>
+                        <a [href]="projectUrl.githubUrl" target="_blank">GitHub <i [class]="projectUrl.gitIconUrl"></i></a>
+                        <a [href]="projectUrl.hostingUrl" target="_blank">Live Demo <i [class]="projectUrl.demoIcon"></i></a>
+                      }
+                    </div>
+                </mat-expansion-panel>
+              </mat-accordion>
               </div>
             </div>
           } @empty {

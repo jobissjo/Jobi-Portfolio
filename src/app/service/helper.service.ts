@@ -218,10 +218,22 @@ export class HelperService {
   private projects: Project[] = [
     {
       name: "MERN Real Time Chat Project",
-      githubUrl : "https://github.com/jobissjo/mern-real-time-chat",
-      gitIconUrl: "fa-brands fa-github",
-      demoIcon: "fa-solid fa-arrow-up-right-from-square",
-      hostingUrl : "http://localhost",
+      projectUrls: [
+        {
+          title: "Quick Chat Server",
+          githubUrl : "https://github.com/jobissjo/mern-real-time-chat",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl : "https://github.com/jobissjo/mern-real-time-chat",
+        },
+        {
+          title: "Quick Chat Client",
+          githubUrl : "https://github.com/jobissjo/mern-real-time-chat-client",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl : "https://github.com/jobissjo/mern-real-time-chat-client",
+        }
+      ],
       description: "This Job Portal project is a using frontend react and backend for Express js",
       features: [
         "Mobile responsive",
@@ -232,10 +244,6 @@ export class HelperService {
     },
     {
     name: "Job Portal Project",
-    githubUrl : "https://github.com/jobissjo/job-sera",
-    gitIconUrl: "fa-brands fa-github",
-    demoIcon: "fa-solid fa-arrow-up-right-from-square",
-    hostingUrl : "http://localhost",
     description: "This Job Portal project is a using frontend angular and backend fastapi",
     features: [
       "Angular 16 to Angular 18 upgraded",
@@ -243,6 +251,15 @@ export class HelperService {
     ],
     startDate: "January 2023",
     endDate: "June 2023",
+    projectUrls: [
+      {
+        title: "Job Portal Full Version",
+        githubUrl : "https://github.com/jobissjo/job-sera",
+        gitIconUrl: "fa-brands fa-github",
+        demoIcon: "fa-solid fa-arrow-up-right-from-square",
+        hostingUrl : "http://localhost",
+      }
+    ]
   },
 ]
 }

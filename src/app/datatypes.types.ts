@@ -35,15 +35,20 @@ export interface Resume{
     file:string
 }
 
-export interface Project {
-    name: string,
+interface ProjectUrl{
+    title: string,
     githubUrl: string,
     hostingUrl: string,
-    description: string,
-    features: string[],
     gitIconUrl:string,
     demoIcon:string,
+}
+
+export interface Project {
+    name: string,
+    description: string,
+    features: string[],
     startDate: string,
     endDate: string,
+    projectUrls:ProjectUrl[]
 
 }
