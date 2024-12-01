@@ -124,13 +124,17 @@
     color: white !important;
 }
 
+.width-90{
+    width: 90%;
+}
 
 @media (max-width: 768px){
     .timeline-event-copy {
         padding: 2rem 0 0 2rem;
         position: relative;
         top: -1.875em;
-        left: 2.5em;
+        left: 1.2em;
         width: 100%;
     }
 }
+
