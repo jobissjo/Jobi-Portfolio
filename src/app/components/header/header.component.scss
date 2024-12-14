@@ -83,3 +83,71 @@ a.active {
 .bg-change-black:hover {
     background-color: #1b1b1b !important;
 }
+
+#menu-toggle {
+    display: none; /* Hidden by default */
+}
+
+/* General styling for header remains unchanged */
+
+/* Responsive styling for mobile view */
+@media (max-width: 768px) {
+    /* Show the menu toggle button only on mobile */
+    #menu-toggle {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+
+    #menu-toggle:hover {
+        background-color: #e1e1e1;
+    }
+
+    /* Initially hide the menu on mobile */
+    nav ul {
+        display: none; /* Hidden by default */
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+    }
+
+    /* Show menu when toggled */
+    nav ul.show-menu {
+        display: flex;
+        flex-direction: column;
+        
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    nav li {
+        margin: 5px 0; /* Reduce spacing for better mobile display */
+        text-align: center;
+    }
+
+    nav li a {
+        font-size: 14px; /* Slightly increase font size for mobile readability */
+    }
+
+    /* Ensure theme toggle button remains properly positioned */
+    #theme-toggle {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

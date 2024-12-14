@@ -1,18 +1,21 @@
 <header class="navbar-fixed-top">
     <nav aria-label="Main Navbar">
-        <ul>
-            @for(section of sections; track section){
+        <button id="menu-toggle" aria-label="Toggle Menu" (click)="toggleMenu()"
+            [ngClass]="{'bg-change-black': darkMode}">
+            <mat-icon aria-hidden="false" fontIcon="menu"></mat-icon>
+        </button>
+        <ul [ngClass]="{'show-menu': menuOpen, 'bg-change-black': darkMode}">
+            @for(section of sections; track section) {
                 <li><a (click)="scrollToSection(section)"> {{section | titlecase}}</a></li>
             }
-
         </ul>
         <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" (click)="toggleDarkMode()"
-        [ngClass]="{'bg-change-black': darkMode}">
-        @if (darkMode){
-            <mat-icon aria-hidden="false"  fontIcon="wb_sunny"></mat-icon>
-        }@else {
-            <mat-icon aria-hidden="false"  fontIcon="dark_mode"></mat-icon>
-        }</button>
+            [ngClass]="{'bg-change-black': darkMode}">
+            @if (darkMode) {
+                <mat-icon aria-hidden="false" fontIcon="wb_sunny"></mat-icon>
+            } @else {
+                <mat-icon aria-hidden="false" fontIcon="dark_mode"></mat-icon>
+            }
+        </button>
     </nav>
-    
 </header>

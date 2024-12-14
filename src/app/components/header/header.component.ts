@@ -20,8 +20,16 @@ export class HeaderComponent{
     'contact'
   ]
 
+  menuOpen = false;
+
+  toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+  }
+
+
   scrollToSection(section:string){
-    this.helperService.scrollToElement(section)
+    this.helperService.scrollToElement(section);
+    this.menuOpen = !this.menuOpen;
   }
 
   darkMode:boolean = true;
