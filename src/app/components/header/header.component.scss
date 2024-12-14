@@ -125,7 +125,7 @@ a.active {
     nav ul.show-menu {
         display: flex;
         flex-direction: column;
-        
+        background-color: #e1e1e1;
         position: absolute;
         top: 65px;
         left: 0;
@@ -150,4 +150,8 @@ a.active {
         top: 50%;
         transform: translateY(-50%);
     }
+}
+
+.bg-change-black-div{
+    background-color: #0a0a0a !important;
 }

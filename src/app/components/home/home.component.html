@@ -1,5 +1,5 @@
 <div class="app-container" [ngClass]="{'dark-mode-color': isDarkMode}">
-    <app-header (modeChange)="modeChanged($event)" ></app-header>
+    <app-header #header_component (modeChange)="modeChanged($event)" ></app-header>
     <app-main ></app-main>
     <app-about></app-about>
     <app-experience [darkMode]="isDarkMode" ></app-experience>

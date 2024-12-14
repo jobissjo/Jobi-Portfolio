@@ -2,9 +2,9 @@
     <nav aria-label="Main Navbar">
         <button id="menu-toggle" aria-label="Toggle Menu" (click)="toggleMenu()"
             [ngClass]="{'bg-change-black': darkMode}">
-            <mat-icon aria-hidden="false" fontIcon="menu"></mat-icon>
+            <mat-icon id="menu-toggle-icon" aria-hidden="false" fontIcon="menu"></mat-icon>
         </button>
-        <ul [ngClass]="{'show-menu': menuOpen, 'bg-change-black': darkMode}">
+        <ul [ngClass]="{'show-menu': menuOpen, 'bg-change-black-div': darkMode}">
             @for(section of sections; track section) {
                 <li><a (click)="scrollToSection(section)"> {{section | titlecase}}</a></li>
             }
