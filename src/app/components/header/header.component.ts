@@ -16,6 +16,7 @@ export class HeaderComponent{
     'about',
     'experience',
     'skill',
+    'project',
     'contact'
   ]
 
