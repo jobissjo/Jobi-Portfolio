@@ -7,6 +7,7 @@
   <meta name="author" content="Jobi S S">
   <meta name="google-site-verification" content="nJDSwhCFeybT5c1EJOipFujH_3D81r4QgqeVHJNj1kY">
   <meta name="msvalidate.01" content="C1A89A7B451D62F774B831FD318611D4">
+  <meta name="robots" content="index, follow">
   <!-- For Social Media -->
   <meta property="og:title" content="Jobi S S - Full-Stack Python and Angular Developer">
   <meta property="og:description" content="Experienced developer with expertise in Python, Angular, REST API, and web application development.">
