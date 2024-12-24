@@ -11,7 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent{
-  private helperService:HelperService = inject(HelperService)
+  private readonly helperService:HelperService = inject(HelperService)
   sections: string[] = [
     'about',
     'experience',
