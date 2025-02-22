@@ -6,7 +6,7 @@ import { ViewportScroller } from '@angular/common';
   providedIn: 'root'
 })
 export class HelperService {
-  private viewportScroller: ViewportScroller = inject(ViewportScroller);
+  private readonly viewportScroller: ViewportScroller = inject(ViewportScroller);
 
   constructor() { }
 
@@ -51,7 +51,7 @@ export class HelperService {
     }
   }
 
-  private skills: Skill[] = [
+  private readonly skills: Skill[] = [
     {
       name: 'Python',
       imageUrl: 'img/skills/python.png',
@@ -150,7 +150,7 @@ export class HelperService {
     }
   ]
 
-  private experiences : Experience[] = [
+  private readonly experiences : Experience[] = [
     {
       position: 'Full Stack Python Developer Intern',
       companyName:'Inmakes Infotech Pvt Ltd',
@@ -182,7 +182,7 @@ export class HelperService {
 
   ]
 
-  private contacts:Contact[] = [
+  private readonly contacts:Contact[] = [
     {
       name: 'mail',
       link: 'mailto:jobisjobi1234@gmail.com',
@@ -210,12 +210,45 @@ export class HelperService {
     },
   ]
 
-  private resume:Resume = {
+  private readonly resume:Resume = {
     name: 'Jobi Resume',
     file: 'jobiss.pdf'
   }
 
-  private projects: Project[] = [
+  private readonly projects: Project[] = [
+    {
+      name: 'Recommendation System',
+      description: "Built a movie recommendation system using Python and Ploar",
+      features: [
+        "Built using FastAPI, Angular and Polor and NLP",
+        "Built recommendation using content-based filtering"
+      ],
+      projectUrls:[
+        {
+          title: 'Frontend',
+          githubUrl : "https://github.com/jobissjo/recommendation-frontend.git",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl : "https://github.com/jobissjo/recommendation-frontend.git",
+        },{
+          title: "Backend",
+          githubUrl : "https://github.com/jobissjo/recommendation-backend-mongodb.git",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl : "https://github.com/jobissjo/recommendation-backend-mongodb.git",
+        },
+        {
+          title: "Recommendation Model",
+          githubUrl : "https://github.com/jobissjo/movie-recommendation-model.git",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl : "https://github.com/jobissjo/movie-recommendation-model.git",
+        }
+      ],
+      startDate: "Feb 2025",
+      endDate: "Present",
+    },
+
     {
       name: "MERN Real Time Chat Project",
       projectUrls: [
