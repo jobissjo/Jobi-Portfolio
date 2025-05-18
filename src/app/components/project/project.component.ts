@@ -4,11 +4,12 @@ import { HelperService } from '../../service/helper.service';
 import { Project } from '../../datatypes.types';
 import { CommonModule } from '@angular/common';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule],
+  imports: [CommonModule, MatExpansionModule, RouterModule],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })

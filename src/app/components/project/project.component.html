@@ -26,7 +26,13 @@
                       @for (projectUrl of project.projectUrls; track projectUrl) {
                         <h4 class="heading-project-link" [ngClass]="{'dark-heading-project-link': darkMode}" >{{ projectUrl.title }}</h4>
                         <a [href]="projectUrl.githubUrl" target="_blank">GitHub <i [class]="projectUrl.gitIconUrl"></i></a>
-                        <a [href]="projectUrl.hostingUrl" target="_blank">Live Demo <i [class]="projectUrl.demoIcon"></i></a>
+                        @if(projectUrl.hostingUrl){
+                          <a [href]="projectUrl.hostingUrl" target="_blank">Live Demo <i [class]="projectUrl.demoIcon"></i></a>
+                        }
+                        @else{
+                          <a routerLink="/in-progress" >Live Demo <i [class]="projectUrl.demoIcon"></i></a>
+                          
+                        }
                       }
                     </div>
                 </mat-expansion-panel>

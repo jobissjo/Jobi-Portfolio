@@ -4,6 +4,16 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i';
 
+:root {
+    // ... existing variables ...
+  
+    // Dark mode colors
+    --surface-dark: #121212;
+    --surface-variant-dark: #1e1e1e;
+    --text-primary-dark: #ffffff;
+    --text-secondary-dark: rgba(255, 255, 255, 0.7);
+    --primary-dark: #bb86fc;
+  }
 
 h1 {
     font-family: 'Playfair Display', serif;

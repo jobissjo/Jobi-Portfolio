@@ -1,0 +1,25 @@
+<div class="in-progress-container" [class.dark-mode]="isDarkMode">
+    <div class="content" [class.dark-mode]="isDarkMode">
+      <mat-icon class="construction-icon">construction</mat-icon>
+      <h1>Feature Under Development</h1>
+      <p class="message">We're working hard to bring you something amazing! This feature is currently being developed and will be available soon.</p>
+      <div class="features">
+        <div class="feature-item">
+          <mat-icon>engineering</mat-icon>
+          <span>Active Development</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>schedule</mat-icon>
+          <span>Coming Soon</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>auto_awesome</mat-icon>
+          <span>New Features</span>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" routerLink="/">
+        <mat-icon>home</mat-icon>
+        Return to Home
+      </button>
+    </div>
+  </div>

@@ -11,7 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent{
-  private readonly helperService:HelperService = inject(HelperService)
+  private readonly helperService:HelperService = inject(HelperService);
   sections: string[] = [
     'about',
     'experience',
@@ -40,6 +40,7 @@ export class HeaderComponent{
   toggleDarkMode(){
     this.darkMode = !this.darkMode
     this.modeChange.emit(this.darkMode);
+    this.helperService.toggleDarkMode()
   }
 
 }

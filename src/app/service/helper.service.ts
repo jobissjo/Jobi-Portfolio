@@ -1,17 +1,30 @@
 import { inject, Injectable } from '@angular/core';
 import { Contact, Experience, Project, Resume, Skill, SkillCategory } from '../datatypes.types';
 import { ViewportScroller } from '@angular/common';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelperService {
   private readonly viewportScroller: ViewportScroller = inject(ViewportScroller);
+  private readonly darkModeSubject = new BehaviorSubject<boolean>(true);
+  darkMode$ = this.darkModeSubject.asObservable();
 
   constructor() { }
 
   scrollToElement(id:string){
     this.viewportScroller.scrollToAnchor(id);
+  }
+
+  toggleDarkMode() {
+    const currentValue = this.darkModeSubject.value;
+    this.darkModeSubject.next(!currentValue);
+    document.body.classList.toggle('dark-theme', !currentValue);
+  }
+
+  isDarkMode(): boolean {
+    return this.darkModeSubject.value;
   }
 
   getProjects(){
@@ -229,20 +242,20 @@ export class HelperService {
           githubUrl : "https://github.com/jobissjo/recommendation-frontend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://github.com/jobissjo/recommendation-frontend.git",
+          hostingUrl : "",
         },{
           title: "Backend",
           githubUrl : "https://github.com/jobissjo/recommendation-backend-mongodb.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://github.com/jobissjo/recommendation-backend-mongodb.git",
+          hostingUrl : "",
         },
         {
           title: "Recommendation Model",
           githubUrl : "https://github.com/jobissjo/movie-recommendation-model.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://github.com/jobissjo/movie-recommendation-model.git",
+          hostingUrl : "",
         }
       ],
       startDate: "Feb 2025",
