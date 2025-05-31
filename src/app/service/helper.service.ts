@@ -277,7 +277,7 @@ export class HelperService {
           githubUrl : "https://github.com/jobissjo/mern-real-time-chat-client",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://mern-real-time-chat-client-234uef8b4.vercel.app",
+          hostingUrl : "https://mern-real-time-chat-client.vercel.app/",
         }
       ],
       description: "This Job Portal project is a using frontend react and backend for Express js",
