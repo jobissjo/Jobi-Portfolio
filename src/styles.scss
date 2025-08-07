@@ -6,14 +6,14 @@
 
 :root {
     // ... existing variables ...
-  
+
     // Dark mode colors
     --surface-dark: #121212;
     --surface-variant-dark: #1e1e1e;
     --text-primary-dark: #ffffff;
     --text-secondary-dark: rgba(255, 255, 255, 0.7);
     --primary-dark: #bb86fc;
-  }
+}
 
 h1 {
     font-family: 'Playfair Display', serif;
@@ -36,13 +36,22 @@ body {
 .h-50 {
     height: 50px;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-.dark-mode-color{
+.dark-mode-color {
     background-color: black;
     color: white;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
