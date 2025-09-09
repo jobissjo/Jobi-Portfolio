@@ -2,11 +2,12 @@ import { Component, inject, Input } from '@angular/core';
 import { HelperService } from '../../service/helper.service';
 import { Skill, SkillCategory } from '../../datatypes.types';
 import { CommonModule } from '@angular/common';
+import { AtroposDirective } from '../../directives/atropos.directive';
 
 @Component({
   selector: 'app-skill',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AtroposDirective],
   templateUrl: './skill.component.html',
   styleUrl: './skill.component.scss'
 })

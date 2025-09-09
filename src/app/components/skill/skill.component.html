@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col-md-12">
             <!-- <h4>03</h4> -->
-            <h1 class="size-50 animate__animated animate__backInLeft">My <br /> Skills</h1> 
+            <h1 class="size-50 animate__animated animate__backInLeft">My <br /> Skills</h1>
         </div>
         <!-- main container -->
         <div class="main-container portfolio-inner clearfix">
@@ -14,47 +14,54 @@
                         <nav class="categories">
                             <ul class="portfolio_filter">
                                 @for (category of skillCategories; track category){
-                                   <li ><a (click)="changeCategory(category)" [ngClass]="{'active': selectedSkillCategory==category}" >{{category | titlecase}}</a></li> 
+                                <li><a (click)="changeCategory(category)"
+                                        [ngClass]="{'active': selectedSkillCategory==category}">{{category |
+                                        titlecase}}</a></li>
                                 }
-                                
+
                             </ul>
                         </nav>
                     </div>
                     <!-- portfolio_filter -->
-                    
+
                     <!-- portfolio_container -->
                     <div class="skill-container" data-aos="fade-up">
                         @for (skill of skills; track skill.name){
-                            <div class="skill">
-                                <a class="skill-item" [ngClass]="{'dark-mode-color': darkMode}">
-                                    <img [src]="skill.imageUrl" [alt]="skill.name" class="skill-logo" [ngClass]="{'dark-mode-color': darkMode}" />
-                                    <div class="skill-item-hover">
-                                        <div class="portfolio-border">
-                                            <div class="skill-info">
-                                                <span>{{skill.name}}</span>
-                                                <div class="skill-level">
-                                                    <div class="skill-level-indicator" [style.width.%]="skill.level"></div>
-                                                    <span class="skill-level-text">{{skill.level}}%</span>
+                        <div class="skill atropos" appAtropos>
+                            <div class="atropos-scale">
+                                <div class="atropos-rotate">
+                                    <div class="atropos-inner">
+                                        <a class="skill-item" [ngClass]="{'dark-mode-color': darkMode}">
+                                            <img [src]="skill.imageUrl" [alt]="skill.name" class="skill-logo"
+                                                [ngClass]="{'dark-mode-color': darkMode}" />
+                                            <div class="skill-item-hover">
+                                                <div class="portfolio-border">
+                                                    <div class="skill-info">
+                                                        <span>{{skill.name}}</span>
+                                                        <div class="skill-level">
+                                                            <div class="skill-level-indicator"
+                                                                [style.width.%]="skill.level"></div>
+                                                            <span class="skill-level-text">{{skill.level}}%</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
+                        </div>
                         }@empty {
-                            <div>
-                                <p>No skills added yet</p>
-                            </div>
+                        <div>
+                            <p>No skills added yet</p>
+                        </div>
                         }
                     </div>
-                    
-                <!-- portfolio -->
+
+                    <!-- portfolio -->
+                </div>
+                <!-- end portfolio div -->
             </div>
-            <!-- end portfolio div -->
+            <!-- end main container -->
         </div>
-        <!-- end main container -->
     </div>
-</div>
-
-
-  
