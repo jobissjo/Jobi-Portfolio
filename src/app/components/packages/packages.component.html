@@ -1,0 +1,67 @@
+<div class="section" id="package">
+    <div class="container">
+        <div class="col-md-12">
+            <!-- <h4>04</h4> -->
+            <h1 class="size-50 animate__animated animate__backInLeft">My <br /> Packages</h1>
+        </div>
+        <!-- main container -->
+        <div class="main-container portfolio-inner clearfix">
+            <!-- portfolio div -->
+            <div class="portfolio-div">
+                <div class="portfolio">
+                    <!-- portfolio_filter -->
+                    <div class="categories-grid wow fadeInLeft">
+                        <nav class="categories">
+                            <ul class="portfolio_filter">
+                                @for (category of packageCategories; track category){
+                                <li><a (click)="changeCategory(category)"
+                                        [ngClass]="{'active': selectedPackageCategory==category}">{{category |
+                                        titlecase}}</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- portfolio_filter -->
+
+                    <!-- package_container -->
+                    <div class="package-container" data-aos="fade-up">
+                        @for (package of packages; track package.name){
+                        <div class="package atropos" appAtropos>
+                            <div class="atropos-scale">
+                                <div class="atropos-rotate">
+                                    <div class="atropos-inner">
+                                        <a class="package-item" [ngClass]="{'dark-mode-color': darkMode}">
+                                            <img [src]="package.imageUrl" [alt]="package.name" class="package-logo"
+                                                [ngClass]="{'dark-mode-color': darkMode}" />
+                                            <div class="package-item-hover">
+                                                <div class="portfolio-border">
+                                                    <div class="package-info">
+                                                        <span class="package-name">{{package.name}}</span>
+                                                        <p class="package-description">{{package.description}}</p>
+                                                        <div class="package-badges">
+                                                            <span class="package-badge package-type">{{package.type}}</span>
+                                                            <span class="package-badge package-version">v{{package.version}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }@empty {
+                        <div>
+                            <p>No packages added yet</p>
+                        </div>
+                        }
+                    </div>
+
+                    <!-- portfolio -->
+                </div>
+                <!-- end portfolio div -->
+            </div>
+            <!-- end main container -->
+        </div>
+    </div>
+</div>

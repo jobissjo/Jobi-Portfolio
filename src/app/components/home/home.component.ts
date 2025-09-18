@@ -8,12 +8,14 @@ import { ProjectComponent } from '../project/project.component';
 import { SkillComponent } from '../skill/skill.component';
 import { MainComponent } from '../main/main.component';
 import { CommonModule } from '@angular/common';
+import { PackagesComponent } from '../packages/packages.component';
+import { ArticlesComponent } from '../articles/articles.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [HeaderComponent, AboutComponent, FooterComponent, ExperienceComponent, ContactComponent,
-    ProjectComponent, SkillComponent, MainComponent, CommonModule
+    ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

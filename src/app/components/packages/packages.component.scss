@@ -1,0 +1,234 @@
+.package-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.package {
+    flex: 1 1 22%; /* Change to 22% for 4 items on larger screens */
+    max-width: 22%;
+    text-align: center;
+    position: relative;
+}
+
+.package-item {
+    display: block;
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.package-logo {
+    width: 100%;
+    height: auto;
+    max-height: 120px; /* Slightly smaller than skill logos */
+    object-fit: contain;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.package-item-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.package:hover .package-item-hover {
+    display: flex;
+}
+
+.package-info {
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.package-name {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.package-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.9);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.package-badges {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.package-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.package-type {
+    background-color: #425BB5;
+    color: white;
+}
+
+.package-version {
+    background-color: #FF6B6B;
+    color: white;
+}
+
+/* General Styles - reuse from skills */
+.categories {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio_filter {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.portfolio_filter li {
+    display: inline-block;
+}
+
+.portfolio_filter a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.portfolio_filter a.active,
+.portfolio_filter a:hover {
+    background-color: #425BB5;
+    color: white;
+    border-color: #425BB5;
+}
+
+/* Responsive Design */
+
+/* For larger screens, display 4 items */
+@media (min-width: 1200px) {
+    .package {
+        flex: 1 1 22%;
+        max-width: 22%;
+    }
+}
+
+/* For laptops, display 3 items */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .package {
+        flex: 1 1 30%;
+        max-width: 30%;
+    }
+}
+
+/* For tablets, display 2 items */
+@media (max-width: 768px) {
+    .package {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+/* For mobile devices, display 1 item */
+@media (max-width: 480px) {
+    .package {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Laptop Styles (default) */
+@media (min-width: 768px) {
+    .portfolio_filter {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .portfolio_filter a {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .portfolio_filter {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .portfolio_filter a {
+        font-size: 14px;
+        padding: 8px 15px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .package-description {
+        font-size: 13px;
+        -webkit-line-clamp: 2;
+    }
+
+    .package-badges {
+        gap: 5px;
+    }
+
+    .package-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+}
+
+.dark-mode-color {
+    background-color: #121212;
+    color: whitesmoke;
+}

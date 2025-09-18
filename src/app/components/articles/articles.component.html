@@ -1,0 +1,229 @@
+<!-- articles.component.html -->
+<section class="articles-section" id="articles">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-newspaper"></i>
+                Articles & Blog Posts
+            </h2>
+            <p class="section-description">
+                Technical articles and insights I've shared with the developer community
+            </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search articles..." [(ngModel)]="searchTerm" (input)="onSearchChange()"
+                    class="search-input" />
+            </div>
+
+            <div class="filter-group">
+                <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()" class="filter-select">
+                    <option value="">All Categories</option>
+                    <option *ngFor="let category of getCategories()" [value]="category">
+                        {{ category }}
+                    </option>
+                </select>
+
+                <select [(ngModel)]="selectedPlatform" (change)="onPlatformChange()" class="filter-select">
+                    <option value="">All Platforms</option>
+                    <option *ngFor="let platform of getPlatforms()" [value]="platform">
+                        {{ platform }}
+                    </option>
+                </select>
+
+                <label class="featured-toggle">
+                    <input type="checkbox" [(ngModel)]="showFeaturedOnly" (change)="onFeaturedToggle()" />
+                    <span class="checkmark"></span>
+                    Featured Only
+                </label>
+
+                <button class="clear-btn" (click)="clearFilters()"
+                    *ngIf="searchTerm || selectedCategory || selectedPlatform || showFeaturedOnly">
+                    <i class="fas fa-times"></i> Clear
+                </button>
+            </div>
+        </div>
+
+        <!-- Featured Articles -->
+        <div class="featured-section" *ngIf="!showFeaturedOnly">
+            <h3 class="featured-title">
+                <i class="fas fa-star"></i>
+                Featured Articles
+            </h3>
+            <div class="featured-grid">
+                <!-- *ngFor="let article of articles.slice(0, 2) | filter: {featured: true}; trackBy: trackByArticleId" -->
+                @for (article of articles; track article.id){
+                <div class="featured-article-card">
+                    <div class="featured-image" *ngIf="article.image">
+                        <img [src]="article.image" [alt]="article.title" />
+                        <div class="featured-overlay">
+                            <span class="featured-badge">
+                                <i class="fas fa-star"></i>
+                                Featured
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="featured-content">
+                        <div class="article-meta">
+                            <span class="platform-badge" [style.background]="getPlatformColor(article.platform)">
+                                <i [class]="getPlatformIcon(article.platform)"></i>
+                                {{ article.platform }}
+                            </span>
+                            <span class="category-badge">{{ article.category }}</span>
+                        </div>
+
+                        <h3 class="featured-article-title">
+                            <a [href]="article.url" target="_blank" rel="noopener noreferrer">
+                                {{ article.title }}
+                            </a>
+                        </h3>
+
+                        <p class="featured-article-summary">
+                            {{ article.summary }}
+                        </p>
+
+                        <div class="article-stats">
+                            <span class="stat">
+                                <i class="fas fa-calendar"></i>
+                                {{ article.publishedDate | date:'MMM dd, yyyy' }}
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-clock"></i>
+                                {{ getReadTimeText(article.readTime) }}
+                            </span>
+                            <span class="stat" *ngIf="article.views">
+                                <i class="fas fa-eye"></i>
+                                {{ formatViews(article.views) }} views
+                            </span>
+                            <span class="stat" *ngIf="article.likes">
+                                <i class="fas fa-heart"></i>
+                                {{ article.likes }} likes
+                            </span>
+                        </div>
+
+                        <div class="article-tags">
+                            <span class="tag" *ngFor="let tag of article.tags">
+                                {{ tag }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                }
+
+            </div>
+        </div>
+
+        <!-- All Articles Grid -->
+        <div class="articles-grid">
+            <div class="grid-header">
+                <h3 class="grid-title">
+                    {{ showFeaturedOnly ? 'Featured Articles' : 'All Articles' }}
+                </h3>
+                <span class="articles-count">
+                    {{ filteredArticles.length }} article{{ filteredArticles.length !== 1 ? 's' : '' }}
+                </span>
+            </div>
+
+            <div class="articles-list">
+                <article class="article-card" *ngFor="let article of filteredArticles; trackBy: trackByArticleId"
+                    [class.featured]="article.featured">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="platform-badge" [style.background]="getPlatformColor(article.platform)">
+                                <i [class]="getPlatformIcon(article.platform)"></i>
+                                {{ article.platform }}
+                            </span>
+                            <span class="category-badge">{{ article.category }}</span>
+                            <span class="featured-indicator" *ngIf="article.featured">
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+
+                        <div class="article-date">
+                            {{ article.publishedDate | date:'MMM dd, yyyy' }}
+                        </div>
+                    </div>
+
+                    <div class="article-content">
+                        <h3 class="article-title">
+                            <a [href]="article.url" target="_blank" rel="noopener noreferrer">
+                                {{ article.title }}
+                            </a>
+                        </h3>
+
+                        <p class="article-summary">
+                            {{ article.summary }}
+                        </p>
+
+                        <div class="article-footer">
+                            <div class="article-tags">
+                                <span class="tag" *ngFor="let tag of article.tags.slice(0, 4)">
+                                    {{ tag }}
+                                </span>
+                                <span class="more-tags" *ngIf="article.tags.length > 4">
+                                    +{{ article.tags.length - 4 }} more
+                                </span>
+                            </div>
+
+                            <div class="article-stats">
+                                <span class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    {{ getReadTimeText(article.readTime) }}
+                                </span>
+                                <span class="stat" *ngIf="article.views">
+                                    <i class="fas fa-eye"></i>
+                                    {{ formatViews(article.views) }}
+                                </span>
+                                <span class="stat" *ngIf="article.likes">
+                                    <i class="fas fa-heart"></i>
+                                    {{ article.likes }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-actions">
+                        <a [href]="article.url" target="_blank" class="read-more-btn" rel="noopener noreferrer">
+                            Read Article
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" *ngIf="filteredArticles.length === 0">
+            <i class="fas fa-search"></i>
+            <h3>No articles found</h3>
+            <p>Try adjusting your search terms or filters</p>
+            <button class="clear-btn" (click)="clearFilters()">
+                Clear all filters
+            </button>
+        </div>
+
+        <!-- Newsletter CTA -->
+        <div class="newsletter-cta">
+            <div class="cta-content">
+                <h3>Stay Updated</h3>
+                <p>Get notified when I publish new articles about web development, Python, and software engineering.</p>
+                <div class="cta-actions">
+                    <a href="https://medium.com/@jobiss" target="_blank" class="cta-btn primary">
+                        <i class="fab fa-medium"></i>
+                        Follow on Medium
+                    </a>
+                    <a href="https://dev.to/jobiss" target="_blank" class="cta-btn secondary">
+                        <i class="fab fa-dev"></i>
+                        Follow on Dev.to
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

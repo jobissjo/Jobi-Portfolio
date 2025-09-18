@@ -52,3 +52,25 @@ export interface Project {
     projectUrls:ProjectUrl[]
 
 }
+
+
+export interface Package {
+  name: string;
+  imageUrl: string;
+  description: string;
+  type: 'Python' | 'NPM';
+  version: string;
+  category: PackageCategory;
+}
+
+export enum PackageCategory {
+  PYTHON = 'python',
+  NPM = 'npm',
+  WEB_DEVELOPMENT = 'web development',
+  DATA_SCIENCE = 'data science',
+  MACHINE_LEARNING = 'machine learning',
+  BACKEND = 'backend',
+  FRONTEND = 'frontend',
+  TESTING = 'testing',
+  UTILITIES = 'utilities'
+}
