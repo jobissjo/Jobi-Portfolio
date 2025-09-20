@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Contact, Experience, Project, Resume, Skill, SkillCategory } from '../datatypes.types';
+import { Article, ArticleCategory, Contact, Experience, Project, Resume, Skill, SkillCategory } from '../datatypes.types';
 import { ViewportScroller } from '@angular/common';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
@@ -308,4 +308,71 @@ export class HelperService {
     ]
   },
 ]
+
+
+private articles: Article[] = [
+  // {
+  //   id: '1',
+  //   title: 'Building Scalable Web Applications with Angular and Node.js',
+  //   excerpt: 'Learn how to create robust, scalable web applications using the powerful combination of Angular frontend and Node.js backend. This comprehensive guide covers architecture patterns, best practices, and real-world implementation strategies.',
+  //   imageUrl: 'assets/images/articles/angular-nodejs.jpg',
+  //   url: 'https://medium.com/@yourhandle/building-scalable-web-apps-angular-nodejs',
+  //   publishedDate: new Date('2024-01-15'),
+  //   category: ArticleCategory.WEB_DEVELOPMENT,
+  //   tags: ['angular', 'nodejs', 'typescript', 'fullstack', 'scalability'],
+  //   views: 2500,
+  //   likes: 187,
+  //   platform: 'Medium'
+  // },
+  // {
+  //   id: '3',
+  //   title: 'Modern CSS: Grid, Flexbox, and Beyond',
+  //   excerpt: 'Explore the latest CSS features and techniques for creating responsive, modern layouts. This article covers CSS Grid, Flexbox, custom properties, and emerging technologies like container queries.',
+  //   imageUrl: 'assets/images/articles/modern-css.jpg',
+  //   url: 'https://yourblog.com/modern-css-grid-flexbox-beyond',
+  //   publishedDate: new Date('2024-03-10'),
+  //   category: ArticleCategory.WEB_DEVELOPMENT,
+  //   tags: ['css', 'grid', 'flexbox', 'responsive', 'frontend'],
+  //   views: 1800,
+  //   likes: 156,
+  //   platform: 'Personal Blog'
+  // },
+  // {
+  //   id: '5',
+  //   title: 'Data Visualization with D3.js: Interactive Charts and Dashboards',
+  //   excerpt: 'Master the art of data visualization using D3.js to create stunning, interactive charts and dashboards. This tutorial covers everything from basic charts to complex data-driven animations.',
+  //   imageUrl: 'assets/images/articles/d3-visualization.jpg',
+  //   url: 'https://dev.to/yourhandle/data-visualization-d3js-interactive-charts',
+  //   publishedDate: new Date('2024-05-12'),
+  //   category: ArticleCategory.DATA_SCIENCE,
+  //   tags: ['d3js', 'javascript', 'dataviz', 'charts', 'dashboard'],
+  //   views: 2900,
+  //   likes: 198,
+  //   platform: 'Dev.to'
+  // },
+  // {
+  //   id: '6',
+  //   title: 'Essential TypeScript Patterns for Enterprise Applications',
+  //   excerpt: 'Learn advanced TypeScript patterns and techniques for building maintainable enterprise applications. Covers design patterns, type safety, generics, and architectural considerations.',
+  //   imageUrl: 'assets/images/articles/typescript-patterns.jpg',
+  //   url: 'https://yourblog.com/essential-typescript-patterns-enterprise',
+  //   publishedDate: new Date('2024-06-18'),
+  //   category: ArticleCategory.PROGRAMMING_TIPS,
+  //   tags: ['typescript', 'patterns', 'enterprise', 'architecture', 'bestpractices'],
+  //   views: 3500,
+  //   likes: 267,
+  //   platform: 'Personal Blog'
+  // },
+  
+  
+];
+
+getArticles(category: string = 'all'): Article[] {
+  if (category === 'all') {
+    return this.articles.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime());
+  }
+  return this.articles
+    .filter(article => article.category === category)
+    .sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime());
+}
 }

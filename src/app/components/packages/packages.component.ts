@@ -46,7 +46,7 @@ export class PackagesComponent {
     this.getPackages()
   }
 
-  getPackages(category: string = 'all') {
+  getPackages(category: string | PackageCategory = 'all') {
     this.packages = this.skillService.getPackages(category)
   }
 
