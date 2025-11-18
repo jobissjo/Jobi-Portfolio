@@ -241,10 +241,17 @@ export class HelperService {
       projectUrls:[
         {
           title: 'Frontend',
-          githubUrl : "https://github.com/jobissjo/job-haunt-frontend.git",
+          githubUrl : "https://github.com/jobissjo/blog-frontend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://job-haunt-frontend-0a780.sevalla.page/",
+          hostingUrl : "",
+        },
+        {
+          title: 'Backend',
+          githubUrl : "https://github.com/jobissjo/blog-fastapi.git",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl : "",
         }
       ]
     },
