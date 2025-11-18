@@ -52,3 +52,52 @@ export interface Project {
     projectUrls:ProjectUrl[]
 
 }
+
+
+export interface Package {
+  name: string;
+  imageUrl: string;
+  description: string;
+  type: 'Python' | 'NPM';
+  version: string;
+  category: PackageCategory;
+  categories: string[];
+}
+
+export enum PackageCategory {
+  PYTHON = 'python',
+//   NPM = 'npm',
+//   WEB_DEVELOPMENT = 'web development',
+//   DATA_SCIENCE = 'data science',
+//   MACHINE_LEARNING = 'machine learning',
+  BACKEND = 'backend',
+//   FRONTEND = 'frontend',
+  TESTING = 'testing',
+  UTILITIES = 'utilities'
+}
+
+export interface Article {
+  id: string;
+  title: string;
+  excerpt: string;
+  imageUrl: string;
+  url: string;
+  publishedDate: Date;
+  category: ArticleCategory;
+  tags: string[];
+  views: number;
+  likes: number;
+  platform?: string; // Medium, Dev.to, Personal Blog, etc.
+}
+
+export enum ArticleCategory {
+  WEB_DEVELOPMENT = 'web development',
+  DATA_SCIENCE = 'data science',
+//   MACHINE_LEARNING = 'machine learning',
+//   DEVOPS = 'devops',
+//   TUTORIALS = 'tutorials',
+//   TECH_TRENDS = 'tech trends',
+  PROGRAMMING_TIPS = 'programming tips',
+  FRAMEWORKS = 'frameworks',
+  DATABASES = 'databases'
+}
