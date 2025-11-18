@@ -230,37 +230,85 @@ export class HelperService {
 
   private readonly projects: Project[] = [
     {
-      name: 'Recommendation System',
-      description: "Built a movie recommendation system using Python and Ploar",
+      name: "Personal Blog",
+      description: "This is project is about track learning progress of the user and track the application status",
       features: [
-        "Built using FastAPI, Angular and Polor and NLP",
-        "Built recommendation using content-based filtering"
+        "Backend built using FastAPI and MongoDB",
+        "Frontend built using React and Tailwind CSS"
       ],
+      startDate: "November 2025",
+      endDate: "Present",
       projectUrls:[
         {
           title: 'Frontend',
-          githubUrl : "https://github.com/jobissjo/recommendation-frontend.git",
+          githubUrl : "https://github.com/jobissjo/job-haunt-frontend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "",
-        },{
-          title: "Backend",
-          githubUrl : "https://github.com/jobissjo/recommendation-backend-mongodb.git",
+          hostingUrl : "https://job-haunt-frontend-0a780.sevalla.page/",
+        }
+      ]
+    },
+
+    {
+      name: 'Job Haunt Project',
+      description: "This is project is about track learning progress of the user and track the application status",
+      features: [
+        "Built using FastAPI, React ",
+        "Built using React and Tailwind CSS"
+      ],
+      startDate: "October 2025",
+      endDate: "November 2025",
+      projectUrls:[
+        {
+          title: 'Frontend',
+          githubUrl : "https://github.com/jobissjo/job-haunt-frontend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "",
+          hostingUrl : "https://job-haunt-frontend-0a780.sevalla.page/",
         },
         {
-          title: "Recommendation Model",
-          githubUrl : "https://github.com/jobissjo/movie-recommendation-model.git",
+          title: 'Backend',
+          githubUrl : "https://github.com/jobissjo/job-haunt-fastapi-backend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "",
+          hostingUrl : "https://job-haunt-fastapi-backend.onrender.com",
         }
-      ],
-      startDate: "Feb 2025",
-      endDate: "Present",
+      ]
     },
+
+    
+    // {
+    //   name: 'Recommendation System',
+    //   description: "Built a movie recommendation system using Python and Ploar",
+    //   features: [
+    //     "Built using FastAPI, Angular and Polor and NLP",
+    //     "Built recommendation using content-based filtering"
+    //   ],
+    //   projectUrls:[
+    //     {
+    //       title: 'Frontend',
+    //       githubUrl : "https://github.com/jobissjo/recommendation-frontend.git",
+    //       gitIconUrl: "fa-brands fa-github",
+    //       demoIcon: "fa-solid fa-arrow-up-right-from-square",
+    //       hostingUrl : "",
+    //     },{
+    //       title: "Backend",
+    //       githubUrl : "https://github.com/jobissjo/recommendation-backend-mongodb.git",
+    //       gitIconUrl: "fa-brands fa-github",
+    //       demoIcon: "fa-solid fa-arrow-up-right-from-square",
+    //       hostingUrl : "",
+    //     },
+    //     {
+    //       title: "Recommendation Model",
+    //       githubUrl : "https://github.com/jobissjo/movie-recommendation-model.git",
+    //       gitIconUrl: "fa-brands fa-github",
+    //       demoIcon: "fa-solid fa-arrow-up-right-from-square",
+    //       hostingUrl : "",
+    //     }
+    //   ],
+    //   startDate: "Feb 2025",
+    //   endDate: "Present",
+    // },
 
     {
       name: "MERN Real Time Chat Project",
