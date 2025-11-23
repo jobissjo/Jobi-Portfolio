@@ -244,14 +244,14 @@ export class HelperService {
           githubUrl : "https://github.com/jobissjo/blog-frontend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "",
+          hostingUrl : "https://jotechblog.netlify.app/",
         },
         {
           title: 'Backend',
           githubUrl : "https://github.com/jobissjo/blog-fastapi.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "",
+          hostingUrl : "https://blog-fastapi-drab.vercel.app/",
         }
       ]
     },
