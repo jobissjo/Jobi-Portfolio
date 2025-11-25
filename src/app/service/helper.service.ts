@@ -152,7 +152,7 @@ export class HelperService {
     {
       name : 'FastAPI',
       imageUrl: 'img/skills/fastAPI.png',
-      level: 50,
+      level: 70,
       category: SkillCategory.Framework
     },
     {
@@ -366,19 +366,19 @@ export class HelperService {
 
 
 private articles: Article[] = [
-  // {
-  //   id: '1',
-  //   title: 'Building Scalable Web Applications with Angular and Node.js',
-  //   excerpt: 'Learn how to create robust, scalable web applications using the powerful combination of Angular frontend and Node.js backend. This comprehensive guide covers architecture patterns, best practices, and real-world implementation strategies.',
-  //   imageUrl: 'assets/images/articles/angular-nodejs.jpg',
-  //   url: 'https://medium.com/@yourhandle/building-scalable-web-apps-angular-nodejs',
-  //   publishedDate: new Date('2024-01-15'),
-  //   category: ArticleCategory.WEB_DEVELOPMENT,
-  //   tags: ['angular', 'nodejs', 'typescript', 'fullstack', 'scalability'],
-  //   views: 2500,
-  //   likes: 187,
-  //   platform: 'Medium'
-  // },
+  {
+    id: '1',
+    title: 'Exploring Django’s New Rust-Powered API Framework — Django Bolt',
+    excerpt: 'Django Bolt is a new API framework that is built on top of Django. It is a powerful tool that allows you to create robust, scalable web applications using the powerful combination of Django frontend and Node.js backend. This comprehensive guide covers architecture patterns, best practices, and real-world implementation strategies.',
+    imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1764009013/images/lqfhmxtdiu3rnvirmpku.png',
+    url: 'https://jotechblog.netlify.app/blog/exploring-django-s-new-rust-powered-api-framework-django-bolt',
+    publishedDate: new Date('2025-11-24'),
+    category: ArticleCategory.WEB_DEVELOPMENT,
+    tags: ['Django', 'rest', 'pythhon', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
+    views: 2500,
+    likes: 187,
+    platform: 'Medium'
+  },
   // {
   //   id: '3',
   //   title: 'Modern CSS: Grid, Flexbox, and Beyond',
