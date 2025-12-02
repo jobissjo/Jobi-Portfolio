@@ -234,7 +234,8 @@ export class HelperService {
       description: "This is project is about track learning progress of the user and track the application status",
       features: [
         "Backend built using FastAPI and MongoDB",
-        "Frontend built using React and Tailwind CSS"
+        "Frontend built using React and Tailwind CSS",
+        "Migrated from react to nextjs"
       ],
       startDate: "November 2025",
       endDate: "Present",
@@ -369,7 +370,7 @@ private articles: Article[] = [
   {
     id: '1',
     title: 'Exploring Django’s New Rust-Powered API Framework — Django Bolt',
-    excerpt: 'Django Bolt is a new API framework that is built on top of Django. It is a powerful tool that allows you to create robust, scalable web applications using the powerful combination of Django frontend and Node.js backend. This comprehensive guide covers architecture patterns, best practices, and real-world implementation strategies.',
+    excerpt: 'Django Bolt is a new API framework that is built on top of Django. It is a powerful tool that allows you to create robust, scalable web applications using the powerful combination of Django and rust. This comprehensive guide covers architecture patterns, best practices, and real-world implementation strategies.',
     imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1764009013/images/lqfhmxtdiu3rnvirmpku.png',
     url: 'https://jotechblog.netlify.app/blog/exploring-django-s-new-rust-powered-api-framework-django-bolt',
     publishedDate: new Date('2025-11-24'),
