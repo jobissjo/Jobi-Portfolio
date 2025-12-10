@@ -375,11 +375,24 @@ private articles: Article[] = [
     url: 'https://jotechblog.netlify.app/blog/exploring-django-s-new-rust-powered-api-framework-django-bolt',
     publishedDate: new Date('2025-11-24'),
     category: ArticleCategory.WEB_DEVELOPMENT,
-    tags: ['Django', 'rest', 'pythhon', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
+    tags: ['Django', 'rest', 'python', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
     views: 2500,
     likes: 187,
     platform: 'Medium'
   },
+  {
+    id: '2',
+    title: 'How to Add Swagger for Django with Django Rest Framework using DRF Spectacular',
+    excerpt: 'How to Add Swagger for Django with Django Rest Framework using DRF Spectacular',
+    imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1765262789/images/iiylsjptfjtg10lbutww.png',
+    url: 'https://jotechblog.netlify.app/blog/how-to-add-swagger-for-django-with-django-rest-framework-using-drf-spectacular',
+    publishedDate: new Date('2025-12-09'),
+    category: ArticleCategory.WEB_DEVELOPMENT,
+    tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework', 'drf'],
+    views: 2500,
+    likes: 187,
+    platform: 'Medium '
+  }
   // {
   //   id: '3',
   //   title: 'Modern CSS: Grid, Flexbox, and Beyond',
