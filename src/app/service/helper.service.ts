@@ -13,7 +13,7 @@ export class HelperService {
 
   constructor() { }
 
-  scrollToElement(id:string){
+  scrollToElement(id: string) {
     this.viewportScroller.scrollToAnchor(id);
   }
 
@@ -27,38 +27,38 @@ export class HelperService {
     return this.darkModeSubject.value;
   }
 
-  getProjects(){
+  getProjects() {
     return this.projects
   }
 
 
 
-  getExperience(){
+  getExperience() {
     return this.experiences;
   }
 
-  getContacts(){
+  getContacts() {
     return this.contacts;
   }
 
-  getResume(){
+  getResume() {
     return this.resume;
   }
 
-  
 
-  getSkills(category:string):Skill[]{
+
+  getSkills(category: string): Skill[] {
     if (category == 'all')
       return this.skills;
-    else{
-      let filtered_skills =  this.skills.filter(skill => {
+    else {
+      let filtered_skills = this.skills.filter(skill => {
         return skill.category == category;
       })
 
-      if(filtered_skills.length > 0){
+      if (filtered_skills.length > 0) {
         return filtered_skills
       }
-      else{
+      else {
         return []
       }
     }
@@ -109,19 +109,19 @@ export class HelperService {
     },
     {
       name: 'PostgreSQL',
-      imageUrl:'img/skills/postgreSQL.png',
-      level:75,
-      category:SkillCategory.Database
+      imageUrl: 'img/skills/postgreSQL.png',
+      level: 75,
+      category: SkillCategory.Database
     },
     {
       name: 'MongoDB',
-      imageUrl:'img/skills/mongodb.png',
-      level:50,
-      category:SkillCategory.Database
+      imageUrl: 'img/skills/mongodb.png',
+      level: 50,
+      category: SkillCategory.Database
     },
     {
       name: 'HTML',
-      imageUrl:'img/skills/html.png',
+      imageUrl: 'img/skills/html.png',
       level: 80,
       category: SkillCategory.TechStack,
     },
@@ -129,7 +129,7 @@ export class HelperService {
       name: 'CSS',
       imageUrl: 'img/skills/css.png',
       level: 70,
-      category:SkillCategory.TechStack
+      category: SkillCategory.TechStack
     },
     {
       name: 'Bootstrap',
@@ -150,32 +150,32 @@ export class HelperService {
       category: SkillCategory.Tool
     },
     {
-      name : 'FastAPI',
+      name: 'FastAPI',
       imageUrl: 'img/skills/fastAPI.png',
       level: 70,
       category: SkillCategory.Framework
     },
     {
       name: 'Litestar',
-      imageUrl : 'img/skills/litestar.png',
+      imageUrl: 'img/skills/litestar.png',
       level: 30,
       category: SkillCategory.Framework
     }
   ]
 
-  private readonly experiences : Experience[] = [
+  private readonly experiences: Experience[] = [
     {
       position: 'Full Stack Python Developer Intern',
-      companyName:'Inmakes Infotech Pvt Ltd',
+      companyName: 'Inmakes Infotech Pvt Ltd',
       startedDate: new Date('2022-06-22'),
       endedDate: new Date('2022-09-22'),
       workAchievements: [
-         "Built an e-commerce project using Django."
+        "Built an e-commerce project using Django."
       ]
     },
     {
       position: 'Python Developer',
-      companyName:'Mentor Thesis',
+      companyName: 'Mentor Thesis',
       startedDate: new Date('2023-03-06'),
       endedDate: new Date('2023-04-15'),
       workAchievements: [
@@ -184,7 +184,7 @@ export class HelperService {
     },
     {
       position: 'Python Developer',
-      companyName:'Senscript Technologies',
+      companyName: 'Senscript Technologies',
       startedDate: new Date('2024-05-13'),
       endedDate: new Date(),
       workAchievements: [
@@ -195,35 +195,35 @@ export class HelperService {
 
   ]
 
-  private readonly contacts:Contact[] = [
+  private readonly contacts: Contact[] = [
     {
       name: 'mail',
       link: 'mailto:jobisjobi1234@gmail.com',
       iconStyle: 'fa-solid fa-envelope',
-      title:"Mail to Jobi"
+      title: "Mail to Jobi"
     },
 
     {
       name: 'github',
       link: 'https://github.com/jobissjo',
       iconStyle: 'fa-brands fa-github',
-      title:"Jobi Github"
+      title: "Jobi Github"
     },
     {
       name: 'linkedin',
       link: 'https://in.linkedin.com/in/jobiss12',
       iconStyle: 'fa-brands fa-linkedin',
-      title:"Jobi Linkedin"
+      title: "Jobi Linkedin"
     },
     {
       name: 'Instagram',
       link: 'https://www.instagram.com/__mr_unknown_/',
       iconStyle: 'fa-brands fa-instagram',
-      title:"Jobi Instagram"
+      title: "Jobi Instagram"
     },
   ]
 
-  private readonly resume:Resume = {
+  private readonly resume: Resume = {
     name: 'Jobi Resume',
     file: 'jobiss.pdf'
   }
@@ -239,20 +239,20 @@ export class HelperService {
       ],
       startDate: "November 2025",
       endDate: "Present",
-      projectUrls:[
+      projectUrls: [
         {
           title: 'Frontend',
-          githubUrl : "https://github.com/jobissjo/blog-frontend.git",
+          githubUrl: "https://github.com/jobissjo/blog-frontend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://jotechblog.netlify.app/",
+          hostingUrl: "https://jotechblog.netlify.app/",
         },
         {
           title: 'Backend',
-          githubUrl : "https://github.com/jobissjo/blog-fastapi.git",
+          githubUrl: "https://github.com/jobissjo/blog-fastapi.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://blog-fastapi-drab.vercel.app/",
+          hostingUrl: "https://blog-fastapi-drab.vercel.app/",
         }
       ]
     },
@@ -266,25 +266,25 @@ export class HelperService {
       ],
       startDate: "October 2025",
       endDate: "November 2025",
-      projectUrls:[
+      projectUrls: [
         {
           title: 'Frontend',
-          githubUrl : "https://github.com/jobissjo/job-haunt-frontend.git",
+          githubUrl: "https://github.com/jobissjo/job-haunt-frontend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://job-haunt-frontend-0a780.sevalla.page/",
+          hostingUrl: "https://job-haunt-frontend-0a780.sevalla.page/",
         },
         {
           title: 'Backend',
-          githubUrl : "https://github.com/jobissjo/job-haunt-fastapi-backend.git",
+          githubUrl: "https://github.com/jobissjo/job-haunt-fastapi-backend.git",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://job-haunt-fastapi-backend.onrender.com",
+          hostingUrl: "https://job-haunt-fastapi-backend.onrender.com",
         }
       ]
     },
 
-    
+
     // {
     //   name: 'Recommendation System',
     //   description: "Built a movie recommendation system using Python and Ploar",
@@ -323,17 +323,17 @@ export class HelperService {
       projectUrls: [
         {
           title: "Quick Chat Server",
-          githubUrl : "https://github.com/jobissjo/mern-real-time-chat",
+          githubUrl: "https://github.com/jobissjo/mern-real-time-chat",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://mern-real-time-chat-1.onrender.com",
+          hostingUrl: "https://mern-real-time-chat-1.onrender.com",
         },
         {
           title: "Quick Chat Client",
-          githubUrl : "https://github.com/jobissjo/mern-real-time-chat-client",
+          githubUrl: "https://github.com/jobissjo/mern-real-time-chat-client",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl : "https://mern-real-time-chat-client.vercel.app/",
+          hostingUrl: "https://mern-real-time-chat-client.vercel.app/",
         }
       ],
       description: "This Job Portal project is a using frontend react and backend for Express js",
@@ -345,103 +345,122 @@ export class HelperService {
       endDate: "Present",
     },
     {
-    name: "Job Portal Project",
-    description: "This Job Portal project is a using frontend angular and backend fastapi",
-    features: [
-      "Angular 16 to Angular 18 upgraded",
-      "Mobile responsive"
-    ],
-    startDate: "January 2023",
-    endDate: "June 2023",
-    projectUrls: [
-      {
-        title: "Job Portal Full Version",
-        githubUrl : "https://github.com/jobissjo/job-sera",
-        gitIconUrl: "fa-brands fa-github",
-        demoIcon: "fa-solid fa-arrow-up-right-from-square",
-        hostingUrl : "http://localhost",
-      }
-    ]
-  },
-]
+      name: "Job Portal Project",
+      description: "This Job Portal project is a using frontend angular and backend fastapi",
+      features: [
+        "Angular 16 to Angular 18 upgraded",
+        "Mobile responsive"
+      ],
+      startDate: "January 2023",
+      endDate: "June 2023",
+      projectUrls: [
+        {
+          title: "Job Portal Full Version",
+          githubUrl: "https://github.com/jobissjo/job-sera",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "http://localhost",
+        }
+      ]
+    },
+    {
+      name: "Todo App",
+      description: "This Todo App project is a using mvt architecture in django",
+      features: [
+        "Django 4.2 to Django 5.0 upgraded",
+        "This is my first project and it is redesigned and fixed lot of my mistakes"
+      ],
+      startDate: "Jun 2022",
+      endDate: "July 2022",
+      projectUrls: [
+        {
+          title: "Todo App Full Version",
+          githubUrl: "https://github.com/jobissjo/todoapp",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://todoapp-production-7e82.up.railway.app/",
+        }
+      ]
+    }
+  ]
 
 
-private articles: Article[] = [
-  {
-    id: '1',
-    title: 'Exploring Django’s New Rust-Powered API Framework — Django Bolt',
-    excerpt: 'Django Bolt is a new API framework that is built on top of Django. It is a powerful tool that allows you to create robust, scalable web applications using the powerful combination of Django and rust. This comprehensive guide covers architecture patterns, best practices, and real-world implementation strategies.',
-    imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1764009013/images/lqfhmxtdiu3rnvirmpku.png',
-    url: 'https://jotechblog.netlify.app/blog/exploring-django-s-new-rust-powered-api-framework-django-bolt',
-    publishedDate: new Date('2025-11-24'),
-    category: ArticleCategory.WEB_DEVELOPMENT,
-    tags: ['Django', 'rest', 'python', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
-    views: 2500,
-    likes: 187,
-    platform: 'Medium'
-  },
-  {
-    id: '2',
-    title: 'How to Add Swagger for Django with Django Rest Framework using DRF Spectacular',
-    excerpt: 'How to Add Swagger for Django with Django Rest Framework using DRF Spectacular',
-    imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1765262789/images/iiylsjptfjtg10lbutww.png',
-    url: 'https://jotechblog.netlify.app/blog/how-to-add-swagger-for-django-with-django-rest-framework-using-drf-spectacular',
-    publishedDate: new Date('2025-12-09'),
-    category: ArticleCategory.WEB_DEVELOPMENT,
-    tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework', 'drf'],
-    views: 2500,
-    likes: 187,
-    platform: 'Medium '
+  private articles: Article[] = [
+    {
+      id: '1',
+      title: 'Exploring Django’s New Rust-Powered API Framework — Django Bolt',
+      excerpt: 'Django Bolt is a new API framework that is built on top of Django. It is a powerful tool that allows you to create robust, scalable web applications using the powerful combination of Django and rust. This comprehensive guide covers architecture patterns, best practices, and real-world implementation strategies.',
+      imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1764009013/images/lqfhmxtdiu3rnvirmpku.png',
+      url: 'https://jotechblog.netlify.app/blog/exploring-django-s-new-rust-powered-api-framework-django-bolt',
+      publishedDate: new Date('2025-11-24'),
+      category: ArticleCategory.WEB_DEVELOPMENT,
+      tags: ['Django', 'rest', 'python', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
+      views: 2500,
+      likes: 187,
+      platform: 'Medium'
+    },
+    {
+      id: '2',
+      title: 'How to Add Swagger for Django with Django Rest Framework using DRF Spectacular',
+      excerpt: 'How to Add Swagger for Django with Django Rest Framework using DRF Spectacular',
+      imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1765262789/images/iiylsjptfjtg10lbutww.png',
+      url: 'https://jotechblog.netlify.app/blog/how-to-add-swagger-for-django-with-django-rest-framework-using-drf-spectacular',
+      publishedDate: new Date('2025-12-09'),
+      category: ArticleCategory.WEB_DEVELOPMENT,
+      tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework', 'drf'],
+      views: 2500,
+      likes: 187,
+      platform: 'Medium '
+    }
+    // {
+    //   id: '3',
+    //   title: 'Modern CSS: Grid, Flexbox, and Beyond',
+    //   excerpt: 'Explore the latest CSS features and techniques for creating responsive, modern layouts. This article covers CSS Grid, Flexbox, custom properties, and emerging technologies like container queries.',
+    //   imageUrl: 'assets/images/articles/modern-css.jpg',
+    //   url: 'https://yourblog.com/modern-css-grid-flexbox-beyond',
+    //   publishedDate: new Date('2024-03-10'),
+    //   category: ArticleCategory.WEB_DEVELOPMENT,
+    //   tags: ['css', 'grid', 'flexbox', 'responsive', 'frontend'],
+    //   views: 1800,
+    //   likes: 156,
+    //   platform: 'Personal Blog'
+    // },
+    // {
+    //   id: '5',
+    //   title: 'Data Visualization with D3.js: Interactive Charts and Dashboards',
+    //   excerpt: 'Master the art of data visualization using D3.js to create stunning, interactive charts and dashboards. This tutorial covers everything from basic charts to complex data-driven animations.',
+    //   imageUrl: 'assets/images/articles/d3-visualization.jpg',
+    //   url: 'https://dev.to/yourhandle/data-visualization-d3js-interactive-charts',
+    //   publishedDate: new Date('2024-05-12'),
+    //   category: ArticleCategory.DATA_SCIENCE,
+    //   tags: ['d3js', 'javascript', 'dataviz', 'charts', 'dashboard'],
+    //   views: 2900,
+    //   likes: 198,
+    //   platform: 'Dev.to'
+    // },
+    // {
+    //   id: '6',
+    //   title: 'Essential TypeScript Patterns for Enterprise Applications',
+    //   excerpt: 'Learn advanced TypeScript patterns and techniques for building maintainable enterprise applications. Covers design patterns, type safety, generics, and architectural considerations.',
+    //   imageUrl: 'assets/images/articles/typescript-patterns.jpg',
+    //   url: 'https://yourblog.com/essential-typescript-patterns-enterprise',
+    //   publishedDate: new Date('2024-06-18'),
+    //   category: ArticleCategory.PROGRAMMING_TIPS,
+    //   tags: ['typescript', 'patterns', 'enterprise', 'architecture', 'bestpractices'],
+    //   views: 3500,
+    //   likes: 267,
+    //   platform: 'Personal Blog'
+    // },
+
+
+  ];
+
+  getArticles(category: string = 'all'): Article[] {
+    if (category === 'all') {
+      return this.articles.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime());
+    }
+    return this.articles
+      .filter(article => article.category === category)
+      .sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime());
   }
-  // {
-  //   id: '3',
-  //   title: 'Modern CSS: Grid, Flexbox, and Beyond',
-  //   excerpt: 'Explore the latest CSS features and techniques for creating responsive, modern layouts. This article covers CSS Grid, Flexbox, custom properties, and emerging technologies like container queries.',
-  //   imageUrl: 'assets/images/articles/modern-css.jpg',
-  //   url: 'https://yourblog.com/modern-css-grid-flexbox-beyond',
-  //   publishedDate: new Date('2024-03-10'),
-  //   category: ArticleCategory.WEB_DEVELOPMENT,
-  //   tags: ['css', 'grid', 'flexbox', 'responsive', 'frontend'],
-  //   views: 1800,
-  //   likes: 156,
-  //   platform: 'Personal Blog'
-  // },
-  // {
-  //   id: '5',
-  //   title: 'Data Visualization with D3.js: Interactive Charts and Dashboards',
-  //   excerpt: 'Master the art of data visualization using D3.js to create stunning, interactive charts and dashboards. This tutorial covers everything from basic charts to complex data-driven animations.',
-  //   imageUrl: 'assets/images/articles/d3-visualization.jpg',
-  //   url: 'https://dev.to/yourhandle/data-visualization-d3js-interactive-charts',
-  //   publishedDate: new Date('2024-05-12'),
-  //   category: ArticleCategory.DATA_SCIENCE,
-  //   tags: ['d3js', 'javascript', 'dataviz', 'charts', 'dashboard'],
-  //   views: 2900,
-  //   likes: 198,
-  //   platform: 'Dev.to'
-  // },
-  // {
-  //   id: '6',
-  //   title: 'Essential TypeScript Patterns for Enterprise Applications',
-  //   excerpt: 'Learn advanced TypeScript patterns and techniques for building maintainable enterprise applications. Covers design patterns, type safety, generics, and architectural considerations.',
-  //   imageUrl: 'assets/images/articles/typescript-patterns.jpg',
-  //   url: 'https://yourblog.com/essential-typescript-patterns-enterprise',
-  //   publishedDate: new Date('2024-06-18'),
-  //   category: ArticleCategory.PROGRAMMING_TIPS,
-  //   tags: ['typescript', 'patterns', 'enterprise', 'architecture', 'bestpractices'],
-  //   views: 3500,
-  //   likes: 267,
-  //   platform: 'Personal Blog'
-  // },
-  
-  
-];
-
-getArticles(category: string = 'all'): Article[] {
-  if (category === 'all') {
-    return this.articles.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime());
-  }
-  return this.articles
-    .filter(article => article.category === category)
-    .sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime());
-}
 }
