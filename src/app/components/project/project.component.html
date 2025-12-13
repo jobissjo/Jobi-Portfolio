@@ -1,49 +1,67 @@
-<div class="section" id="project" [ngClass]="{'dark-mode-color': darkMode}">
-    <div class="container">
-      <div class="col-md-12">
-        <h1 class="size-50 animate__animated animate__backInRight">My <br /> Projects</h1>
-      </div>
-      <div class="col-md-12">
-        <div class="row">
-          <!-- Loop through projects -->
-          @for (project of projects; track project.name) {
-            <div class="col-md-4 col-sm-6">
-              <div class="project-card">
-                <h3>{{ project.name }}</h3>
-                <p>{{ project.description }}</p>
-                <p><strong>Duration:</strong> {{ project.startDate }} - {{ project.endDate }}</p>
-                <ul class="features-list">
-                  @for (feature of project.features; track feature) {
-                    <li>{{ feature }}</li>
-                  }
-                </ul>
-                <mat-accordion class="accordion">
-                  <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)" class="expansion-panel" [ngClass]="{'dark-expansion-panel': darkMode}">
-                    <mat-expansion-panel-header>
-                      <mat-panel-title>Project Links</mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="project-links">
-                      @for (projectUrl of project.projectUrls; track projectUrl) {
-                        <h4 class="heading-project-link" [ngClass]="{'dark-heading-project-link': darkMode}" >{{ projectUrl.title }}</h4>
-                        <a [href]="projectUrl.githubUrl" target="_blank">GitHub <i [class]="projectUrl.gitIconUrl"></i></a>
-                        @if(projectUrl.hostingUrl){
-                          <a [href]="projectUrl.hostingUrl" target="_blank">Live Demo <i [class]="projectUrl.demoIcon"></i></a>
-                        }
-                        @else{
-                          <a routerLink="/in-progress" >Live Demo <i [class]="projectUrl.demoIcon"></i></a>
-                          
-                        }
-                      }
-                    </div>
-                </mat-expansion-panel>
-              </mat-accordion>
-              </div>
-            </div>
-          } @empty {
-            <p>No projects available.</p>
-          }
-        </div>
+<div class="section" id="project" [ngClass]="{'dark-section': darkMode}">
+  <div class="container">
+    <div class="col-md-12">
+      <h1 class="size-50 animate__animated animate__backInRight">My <br /> Projects</h1>
+      <div class="section-description">
+        <p>A showcase of my technical projects and applications</p>
       </div>
     </div>
+
+    <div class="project-container">
+      @for (project of projects; track project.name) {
+      <div class="project-card" [ngClass]="{'dark-card': darkMode}" data-aos="fade-up">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-code-branch"></i>
+          </div>
+          <div class="project-title-group">
+            <h3>{{ project.name }}</h3>
+            <span class="project-duration">{{ project.startDate }} - {{ project.endDate }}</span>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-features">
+            <h4>Key Features</h4>
+            <ul>
+              @for (feature of project.features; track feature) {
+              <li><i class="fas fa-check-circle"></i> {{ feature }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-footer">
+          <div class="project-links-container">
+            @for (projectUrl of project.projectUrls; track projectUrl) {
+            <div class="link-group">
+              <span class="link-label">{{ projectUrl.title }}</span>
+              <div class="link-buttons">
+                <a [href]="projectUrl.githubUrl" target="_blank" class="btn-link" title="View Source">
+                  <i [class]="projectUrl.gitIconUrl || 'fab fa-github'"></i> Code
+                </a>
+                @if(projectUrl.hostingUrl){
+                <a [href]="projectUrl.hostingUrl" target="_blank" class="btn-link btn-live" title="View Live Demo">
+                  <i [class]="projectUrl.demoIcon || 'fas fa-external-link-alt'"></i> Demo
+                </a>
+                } @else {
+                <a routerLink="/in-progress" class="btn-link btn-live" title="View Live Demo">
+                  <i [class]="projectUrl.demoIcon || 'fas fa-external-link-alt'"></i> Demo
+                </a>
+                }
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      } @empty {
+      <div class="no-projects">
+        <p>No projects available.</p>
+      </div>
+      }
+    </div>
   </div>
-  
+</div>

@@ -440,7 +440,7 @@ export class HelperService {
       tags: ['Django', 'rest', 'python', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
       views: 2500,
       likes: 187,
-      platform: 'Medium'
+      platform: 'JoTechBlog'
     },
     {
       id: '2',
@@ -453,7 +453,7 @@ export class HelperService {
       tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework', 'drf'],
       views: 2500,
       likes: 187,
-      platform: 'Medium '
+      platform: 'JoTechBlog '
     }
     // {
     //   id: '3',
