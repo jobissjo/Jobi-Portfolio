@@ -450,7 +450,7 @@ export class HelperService {
       url: 'https://jotechblog.netlify.app/blog/how-to-add-swagger-for-django-with-django-rest-framework-using-drf-spectacular',
       publishedDate: new Date('2025-12-09'),
       category: ArticleCategory.WEB_DEVELOPMENT,
-      tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework', 'drf'],
+      tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework'],
       views: 2500,
       likes: 187,
       platform: 'JoTechBlog '
