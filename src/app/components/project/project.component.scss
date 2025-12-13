@@ -1,117 +1,270 @@
-#projects {
-    padding: 100px 0;
-    background: #f3f3f3;
-  }
-  
-  .project-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-card h3 {
+.section-description {
+  text-align: center;
+  margin-bottom: 30px;
+
+  p {
     font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .project-card p {
-    font-size: 14px;
     color: #666;
-    margin: 10px 0 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
-  
-  .features-list {
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #425BB5;
+
+    .project-icon {
+      background: #425BB5;
+      color: #fff;
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+}
+
+.project-header {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  background: linear-gradient(to right, #ffffff, #fafafa);
+}
+
+.project-icon {
+  width: 50px;
+  height: 50px;
+  background: #e8f2ff;
+  color: #425BB5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.4s ease;
+}
+
+.project-title-group {
+  flex: 1;
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+  }
+}
+
+.project-duration {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+  margin-top: 4px;
+  display: block;
+}
+
+.project-content {
+  padding: 25px;
+  flex: 1;
+}
+
+.project-description {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.project-features {
+  h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #999;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left;
-  }
-  
-  .features-list li {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 5px;
-    position: relative;
-    padding-left: 20px;
-  }
-  
-  .features-list li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 12px;
-    color: #425BB5;
-  }
-  
-  .project-links a {
-    display: inline-block;
-    font-size: 14px;
-    color: white;
-    background: #425BB5;
-    padding: 10px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin: 5px;
-    transition: background 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .heading-project-link {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: rgb(98, 98, 98); /* Adjust color to fit the design */
-  }
-  .dark-heading-project-link{
-    color: #cecece;
-  }
-  
-  .project-links a:hover {
-    background: #1d387e;
-  }
-  
-  .dark-mode-color {
-    background-color: #121212 !important;
-    color: antiquewhite;
-  }
-  
-  .dark-mode-color .project-card {
-    background: #1e1e1e;
-    color: antiquewhite;
-  }
-  
-  .dark-mode-color .features-list li::before {
-    color: antiquewhite;
-  }
-  
-  .dark-mode-color .project-links a {
-    background: #333;
-  }
-  
-  .dark-mode-color .project-links a:hover {
-    background: #555;
-  }
-  .expansion-panel{
-    background-color: whitesmoke !important;
-    color: #000;
-  }
-  .dark-expansion-panel{
-    background: #555 !important;
-  }
-  /* Responsive */
-  @media (max-width: 768px) {
-    .project-card {
-      margin: 20px auto;
+  li {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    i {
+      color: #425BB5;
+      font-size: 12px;
     }
   }
-  
+}
+
+.project-footer {
+  padding: 20px 25px;
+  background: #f8f9fa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.project-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.link-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    color: #333;
+  }
+
+  &.btn-live {
+    background: #e8f2ff;
+    color: #425BB5;
+    border-color: transparent;
+
+    &:hover {
+      background: #425BB5;
+      color: #fff;
+    }
+  }
+}
+
+/* Dark Mode */
+.dark-section {
+
+  .section-description p {
+    color: #aaa;
+  }
+}
+
+.dark-card {
+  background: #1a1a1a;
+  border-color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    border-color: #5a6fd8;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .project-header {
+    background: linear-gradient(to right, #1a1a1a, #202020);
+    border-bottom-color: #333;
+  }
+
+  .project-icon {
+    background: #252525;
+    color: #5a6fd8;
+  }
+
+  .project-title-group h3 {
+    color: #fff;
+  }
+
+  .project-content {
+    p {
+      color: #ccc;
+    }
+  }
+
+  .project-features li {
+    color: #aaa;
+
+    i {
+      color: #5a6fd8;
+    }
+  }
+
+  .project-footer {
+    background: #222;
+    border-top-color: #333;
+  }
+
+  .btn-link {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #ccc;
+
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    &.btn-live {
+      background: rgba(90, 111, 216, 0.15);
+      color: #7b8de6;
+
+      &:hover {
+        background: #5a6fd8;
+        color: #fff;
+      }
+    }
+  }
+}

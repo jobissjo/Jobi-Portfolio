@@ -11,28 +11,30 @@ import { CommonModule } from '@angular/common';
 import { PackagesComponent } from '../packages/packages.component';
 import { ArticlesComponent } from '../articles/articles.component';
 
+import { CertificationComponent } from '../certification/certification.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [HeaderComponent, AboutComponent, FooterComponent, ExperienceComponent, ContactComponent,
-    ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent
+    ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent, CertificationComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  isDarkMode:boolean = true;
+  isDarkMode: boolean = true;
   @ViewChild('header_component') headerComponent!: HeaderComponent;
-  modeChanged(isDarkMode:boolean){
+  modeChanged(isDarkMode: boolean) {
     this.isDarkMode = isDarkMode;
   }
 
   @HostListener('document:click', ['$event'])
   onClick(event: Event): void {
-    
+
     const clickedElement = event.target as HTMLElement;
     const elementId = clickedElement.id;
-    if(!['menu-toggle', 'menu-toggle-icon' ].includes(elementId)  && this.headerComponent.menuOpen){
+    if (!['menu-toggle', 'menu-toggle-icon'].includes(elementId) && this.headerComponent.menuOpen) {
       this.headerComponent.menuOpen = false;
     }
   }

@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Article, ArticleCategory, Contact, Experience, Project, Resume, Skill, SkillCategory } from '../datatypes.types';
+import { Article, ArticleCategory, Certification, Contact, Experience, Project, Resume, Skill, SkillCategory } from '../datatypes.types';
 import { ViewportScroller } from '@angular/common';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
@@ -385,6 +385,49 @@ export class HelperService {
   ]
 
 
+  private certifications: Certification[] = [
+    {
+      name: 'Introduction to Neo4j Graph Data Science',
+      issuer: 'Neo4j',
+      date: new Date('2025-10-12'),
+      imageUrl: 'https://media.licdn.com/dms/image/v2/D4D0BAQG6P9i9HARJvw/company-logo_200_200/company-logo_200_200/0/1697806384366/neo4j_logo?e=1767225600&v=beta&t=7lMARtmdF2H5Im05_aXPRkOPaS3D401LRw6BwdcDCIM',
+      url: 'https://graphacademy.neo4j.com/c/0dc11258-5745-4e2d-ae23-8dc51cb49183/',
+      skills: ['Neo4j', 'Graph Data Science']
+    },
+    {
+      name: 'Neo4j Fundamentals',
+      issuer: 'Neo4j',
+      date: new Date('2025-10-12'),
+      imageUrl: 'https://media.licdn.com/dms/image/v2/D4D0BAQG6P9i9HARJvw/company-logo_200_200/company-logo_200_200/0/1697806384366/neo4j_logo?e=1767225600&v=beta&t=7lMARtmdF2H5Im05_aXPRkOPaS3D401LRw6BwdcDCIM',
+      url: 'https://graphacademy.neo4j.com/c/0dc11258-5745-4e2d-ae23-8dc51cb49183/',
+      skills: ['Neo4j', 'Graph Databases']
+    },
+    {
+      name: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
+      issuer: 'Oracle',
+      date: new Date('2025-10-20'),
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg',
+      url: 'https://www.coursera.org/professional-certificates/meta-front-end-developer',
+      skills: ['React', 'JavaScript', 'HTML/CSS', 'UI/UX']
+    },
+    {
+      name: 'Problem Solving (Basic)',
+      issuer: 'HackerRank ',
+      date: new Date('2025-10-19'),
+      imageUrl: 'https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1767225600&v=beta&t=ap5Vag4EM_p79pBY_NRNRTfhO85fCJeAvZqhldJa10k',
+      url: 'https://www.hackerrank.com/certificates/4d37750b4962',
+      skills: ['Problem Solving', 'DSA']
+    },
+    {
+      name: 'Python Certificate',
+      issuer: 'HackerRank ',
+      date: new Date('2022-10-19'),
+      imageUrl: 'https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1767225600&v=beta&t=ap5Vag4EM_p79pBY_NRNRTfhO85fCJeAvZqhldJa10k',
+      url: 'https://www.hackerrank.com/certificates/4d37750b4962',
+      skills: ['Python', 'DSA']
+    }
+  ];
+
   private articles: Article[] = [
     {
       id: '1',
@@ -397,7 +440,7 @@ export class HelperService {
       tags: ['Django', 'rest', 'python', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
       views: 2500,
       likes: 187,
-      platform: 'Medium'
+      platform: 'JoTechBlog'
     },
     {
       id: '2',
@@ -410,7 +453,7 @@ export class HelperService {
       tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework', 'drf'],
       views: 2500,
       likes: 187,
-      platform: 'Medium '
+      platform: 'JoTechBlog '
     }
     // {
     //   id: '3',
@@ -462,5 +505,9 @@ export class HelperService {
     return this.articles
       .filter(article => article.category === category)
       .sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime());
+  }
+
+  getCertifications(): Certification[] {
+    return this.certifications;
   }
 }

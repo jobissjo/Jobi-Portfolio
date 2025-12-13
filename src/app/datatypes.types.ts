@@ -1,55 +1,55 @@
 export enum SkillCategory {
-    Programming = 'programming',
-    TechStack = 'tech stack',
-    Database = 'database',
-    Framework = 'framework',
-    Tool = 'tool'
+  Programming = 'programming',
+  TechStack = 'tech stack',
+  Database = 'database',
+  Framework = 'framework',
+  Tool = 'tool'
 }
 
 
 
-export interface Skill{
-    name:string,
-    imageUrl:string,
-    level:number,
-    category:SkillCategory
+export interface Skill {
+  name: string,
+  imageUrl: string,
+  level: number,
+  category: SkillCategory
 }
 
-export interface Experience{
-    position:string,
-    companyName: string,
-    startedDate: Date,
-    endedDate:Date,
-    workAchievements: string[]
+export interface Experience {
+  position: string,
+  companyName: string,
+  startedDate: Date,
+  endedDate: Date,
+  workAchievements: string[]
 }
 
-export interface Contact{
-    name: string,
-    iconStyle:string,
-    link: string,
-    title:string
+export interface Contact {
+  name: string,
+  iconStyle: string,
+  link: string,
+  title: string
 }
 
-export interface Resume{
-    name:string,
-    file:string
+export interface Resume {
+  name: string,
+  file: string
 }
 
-interface ProjectUrl{
-    title: string,
-    githubUrl: string,
-    hostingUrl: string,
-    gitIconUrl:string,
-    demoIcon:string,
+interface ProjectUrl {
+  title: string,
+  githubUrl: string,
+  hostingUrl: string,
+  gitIconUrl: string,
+  demoIcon: string,
 }
 
 export interface Project {
-    name: string,
-    description: string,
-    features: string[],
-    startDate: string,
-    endDate: string,
-    projectUrls:ProjectUrl[]
+  name: string,
+  description: string,
+  features: string[],
+  startDate: string,
+  endDate: string,
+  projectUrls: ProjectUrl[]
 
 }
 
@@ -66,12 +66,12 @@ export interface Package {
 
 export enum PackageCategory {
   PYTHON = 'python',
-//   NPM = 'npm',
-//   WEB_DEVELOPMENT = 'web development',
-//   DATA_SCIENCE = 'data science',
-//   MACHINE_LEARNING = 'machine learning',
+  //   NPM = 'npm',
+  //   WEB_DEVELOPMENT = 'web development',
+  //   DATA_SCIENCE = 'data science',
+  //   MACHINE_LEARNING = 'machine learning',
   BACKEND = 'backend',
-//   FRONTEND = 'frontend',
+  //   FRONTEND = 'frontend',
   TESTING = 'testing',
   UTILITIES = 'utilities'
 }
@@ -93,11 +93,20 @@ export interface Article {
 export enum ArticleCategory {
   WEB_DEVELOPMENT = 'web development',
   DATA_SCIENCE = 'data science',
-//   MACHINE_LEARNING = 'machine learning',
-//   DEVOPS = 'devops',
-//   TUTORIALS = 'tutorials',
-//   TECH_TRENDS = 'tech trends',
+  //   MACHINE_LEARNING = 'machine learning',
+  //   DEVOPS = 'devops',
+  //   TUTORIALS = 'tutorials',
+  //   TECH_TRENDS = 'tech trends',
   PROGRAMMING_TIPS = 'programming tips',
   FRAMEWORKS = 'frameworks',
   DATABASES = 'databases'
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  date: Date;
+  imageUrl: string;
+  url: string;
+  skills: string[];
 }
