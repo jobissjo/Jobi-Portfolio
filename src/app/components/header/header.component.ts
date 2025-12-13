@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject,  output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { HelperService } from '../../service/helper.service';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +10,14 @@ import {MatIconModule} from '@angular/material/icon';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent{
-  private readonly helperService:HelperService = inject(HelperService);
+export class HeaderComponent {
+  private readonly helperService: HelperService = inject(HelperService);
   sections: string[] = [
     'about',
     'experience',
     'skill',
+    'certification',
+    'articles',
     'project',
     'contact'
   ]
@@ -23,21 +25,21 @@ export class HeaderComponent{
   menuOpen = false;
 
   toggleMenu() {
-      this.menuOpen = !this.menuOpen;
+    this.menuOpen = !this.menuOpen;
   }
 
 
-  scrollToSection(section:string){
+  scrollToSection(section: string) {
     this.helperService.scrollToElement(section);
     this.menuOpen = !this.menuOpen;
   }
 
-  darkMode:boolean = true;
+  darkMode: boolean = true;
 
- modeChange = output<boolean>();
+  modeChange = output<boolean>();
 
 
-  toggleDarkMode(){
+  toggleDarkMode() {
     this.darkMode = !this.darkMode
     this.modeChange.emit(this.darkMode);
     this.helperService.toggleDarkMode()
