@@ -160,6 +160,12 @@ export class HelperService {
       imageUrl: 'img/skills/litestar.png',
       level: 30,
       category: SkillCategory.Framework
+    },
+    {
+      name: 'React',
+      imageUrl: 'img/skills/react.png',
+      level: 60,
+      category: SkillCategory.Framework
     }
   ]
 
@@ -406,8 +412,8 @@ export class HelperService {
       name: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
       issuer: 'Oracle',
       date: new Date('2025-10-20'),
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg',
-      url: 'https://www.coursera.org/professional-certificates/meta-front-end-developer',
+      imageUrl: 'https://media.licdn.com/dms/image/v2/D4E0BAQHYCgYovUuPtQ/company-logo_100_100/company-logo_100_100/0/1665755678957/oracle_logo?e=1767225600&v=beta&t=sUGtXQ-CGqScBQXNcDBai_AHtfEGxYcJttjCqp-Z5b0',
+      url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=081267348045033926B32A5564847C7EBDA55E858DB0D8ADF2CEAAC7FC823090',
       skills: ['React', 'JavaScript', 'HTML/CSS', 'UI/UX']
     },
     {
