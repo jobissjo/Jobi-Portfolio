@@ -23,6 +23,13 @@ export class HeaderComponent {
   ]
 
   menuOpen = false;
+  darkMode: boolean = true;
+
+  constructor() {
+    this.helperService.darkMode$.subscribe(isDark => {
+      this.darkMode = isDark;
+    });
+  }
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
@@ -34,15 +41,10 @@ export class HeaderComponent {
     this.menuOpen = !this.menuOpen;
   }
 
-  darkMode: boolean = true;
-
-  modeChange = output<boolean>();
-
-
+  // removed redundant manual emission since service handles state
   toggleDarkMode() {
-    this.darkMode = !this.darkMode
-    this.modeChange.emit(this.darkMode);
-    this.helperService.toggleDarkMode()
+    this.helperService.toggleDarkMode();
+    // Local state will update via subscription
   }
 
 }

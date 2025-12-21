@@ -11,7 +11,18 @@ export class HelperService {
   private readonly darkModeSubject = new BehaviorSubject<boolean>(true);
   darkMode$ = this.darkModeSubject.asObservable();
 
-  constructor() { }
+  constructor() {
+    this.initTheme();
+  }
+
+  private initTheme() {
+    const isDark = this.darkModeSubject.value;
+    if (isDark) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }
 
   scrollToElement(id: string) {
     this.viewportScroller.scrollToAnchor(id);
@@ -19,8 +30,14 @@ export class HelperService {
 
   toggleDarkMode() {
     const currentValue = this.darkModeSubject.value;
-    this.darkModeSubject.next(!currentValue);
-    document.body.classList.toggle('dark-theme', !currentValue);
+    const newValue = !currentValue;
+    this.darkModeSubject.next(newValue);
+
+    if (newValue) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
   }
 
   isDarkMode(): boolean {
