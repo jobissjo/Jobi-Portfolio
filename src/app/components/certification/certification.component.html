@@ -1,4 +1,4 @@
-<div class="section" id="certification" [ngClass]="{'dark-section': darkMode}">
+<div class="section bg-subtle" id="certification">
     <div class="container">
         <div class="col-md-12">
             <!-- Title with consistent animation -->
@@ -7,7 +7,7 @@
                 <p>Professional certifications and credentials earned along my journey</p>
             </div>
         </div>
-        
+
         <div class="main-container clearfix">
             <div class="certification-container">
                 @for (cert of certifications; track cert.name) {
@@ -19,22 +19,22 @@
                         <span class="cert-issuer">{{cert.issuer}}</span>
                         <h3 class="cert-title">{{cert.name}}</h3>
                         <p class="cert-date">Issued: {{formatDate(cert.date)}}</p>
-                        
+
                         <div class="cert-skills">
                             @for (skill of cert.skills; track skill) {
-                                <span class="cert-skill-tag">{{skill}}</span>
+                            <span class="cert-skill-tag">{{skill}}</span>
                             }
                         </div>
-                        
+
                         <a [href]="cert.url" target="_blank" class="verify-btn">
                             Verify Credential <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
                 </div>
                 } @empty {
-                    <div class="no-certs">
-                        <p>No certifications to display.</p>
-                    </div>
+                <div class="no-certs">
+                    <p>No certifications to display.</p>
+                </div>
                 }
             </div>
         </div>

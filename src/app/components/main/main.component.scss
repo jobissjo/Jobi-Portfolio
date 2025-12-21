@@ -1,74 +1,186 @@
+@use 'sass:color';
+
+/* Premium Hero Section */
 #home {
-    background-size: cover;
-    height: 50vh;
+    /* Subtle depth with a very soft radial gradient */
+    background: radial-gradient(circle at 70% 30%,
+            rgba(var(--accent-color), 0.05) 0%,
+            rgba(var(--bg-primary), 1) 70%);
+    background-color: var(--bg-primary);
+    min-height: 85vh;
+    /* Taller hero for impact */
     display: flex;
     align-items: center;
-    justify-content: center; /* Ensure it's centered horizontally */
     position: relative;
+    overflow: hidden;
+    padding: 0;
+
+    /* Geometric Accent - Abstract Line */
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 600px;
+        height: 600px;
+        border: 1px solid rgba(92, 128, 188, 0.1);
+        /* Very subtle accent border */
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 10%;
+        left: -5%;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(92, 128, 188, 0.03) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 0;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    /* Ensure content is above background shapes */
 }
 
 .display-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    gap: 4rem;
+    /* Better spacing between text and image */
 }
 
 .content {
     flex: 1;
+    max-width: 600px;
+
+    h4 {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+        /* Larger, more elegant */
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+
+        span {
+            /* If there are spans for typing effect */
+            color: var(--text-primary);
+        }
+    }
 }
 
 .image-container {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
-}
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-.image-container img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-/* For larger screens, push content higher on the page and control image size */
-@media (min-width: 1024px) {
-    #home {
-        justify-content: flex-start; /* Align content higher vertically */
-        padding-top: 2rem; /* Add some space at the top */
+    /* Subtle backdrop for the image */
+    &::before {
+        content: '';
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        background: var(--bg-secondary);
+        border-radius: 50%;
+        z-index: -1;
+        transform: translate(20px, 20px);
+        /* Offset for depth */
     }
-    
-    .display-flex {
-        justify-content: space-between;
-        align-items: flex-start; /* Align the content to the top of the container */
+
+    img {
+        width: 400px;
+        height: 400px;
+        /* Force square for circle crop */
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        /* Soft, premium shadow */
+        border: 4px solid var(--bg-primary);
+        /* separating border */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    #home {
+        min-height: auto;
+        padding: 6rem 0;
+    }
+
+    .content h1 {
+        font-size: 3.5rem;
     }
 
     .image-container img {
-        max-width: 50%; /* Limit the image size on larger screens */
-        max-height: 40vh; /* Prevent the image from becoming too tall */
+        width: 350px;
+        height: 350px;
+    }
+
+    .image-container::before {
+        width: 370px;
+        height: 370px;
     }
 }
 
-/* For mobile devices, stack the image below the text */
 @media (max-width: 768px) {
-    #home {
-        height: auto;
-        padding-top: 3rem;
+    .display-flex {
+        flex-direction: column-reverse;
+        /* Text on top usually, or keep consistent? Let's check user pref. 
+                                           Usually mobile is Text Top, Image Bottom OR Image Top.
+                                           Actually, putting image top on mobile is classic. 
+                                           But standard layout was column. Let's do column-reverse to put text first? 
+                                           Wait, previous CSS had direction column (image below text).
+                                           I'll stick to that. Text first is good for SEO/Intro. */
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
     }
 
-    .display-flex {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+    .content {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+        }
     }
 
     .image-container {
-        justify-content: center;
-        margin-top: 20px;
-    }
+        margin-top: 1rem;
 
-    .image-container img {
-        max-width: 80%;
-        height: auto;
+        &::before {
+            width: 270px;
+            height: 270px;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+        }
     }
 }
