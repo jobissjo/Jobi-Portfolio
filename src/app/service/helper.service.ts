@@ -244,6 +244,12 @@ export class HelperService {
       iconStyle: 'fa-brands fa-instagram',
       title: "Jobi Instagram"
     },
+    {
+      name: "LeetCode",
+      link: "https://leetcode.com/u/jobi_s_s/",
+      title: "Jobi LeetCode",
+      iconImageUrl: "https://assets.leetcode.com/users/leetcode/avatar_1568224780.png"
+    }
   ]
 
   private readonly resume: Resume = {
