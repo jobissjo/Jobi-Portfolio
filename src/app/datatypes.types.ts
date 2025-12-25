@@ -25,9 +25,10 @@ export interface Experience {
 
 export interface Contact {
   name: string,
-  iconStyle: string,
+  iconStyle?: string,
   link: string,
   title: string
+  iconImageUrl?: string
 }
 
 export interface Resume {

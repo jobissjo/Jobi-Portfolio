@@ -15,6 +15,8 @@ nav ul {
     margin-bottom: 0;
     -webkit-transition: all .5s;
     transition: all .5s;
+    border-radius: 50px;
+    /* Modern pill look for the menu */
 }
 
 nav li {
@@ -25,14 +27,16 @@ nav li {
 nav li a {
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #444;
+    color: var(--text-secondary);
+    /* Use var */
     font-size: 11px;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 nav li a:hover {
-    color: #425BB5;
+    color: var(--accent-color);
 }
 
 #theme-toggle {
@@ -40,8 +44,9 @@ nav li a:hover {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: var(--bg-primary);
+    /* Use var */
+    border: 1px solid var(--border-color);
     /* Subtle border for definition */
     border-radius: 50%;
     width: 45px;
@@ -51,7 +56,7 @@ nav li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #425BB5;
+    color: var(--accent-color);
     /* Primary brand color */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     /* Floating effect */
@@ -69,9 +74,9 @@ nav li a:hover {
 #theme-toggle:hover {
     transform: translateY(-50%) scale(1.1);
     /* Pop out effect */
-    box-shadow: 0 8px 16px rgba(66, 91, 181, 0.25);
+    box-shadow: 0 8px 16px rgba(var(--accent-color-rgb), 0.25);
     /* Colored glow */
-    background-color: #fff;
+    background-color: var(--bg-primary);
 
     mat-icon {
         transform: rotate(30deg);
@@ -80,8 +85,8 @@ nav li a:hover {
 }
 
 .bg-nav {
-    background: #fff;
-    border-bottom: 1px solid #f3f3f3;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .bg-nav ul {
@@ -89,31 +94,31 @@ nav li a:hover {
 }
 
 a:focus {
-    color: #444;
+    color: var(--text-primary);
     text-decoration: none;
 }
 
 a:hover {
-    color: #425BB5;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
 a.active {
-    color: #425BB5;
+    color: var(--accent-color);
 }
 
+/* This was the culprit for the black bar. Now updated to follow theme. */
 .bg-change-black {
-    background-color: #2a2a2a !important;
-    border-color: #444 !important;
-    color: #ffd700 !important;
-    /* Gold for visibility */
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--accent-color) !important;
+    /* Accent instead of Gold */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
 .bg-change-black:hover {
-    background-color: #333 !important;
-    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2) !important;
-    /* Golden glow */
+    background-color: var(--bg-primary) !important;
+    box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.2) !important;
 }
 
 #menu-toggle {
@@ -133,7 +138,7 @@ a.active {
         left: 20px;
         top: 50%;
         transform: translateY(-50%);
-        background-color: #ffffff;
+        background-color: var(--bg-primary);
         border: none;
         border-radius: 50%;
         width: 40px;
@@ -141,10 +146,11 @@ a.active {
         cursor: pointer;
         font-size: 18px;
         transition: all 0.3s ease;
+        color: var(--text-primary);
     }
 
     #menu-toggle:hover {
-        background-color: #e1e1e1;
+        background-color: var(--bg-secondary);
     }
 
     /* Initially hide the menu on mobile */
@@ -160,13 +166,14 @@ a.active {
     nav ul.show-menu {
         display: flex;
         flex-direction: column;
-        background-color: #e1e1e1;
+        background-color: var(--bg-secondary);
         position: absolute;
         top: 65px;
         left: 0;
         width: 100%;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 10;
+        border-radius: 0;
     }
 
     nav li {
@@ -178,6 +185,7 @@ a.active {
     nav li a {
         font-size: 14px;
         /* Slightly increase font size for mobile readability */
+        color: var(--text-primary);
     }
 
     /* Ensure theme toggle button remains properly positioned */
@@ -190,5 +198,6 @@ a.active {
 }
 
 .bg-change-black-div {
-    background-color: #0a0a0a !important;
+    /* Use theme var instead of hardcoded black */
+    background-color: var(--bg-secondary) !important;
 }

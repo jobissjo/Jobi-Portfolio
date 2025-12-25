@@ -1,17 +1,36 @@
 <div class="section" id="about">
     <div class="container">
-        <div class="col-md-6" data-aos="fade-up">
-            <h1 class="size-50 animate__animated animate__backInLeft">Know <br /> About me</h1>
-            <div class="h-50"></div>
-            @for(about of abouts; track about){
-                <p>{{about}}</p>
-            }
-            <!-- <div class="h-50"></div> <img src="img/Signature.svg" width="230" alt="" /> -->
-            <div class="h-50"></div>
-        </div>
-        <div class="col-md-6 about-img-div">
-            <!-- <div class="about-border" data-aos="fade-up" data-aos-delay=".5"></div> -->
-            <!-- <img src="img/about-img.jpg" width="400" class="img-responsive" alt="" align="right" data-aos="fade-right" data-aos-delay="0" /> -->
+        <div class="row display-flex align-items-center">
+            <!-- Content Side -->
+            <div class="col-md-7" data-aos="fade-up">
+                <h1 class="animate__animated animate__backInLeft">Know <br /> <span class="text-accent">About Me</span>
+                </h1>
+                <div class="spacer-sm"></div>
+
+                <div class="bio-content">
+                    @for(about of abouts; track about){
+                    <p class="bio-text">{{about}}</p>
+                    }
+                </div>
+
+                <div class="spacer-md"></div>
+
+                <!-- Skills Highlights -->
+                <div class="skills-wrapper">
+                    <h5 class="custom-subtitle">Core Technologies</h5>
+                    <div class="skills-grid">
+                        @for(skill of skills; track skill) {
+                        <span class="skill-tag">{{skill}}</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Side (Optional: Abstract decoration or just whitespace for balance) -->
+            <div class="col-md-5 d-none d-md-block position-relative">
+                <!-- Abstract geometric decoration -->
+                <div class="about-decoration"></div>
+            </div>
         </div>
     </div>
 </div>

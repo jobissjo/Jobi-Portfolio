@@ -1,17 +1,99 @@
 #about {
-    padding: 100px 0;
+    /* Separation from previous section without harsh lines */
+    background-color: var(--bg-primary);
+    padding: var(--section-spacing) 0;
 }
 
-.about-img-div img {
-    margin: 0 auto;
+.spacer-sm {
+    height: 30px;
 }
 
-.about-border {
+.spacer-md {
+    height: 50px;
+}
+
+.bio-text {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+}
+
+.custom-subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    padding: 8px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    /* Pill shape */
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: default;
+
+    &:hover {
+        border-color: var(--accent-color);
+        background-color: rgba(var(--accent-color), 0.05);
+        /* very subtle tint if possible, or just text color change */
+        color: var(--accent-color);
+        transform: translateY(-2px);
+    }
+}
+
+/* Abstract Decoration on the right */
+.about-decoration {
     position: absolute;
-    border: 10px solid #425BB5;
-    width: 400px;
-    height: 400px;
-    top: 40px;
-    left: 50px;
-    z-index: 1
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 300px;
+    height: 300px;
+    border: 1px solid var(--border-color);
+    opacity: 0.4;
+    z-index: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: -20px;
+        bottom: -20px;
+        border: 1px solid var(--accent-color);
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bio-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .skills-grid {
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .custom-subtitle {
+        text-align: center;
+    }
 }

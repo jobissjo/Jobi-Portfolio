@@ -1,4 +1,4 @@
-<div class="section" id="experience" [ngClass]="{'dark-mode-color': darkMode}">
+<div class="section bg-subtle" id="experience">
     <div class="container">
         <div class="col-md-12">
 
@@ -8,29 +8,29 @@
         <div class="col-md-12">
             <ul class="timeline">
                 @for (experience of experiences; track experience.companyName){
-                    <li class="timeline-event" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">{{experience.startedDate | date : 'MMMM yyyy'}} - 
-                                @if (experience.endedDate.getMonth() == todayDate.getMonth()){
-                                    Present
-                                }
-                                @else{
-                                    {{experience.endedDate | date : 'MMMM yyyy'}}
-                                }
-                                
-                            </p>
-                            <h3 class="width-90">{{experience.position}}</h3>
-                            <h4 class="width-90">{{experience.companyName}}</h4>
-                            <p class="width-90"><strong>Responsibilities</strong>
-                                @for (achievement of experience.workAchievements; track $index) {
-                                    <br>{{achievement}}
-                                }
-                                </p>
-                        </div>
-                    </li>
+                <li class="timeline-event" data-aos="fade-up">
+                    <label class="timeline-event-icon"></label>
+                    <div class="timeline-event-copy">
+                        <p class="timeline-event-thumbnail">{{experience.startedDate | date : 'MMMM yyyy'}} -
+                            @if (experience.endedDate.getMonth() == todayDate.getMonth()){
+                            Present
+                            }
+                            @else{
+                            {{experience.endedDate | date : 'MMMM yyyy'}}
+                            }
+
+                        </p>
+                        <h3 class="width-90">{{experience.position}}</h3>
+                        <h4 class="width-90">{{experience.companyName}}</h4>
+                        <p class="width-90"><strong>Responsibilities</strong>
+                            @for (achievement of experience.workAchievements; track $index) {
+                            <br>{{achievement}}
+                            }
+                        </p>
+                    </div>
+                </li>
                 }@empty {
-                    <li>Not have any work Experience</li>
+                <li>Not have any work Experience</li>
                 }
             </ul>
         </div>

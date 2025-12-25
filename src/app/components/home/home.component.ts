@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
+import { Component, HostListener, ViewChild, inject } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { AboutComponent } from '../about/about.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -10,8 +10,8 @@ import { MainComponent } from '../main/main.component';
 import { CommonModule } from '@angular/common';
 import { PackagesComponent } from '../packages/packages.component';
 import { ArticlesComponent } from '../articles/articles.component';
-
 import { CertificationComponent } from '../certification/certification.component';
+import { HelperService } from '../../service/helper.service';
 
 @Component({
   selector: 'app-home',
@@ -23,10 +23,15 @@ import { CertificationComponent } from '../certification/certification.component
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  private readonly helperService: HelperService = inject(HelperService);
   isDarkMode: boolean = true;
+
   @ViewChild('header_component') headerComponent!: HeaderComponent;
-  modeChanged(isDarkMode: boolean) {
-    this.isDarkMode = isDarkMode;
+
+  constructor() {
+    this.helperService.darkMode$.subscribe(isDark => {
+      this.isDarkMode = isDark;
+    });
   }
 
   @HostListener('document:click', ['$event'])
