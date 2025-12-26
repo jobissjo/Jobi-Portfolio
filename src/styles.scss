@@ -133,3 +133,17 @@ a {
     background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
 }
+
+/* Custom Cursor Logic */
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: none;
+    }
+
+    a,
+    button,
+    .cursor-pointer,
+    [role="button"] {
+        cursor: none !important;
+    }
+}
