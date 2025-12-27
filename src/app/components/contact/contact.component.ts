@@ -1,8 +1,10 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Contact, Resume } from '../../datatypes.types';
+import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
 import { HelperService } from '../../service/helper.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ApiService } from '../../service/api.service';
 
 @Component({
   selector: 'app-contact',
@@ -19,6 +21,7 @@ export class ContactComponent implements OnInit {
 
   private helperService: HelperService = inject(HelperService);
   private fb: FormBuilder = inject(FormBuilder);
+  private apiService: ApiService = inject(ApiService);
 
   ngOnInit(): void {
     this.contacts = this.helperService.getContacts();
@@ -34,10 +37,39 @@ export class ContactComponent implements OnInit {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      console.log('Form Submitted!', this.contactForm.value);
-      // Here you would typically send the data to a backend
-      this.contactForm.reset();
-      alert('Thank you for your message! I will get back to you soon.');
+      const accentColor = this.darkMode ? '#7AA2E3' : '#5C80BC';
+      const backgroundColor = this.darkMode ? '#1e1e1e' : '#ffffff';
+      const textColor = this.darkMode ? '#e0e0e0' : '#1a1a1a';
+
+      this.apiService.postContactUsForm(this.contactForm.value).subscribe({
+        next: (res) => {
+          console.log('Form Submitted!', res);
+          this.contactForm.reset();
+
+          Swal.fire({
+            title: 'Message Sent!',
+            text: 'Thank you for reaching out! I will get back to you soon.',
+            icon: 'success',
+            confirmButtonText: 'Great!',
+            confirmButtonColor: accentColor,
+            background: backgroundColor,
+            color: textColor,
+            iconColor: accentColor
+          });
+        },
+        error: (err) => {
+          console.error('Submission Error:', err);
+          Swal.fire({
+            title: 'Oops...',
+            text: 'Something went wrong. Please try again later.',
+            icon: 'error',
+            confirmButtonText: 'Close',
+            confirmButtonColor: accentColor,
+            background: backgroundColor,
+            color: textColor
+          });
+        }
+      });
     } else {
       this.contactForm.markAllAsTouched();
     }
