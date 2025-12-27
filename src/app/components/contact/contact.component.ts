@@ -18,6 +18,7 @@ export class ContactComponent implements OnInit {
   contacts: Contact[] = [];
   resume!: Resume;
   contactForm!: FormGroup;
+  isSubmitting: boolean = false;
 
   private helperService: HelperService = inject(HelperService);
   private fb: FormBuilder = inject(FormBuilder);
@@ -41,8 +42,10 @@ export class ContactComponent implements OnInit {
       const backgroundColor = this.darkMode ? '#1e1e1e' : '#ffffff';
       const textColor = this.darkMode ? '#e0e0e0' : '#1a1a1a';
 
+      this.isSubmitting = true;
       this.apiService.postContactUsForm(this.contactForm.value).subscribe({
         next: (res) => {
+          this.isSubmitting = false;
           console.log('Form Submitted!', res);
           this.contactForm.reset();
 
@@ -58,6 +61,7 @@ export class ContactComponent implements OnInit {
           });
         },
         error: (err) => {
+          this.isSubmitting = false;
           console.error('Submission Error:', err);
           Swal.fire({
             title: 'Oops...',
