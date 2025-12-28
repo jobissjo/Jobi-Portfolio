@@ -384,14 +384,42 @@ export class HelperService {
       endDate: "June 2023",
       projectUrls: [
         {
-          title: "Job Portal Full Version",
-          githubUrl: "https://github.com/jobissjo/job-sera",
+          title: "Jobs Era Frontend",
+          githubUrl: "https://github.com/jobissjo/jobs-era-angular",
           gitIconUrl: "fa-brands fa-github",
           demoIcon: "fa-solid fa-arrow-up-right-from-square",
-          hostingUrl: "http://localhost",
+          hostingUrl: "https://jobs-era.vercel.app/",
+        },
+        {
+          title: "Jobs Era Backend",
+          githubUrl: "https://github.com/jobissjo/jobs-era-fastapi",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://learn-auth-crud-fastapi.onrender.com/",
         }
       ]
     },
+    {
+      name: "Ecommerce Project",
+      projectUrls: [
+        {
+          title: "Ecommerce Frontend",
+          githubUrl: "https://github.com/jobissjo/ecommerce-angular-project",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://ecommerce-angular-project-xgfl.vercel.app/",
+        }
+      ],
+      description: "This Ecommerce project is a using frontend angular and backend json server",
+      features: [
+        "Angular 16 to Angular 17 upgraded",
+        "Mobile responsive",
+        "backend api using json server"
+      ],
+      startDate: "October 2022",
+      endDate: "January 2023",
+    },
+
     {
       name: "Todo App",
       description: "This Todo App project is a using mvt architecture in django",
