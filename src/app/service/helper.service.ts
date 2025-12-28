@@ -267,7 +267,7 @@ export class HelperService {
         "Migrated from react to nextjs"
       ],
       startDate: "November 2025",
-      endDate: "Present",
+      endDate: "December 2025",
       projectUrls: [
         {
           title: 'Frontend',
@@ -371,7 +371,7 @@ export class HelperService {
         "React with Vite tooling"
       ],
       startDate: "November 2024",
-      endDate: "Present",
+      endDate: "May 2025",
     },
     {
       name: "Job Portal Project",
