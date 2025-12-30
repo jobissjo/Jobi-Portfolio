@@ -7,8 +7,8 @@
         </div>
         <div class="col-md-12">
             <ul class="timeline">
-                @for (experience of experiences; track experience.companyName){
-                <li class="timeline-event" data-aos="fade-up">
+                @for (experience of experiences; track experience.companyName; let i = $index){
+                <li class="timeline-event" appScrollAnimation [animationDelay]="i * 150">
                     <label class="timeline-event-icon"></label>
                     <div class="timeline-event-copy">
                         <p class="timeline-event-thumbnail">{{experience.startedDate | date : 'MMMM yyyy'}} -

@@ -1,8 +1,21 @@
-.app-container{
+.app-container {
     margin-bottom: 0;
 }
 
-.dark-mode-color{
+.dark-mode-color {
     background-color: rgb(10, 10, 10);
     color: white;
+}
+
+/* Ensure components behave as block elements for transforms */
+app-main,
+app-about,
+app-experience,
+app-skill,
+app-certification,
+app-articles,
+app-project,
+app-contact,
+app-footer {
+    display: block;
 }

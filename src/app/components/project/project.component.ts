@@ -4,10 +4,12 @@ import { Project } from '../../datatypes.types';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ScrollAnimationDirective],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })

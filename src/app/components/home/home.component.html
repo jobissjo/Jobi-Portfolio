@@ -1,13 +1,13 @@
 <div class="app-container" [ngClass]="{'dark-mode-color': isDarkMode}">
     <app-header #header_component></app-header>
-    <app-main></app-main>
-    <app-about></app-about>
-    <app-experience [darkMode]="isDarkMode"></app-experience>
-    <app-skill [darkMode]="isDarkMode"></app-skill>
-    <app-certification [darkMode]="isDarkMode"></app-certification>
+    <app-main appScrollAnimation></app-main>
+    <app-about appScrollAnimation></app-about>
+    <app-experience appScrollAnimation [darkMode]="isDarkMode"></app-experience>
+    <app-skill appScrollAnimation [darkMode]="isDarkMode"></app-skill>
+    <app-certification appScrollAnimation [darkMode]="isDarkMode"></app-certification>
     <!-- <app-packages [darkMode]="isDarkMode"></app-packages> -->
-    <app-articles [darkMode]="isDarkMode"></app-articles>
-    <app-project [darkMode]="isDarkMode"></app-project>
-    <app-contact [darkMode]="isDarkMode"></app-contact>
-    <app-footer [darkMode]="isDarkMode"></app-footer>
+    <app-articles appScrollAnimation [darkMode]="isDarkMode"></app-articles>
+    <app-project appScrollAnimation [darkMode]="isDarkMode"></app-project>
+    <app-contact appScrollAnimation [darkMode]="isDarkMode"></app-contact>
+    <app-footer appScrollAnimation [darkMode]="isDarkMode"></app-footer>
 </div>

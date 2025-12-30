@@ -13,11 +13,14 @@ import { ArticlesComponent } from '../articles/articles.component';
 import { CertificationComponent } from '../certification/certification.component';
 import { HelperService } from '../../service/helper.service';
 
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [HeaderComponent, AboutComponent, FooterComponent, ExperienceComponent, ContactComponent,
-    ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent, CertificationComponent
+    ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent, CertificationComponent,
+    ScrollAnimationDirective
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
