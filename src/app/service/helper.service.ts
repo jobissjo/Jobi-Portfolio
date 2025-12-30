@@ -11,8 +11,50 @@ export class HelperService {
   private readonly darkModeSubject = new BehaviorSubject<boolean>(true);
   darkMode$ = this.darkModeSubject.asObservable();
 
+
+
+  private lastScrollTop = 0;
+  private scrollDirectionSubject = new BehaviorSubject<'up' | 'down'>('down');
+  scrollDirection$ = this.scrollDirectionSubject.asObservable();
+
+  private isFastScrollSubject = new BehaviorSubject<boolean>(false);
+  isFastScroll$ = this.isFastScrollSubject.asObservable();
+
+  private scrollTimeout: any;
+
   constructor() {
     this.initTheme();
+    this.initScrollTracking();
+  }
+
+  private initScrollTracking() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => {
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+        const speed = Math.abs(st - this.lastScrollTop);
+
+        // Determine direction
+        if (st > this.lastScrollTop) {
+          this.scrollDirectionSubject.next('down');
+        } else if (st < this.lastScrollTop) {
+          this.scrollDirectionSubject.next('up');
+        }
+
+        // Determine fast scroll (threshold can be adjusted)
+        if (speed > 50) {
+          this.isFastScrollSubject.next(true);
+        } else {
+          this.isFastScrollSubject.next(false);
+        }
+
+        clearTimeout(this.scrollTimeout);
+        this.scrollTimeout = setTimeout(() => {
+          this.isFastScrollSubject.next(false);
+        }, 100);
+
+        this.lastScrollTop = st <= 0 ? 0 : st;
+      }, { passive: true });
+    }
   }
 
   private initTheme() {

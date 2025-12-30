@@ -8,8 +8,8 @@
     </div>
 
     <div class="project-container">
-      @for (project of projects; track project.name) {
-      <div class="project-card" [ngClass]="{'dark-card': darkMode}" data-aos="fade-up">
+      @for (project of projects; track project.name; let i = $index) {
+      <div class="project-card" [ngClass]="{'dark-card': darkMode}" appScrollAnimation [animationDelay]="i * 100">
         <div class="project-header">
           <div class="project-icon">
             <i class="fas fa-code-branch"></i>

@@ -4,17 +4,19 @@ import { Skill, SkillCategory } from '../../datatypes.types';
 import { CommonModule } from '@angular/common';
 import { AtroposDirective } from '../../directives/atropos.directive';
 
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+
 @Component({
   selector: 'app-skill',
   standalone: true,
-  imports: [CommonModule, AtroposDirective],
+  imports: [CommonModule, AtroposDirective, ScrollAnimationDirective],
   templateUrl: './skill.component.html',
   styleUrl: './skill.component.scss'
 })
 export class SkillComponent {
   @Input() darkMode: boolean = false;
-  skills:Skill[] = [];
-  private helperService:HelperService = inject(HelperService);
+  skills: Skill[] = [];
+  private helperService: HelperService = inject(HelperService);
   selectedSkillCategory = 'all'
   skillCategories: string[] = ['all', ...Object.values(SkillCategory)];
 
@@ -32,14 +34,14 @@ export class SkillComponent {
     this.getSkills()
   }
 
-  getSkills(category:string= 'all'){
+  getSkills(category: string = 'all') {
     this.skills = this.helperService.getSkills(category)
   }
   trackById(index: number, skill: any): any {
-    return skill.name; 
+    return skill.name;
   }
 
-  changeCategory(category:string){
+  changeCategory(category: string) {
     this.selectedSkillCategory = category;
     this.getSkills(this.selectedSkillCategory);
   }

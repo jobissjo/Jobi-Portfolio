@@ -25,28 +25,30 @@
                     <!-- portfolio_filter -->
 
                     <!-- portfolio_container -->
-                    <div class="skill-container" data-aos="fade-up">
-                        @for (skill of skills; track skill.name){
-                        <div class="skill atropos" appAtropos>
-                            <div class="atropos-scale">
-                                <div class="atropos-rotate">
-                                    <div class="atropos-inner">
-                                        <a class="skill-item" [ngClass]="{'dark-mode-color': darkMode}">
-                                            <img [src]="skill.imageUrl" [alt]="skill.name" class="skill-logo"
-                                                [ngClass]="{'dark-mode-color': darkMode}" />
-                                            <div class="skill-item-hover">
-                                                <div class="portfolio-border">
-                                                    <div class="skill-info">
-                                                        <span>{{skill.name}}</span>
-                                                        <div class="skill-level">
-                                                            <div class="skill-level-indicator"
-                                                                [style.width.%]="skill.level"></div>
-                                                            <span class="skill-level-text">{{skill.level}}%</span>
+                    <div class="skill-container">
+                        @for (skill of skills; track skill.name; let i = $index){
+                        <div class="skill" appScrollAnimation [animationDelay]="i * 50">
+                            <div class="atropos" appAtropos style="width: 100%; height: 100%;">
+                                <div class="atropos-scale">
+                                    <div class="atropos-rotate">
+                                        <div class="atropos-inner">
+                                            <a class="skill-item" [ngClass]="{'dark-mode-color': darkMode}">
+                                                <img [src]="skill.imageUrl" [alt]="skill.name" class="skill-logo"
+                                                    [ngClass]="{'dark-mode-color': darkMode}" />
+                                                <div class="skill-item-hover">
+                                                    <div class="portfolio-border">
+                                                        <div class="skill-info">
+                                                            <span>{{skill.name}}</span>
+                                                            <div class="skill-level">
+                                                                <div class="skill-level-indicator"
+                                                                    [style.width.%]="skill.level"></div>
+                                                                <span class="skill-level-text">{{skill.level}}%</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -6,10 +6,12 @@ import { Article, ArticleCategory } from '../../datatypes.types';
 
 
 
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+
 @Component({
   selector: 'app-articles',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ScrollAnimationDirective],
   templateUrl: './articles.component.html',
   styleUrl: './articles.component.scss'
 })
