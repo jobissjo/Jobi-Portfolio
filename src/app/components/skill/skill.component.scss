@@ -6,10 +6,13 @@
 }
 
 .skill {
-    flex: 1 1 22%; /* Change to 22% for 4 items on larger screens */
+    flex: 1 1 22%;
+    /* Change to 22% for 4 items on larger screens */
     max-width: 22%;
     text-align: center;
     position: relative;
+    touch-action: pan-y;
+    /* Prioritize vertical scroll on touch devices */
 }
 
 .skill-item {
@@ -24,7 +27,8 @@
 .skill-logo {
     width: 100%;
     height: auto;
-    max-height: 200px; /* Control max height */
+    max-height: 200px;
+    /* Control max height */
     object-fit: contain;
     padding: 10px;
     background-color: #fff;
@@ -92,7 +96,8 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
 }
 
 .portfolio_filter li {
@@ -109,16 +114,18 @@
     font-size: 16px;
     transition: all 0.3s ease;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
     }
 }
 
 .portfolio_filter a.active,
 .portfolio_filter a:hover {
-    background-color: #425BB5; /* Adjust the color as per your design */
+    background-color: #425BB5;
+    /* Adjust the color as per your design */
     color: white;
-    border-color: #425BB5; /* Add border to make hover more pronounced */
+    border-color: #425BB5;
+    /* Add border to make hover more pronounced */
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -162,33 +169,43 @@
 /* Laptop Styles (default) */
 @media (min-width: 768px) {
     .portfolio_filter {
-        justify-content: center; /* Align in the center */
-        gap: 20px; /* Increase spacing between items */
+        justify-content: center;
+        /* Align in the center */
+        gap: 20px;
+        /* Increase spacing between items */
     }
 
     .portfolio_filter a {
-        font-size: 18px; /* Slightly larger text for laptop screens */
-        padding: 12px 25px; /* More padding for bigger buttons */
+        font-size: 18px;
+        /* Slightly larger text for laptop screens */
+        padding: 12px 25px;
+        /* More padding for bigger buttons */
     }
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
     .portfolio_filter {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
+        /* Stack items vertically */
         align-items: center;
-        gap: 10px; /* Reduce gap between items */
+        gap: 10px;
+        /* Reduce gap between items */
     }
 
     .portfolio_filter a {
-        font-size: 14px; /* Smaller text for mobile */
-        padding: 8px 15px; /* Smaller padding for mobile */
-        width: 100%; /* Make links full width on mobile */
-        max-width: 250px; /* Max width for the buttons */
+        font-size: 14px;
+        /* Smaller text for mobile */
+        padding: 8px 15px;
+        /* Smaller padding for mobile */
+        width: 100%;
+        /* Make links full width on mobile */
+        max-width: 250px;
+        /* Max width for the buttons */
     }
 }
 
-.dark-mode-color{
+.dark-mode-color {
     background-color: #121212;
     color: whitesmoke;
 }
