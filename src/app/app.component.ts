@@ -2,12 +2,13 @@ import { AfterViewInit, Component, OnInit, PLATFORM_ID, inject as angularInject 
 import { inject } from "@vercel/analytics"
 import { RouterModule } from '@angular/router';
 import { CursorComponent } from './components/cursor/cursor.component';
+import { ChatbotWidgetComponent } from './components/chatbot-widget/chatbot-widget.component';
 import { ApiService } from './service/api.service';
 import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, CursorComponent],
+  imports: [RouterModule, CursorComponent, ChatbotWidgetComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

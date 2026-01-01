@@ -16,4 +16,8 @@ export class ApiService {
   postContactUsForm(data: any) {
     return this.http.post(environment.apiUrl + '/contact-us', data)
   }
+
+  chat(message: string) {
+    return this.http.post(environment.apiUrl + '/chat', { message });
+  }
 }
