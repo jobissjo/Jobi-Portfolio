@@ -7,11 +7,10 @@ import { AtroposDirective } from '../../directives/atropos.directive';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
-  selector: 'app-skill',
-  standalone: true,
-  imports: [CommonModule, AtroposDirective, ScrollAnimationDirective],
-  templateUrl: './skill.component.html',
-  styleUrl: './skill.component.scss'
+    selector: 'app-skill',
+    imports: [CommonModule, AtroposDirective, ScrollAnimationDirective],
+    templateUrl: './skill.component.html',
+    styleUrl: './skill.component.scss'
 })
 export class SkillComponent {
   @Input() darkMode: boolean = false;

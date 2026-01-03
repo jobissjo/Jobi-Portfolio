@@ -4,11 +4,10 @@ import { HelperService } from '../../service/helper.service';
 import { Certification } from '../../datatypes.types';
 
 @Component({
-  selector: 'app-certification',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './certification.component.html',
-  styleUrl: './certification.component.scss'
+    selector: 'app-certification',
+    imports: [CommonModule],
+    templateUrl: './certification.component.html',
+    styleUrl: './certification.component.scss'
 })
 export class CertificationComponent implements OnInit {
   @Input() darkMode: boolean = false;

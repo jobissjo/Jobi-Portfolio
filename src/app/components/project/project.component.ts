@@ -7,11 +7,10 @@ import { RouterModule } from '@angular/router';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
-  selector: 'app-project',
-  standalone: true,
-  imports: [CommonModule, RouterModule, ScrollAnimationDirective],
-  templateUrl: './project.component.html',
-  styleUrl: './project.component.scss'
+    selector: 'app-project',
+    imports: [CommonModule, RouterModule, ScrollAnimationDirective],
+    templateUrl: './project.component.html',
+    styleUrl: './project.component.scss'
 })
 export class ProjectComponent implements OnInit {
   @Input() darkMode: boolean = false;

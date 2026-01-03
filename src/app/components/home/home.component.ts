@@ -17,14 +17,13 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 import { SectionPlaceholderComponent } from '../section-placeholder/section-placeholder.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [HeaderComponent, AboutComponent, FooterComponent, ExperienceComponent, ContactComponent,
-    ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent, CertificationComponent,
-    ScrollAnimationDirective, SectionPlaceholderComponent
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    imports: [HeaderComponent, AboutComponent, FooterComponent, ExperienceComponent, ContactComponent,
+        ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent, CertificationComponent,
+        ScrollAnimationDirective, SectionPlaceholderComponent
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   private readonly helperService: HelperService = inject(HelperService);

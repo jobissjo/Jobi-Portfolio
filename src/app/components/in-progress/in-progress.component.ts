@@ -7,13 +7,12 @@ import { RouterModule } from '@angular/router';
 import { HelperService } from '../../service/helper.service';
 
 @Component({
-  selector: 'app-in-progress',
-  standalone: true,
-  imports: [MatIconModule, MatButtonModule, CommonModule, MatCardModule,
-    RouterModule
-  ],
-  templateUrl: './in-progress.component.html',
-  styleUrl: './in-progress.component.scss'
+    selector: 'app-in-progress',
+    imports: [MatIconModule, MatButtonModule, CommonModule, MatCardModule,
+        RouterModule
+    ],
+    templateUrl: './in-progress.component.html',
+    styleUrl: './in-progress.component.scss'
 })
 export class InProgressComponent {
   isDarkMode = false;

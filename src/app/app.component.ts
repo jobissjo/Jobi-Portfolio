@@ -6,11 +6,10 @@ import { ChatbotWidgetComponent } from './components/chatbot-widget/chatbot-widg
 import { ApiService } from './service/api.service';
 import { isPlatformBrowser } from '@angular/common';
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterModule, CursorComponent, ChatbotWidgetComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterModule, CursorComponent, ChatbotWidgetComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'jobi-portfolio';

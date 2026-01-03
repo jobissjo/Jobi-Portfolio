@@ -5,11 +5,10 @@ import { HelperService } from '../../service/helper.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-page-not-found',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, RouterModule],
-  templateUrl: './page-not-found.component.html',
-  styleUrl: './page-not-found.component.scss'
+    selector: 'app-page-not-found',
+    imports: [CommonModule, MatIconModule, RouterModule],
+    templateUrl: './page-not-found.component.html',
+    styleUrl: './page-not-found.component.scss'
 })
 export class PageNotFoundComponent {
   isDarkMode = false;
