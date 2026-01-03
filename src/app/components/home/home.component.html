@@ -1,13 +1,49 @@
 <div class="app-container" [ngClass]="{'dark-mode-color': isDarkMode}">
-    <app-header #header_component></app-header>
-    <app-main appScrollAnimation></app-main>
-    <app-about appScrollAnimation></app-about>
-    <app-experience appScrollAnimation [darkMode]="isDarkMode"></app-experience>
-    <app-skill appScrollAnimation [darkMode]="isDarkMode"></app-skill>
-    <app-certification appScrollAnimation [darkMode]="isDarkMode"></app-certification>
+    <app-header role="header" #header_component></app-header>
+    <app-main role="main" appScrollAnimation></app-main>
+    <app-about role="about" appScrollAnimation></app-about>
+    @defer (on idle) {
+    <app-experience role="experience" appScrollAnimation [darkMode]="isDarkMode"></app-experience>
+    }
+    @placeholder {
+    <app-section-placeholder title="Experience" [isSubtle]="true"></app-section-placeholder>
+    }
+
+    @defer (on idle) {
+    <app-skill role="skill" appScrollAnimation [darkMode]="isDarkMode"></app-skill>
+    }
+    @placeholder {
+    <app-section-placeholder title="Skill"></app-section-placeholder>
+    }
+
+    @defer (on idle) {
+    <app-certification role="certification" appScrollAnimation [darkMode]="isDarkMode"></app-certification>
+    }
+    @placeholder {
+    <app-section-placeholder title="Certification" [isSubtle]="true"></app-section-placeholder>
+    }
     <!-- <app-packages [darkMode]="isDarkMode"></app-packages> -->
-    <app-articles appScrollAnimation [darkMode]="isDarkMode"></app-articles>
-    <app-project appScrollAnimation [darkMode]="isDarkMode"></app-project>
-    <app-contact appScrollAnimation [darkMode]="isDarkMode"></app-contact>
+    @defer (on idle) {
+    <app-articles role="articles" appScrollAnimation [darkMode]="isDarkMode"></app-articles>
+    }
+    @placeholder {
+    <app-section-placeholder title="Articles"></app-section-placeholder>
+    }
+    @defer (on viewport) {
+    <app-project role="project" appScrollAnimation [darkMode]="isDarkMode"></app-project>
+    }
+    @placeholder {
+    <app-section-placeholder title="Project" [isSubtle]="true"></app-section-placeholder>
+    }
+    @defer (on idle) {
+    <app-contact role="contact" appScrollAnimation [darkMode]="isDarkMode"></app-contact>
+    }
+    @placeholder {
+    <app-section-placeholder title="Contact"></app-section-placeholder>
+    }
+
     <app-footer appScrollAnimation [darkMode]="isDarkMode"></app-footer>
+
+
+
 </div>

@@ -489,7 +489,7 @@ export class HelperService {
       name: 'Introduction to Neo4j Graph Data Science',
       issuer: 'Neo4j',
       date: new Date('2025-10-12'),
-      imageUrl: 'https://media.licdn.com/dms/image/v2/D4D0BAQG6P9i9HARJvw/company-logo_200_200/company-logo_200_200/0/1697806384366/neo4j_logo?e=1767225600&v=beta&t=7lMARtmdF2H5Im05_aXPRkOPaS3D401LRw6BwdcDCIM',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767402666/neo4j_hpnahv.png',
       url: 'https://graphacademy.neo4j.com/c/0dc11258-5745-4e2d-ae23-8dc51cb49183/',
       skills: ['Neo4j', 'Graph Data Science']
     },
@@ -497,7 +497,7 @@ export class HelperService {
       name: 'Neo4j Fundamentals',
       issuer: 'Neo4j',
       date: new Date('2025-10-12'),
-      imageUrl: 'https://media.licdn.com/dms/image/v2/D4D0BAQG6P9i9HARJvw/company-logo_200_200/company-logo_200_200/0/1697806384366/neo4j_logo?e=1767225600&v=beta&t=7lMARtmdF2H5Im05_aXPRkOPaS3D401LRw6BwdcDCIM',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767402666/neo4j_hpnahv.png',
       url: 'https://graphacademy.neo4j.com/c/0dc11258-5745-4e2d-ae23-8dc51cb49183/',
       skills: ['Neo4j', 'Graph Databases']
     },
@@ -505,7 +505,7 @@ export class HelperService {
       name: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
       issuer: 'Oracle',
       date: new Date('2025-10-20'),
-      imageUrl: 'https://media.licdn.com/dms/image/v2/D4E0BAQHYCgYovUuPtQ/company-logo_100_100/company-logo_100_100/0/1665755678957/oracle_logo?e=1767225600&v=beta&t=sUGtXQ-CGqScBQXNcDBai_AHtfEGxYcJttjCqp-Z5b0',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767402354/oracle_oydqts.png',
       url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=081267348045033926B32A5564847C7EBDA55E858DB0D8ADF2CEAAC7FC823090',
       skills: ['React', 'JavaScript', 'HTML/CSS', 'UI/UX']
     },
@@ -513,7 +513,7 @@ export class HelperService {
       name: 'Problem Solving (Basic)',
       issuer: 'HackerRank ',
       date: new Date('2025-10-19'),
-      imageUrl: 'https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1767225600&v=beta&t=ap5Vag4EM_p79pBY_NRNRTfhO85fCJeAvZqhldJa10k',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767402480/hR_cjcdey.png',
       url: 'https://www.hackerrank.com/certificates/4d37750b4962',
       skills: ['Problem Solving', 'DSA']
     },
@@ -521,7 +521,7 @@ export class HelperService {
       name: 'Python Certificate',
       issuer: 'HackerRank ',
       date: new Date('2022-10-19'),
-      imageUrl: 'https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1767225600&v=beta&t=ap5Vag4EM_p79pBY_NRNRTfhO85fCJeAvZqhldJa10k',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767402480/hR_cjcdey.png',
       url: 'https://www.hackerrank.com/certificates/4d37750b4962',
       skills: ['Python', 'DSA']
     }

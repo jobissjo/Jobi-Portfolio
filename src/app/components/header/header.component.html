@@ -6,7 +6,8 @@
         </button>
         <ul [ngClass]="{'show-menu': menuOpen, 'bg-change-black-div': darkMode}">
             @for(section of sections; track section) {
-                <li><a (click)="scrollToSection(section)"> {{section | titlecase}}</a></li>
+                <li><a [attr.href]="'#'+section"
+                    (click)="scrollToSection(section)"> {{section | titlecase}}</a></li>
             }
         </ul>
         <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" (click)="toggleDarkMode()"
