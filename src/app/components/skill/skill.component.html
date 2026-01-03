@@ -14,7 +14,7 @@
                         <nav class="categories">
                             <ul class="portfolio_filter">
                                 @for (category of skillCategories; track category){
-                                <li><a (click)="changeCategory(category)"
+                                <li><a [attr.href]="'#skill-' + category" (click)="changeCategory(category)"
                                         [ngClass]="{'active': selectedSkillCategory==category}">{{category |
                                         titlecase}}</a></li>
                                 }
