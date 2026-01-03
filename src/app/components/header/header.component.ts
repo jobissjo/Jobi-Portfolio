@@ -4,11 +4,10 @@ import { HelperService } from '../../service/helper.service';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [CommonModule, MatIconModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   private readonly helperService: HelperService = inject(HelperService);

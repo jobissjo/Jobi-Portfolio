@@ -19,11 +19,10 @@ interface PythonLibrary {
 }
 
 @Component({
-  selector: 'app-packages',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './packages.component.html',
-  styleUrl: './packages.component.scss'
+    selector: 'app-packages',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './packages.component.html',
+    styleUrl: './packages.component.scss'
 })
 export class PackagesComponent {
   @Input() darkMode: boolean = false;

@@ -9,11 +9,10 @@ import { Article, ArticleCategory } from '../../datatypes.types';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
-  selector: 'app-articles',
-  standalone: true,
-  imports: [FormsModule, CommonModule, ScrollAnimationDirective],
-  templateUrl: './articles.component.html',
-  styleUrl: './articles.component.scss'
+    selector: 'app-articles',
+    imports: [FormsModule, CommonModule, ScrollAnimationDirective],
+    templateUrl: './articles.component.html',
+    styleUrl: './articles.component.scss'
 })
 export class ArticlesComponent {
 

@@ -3,7 +3,6 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-cursor',
-    standalone: true,
     imports: [CommonModule],
     template: `
     <div class="cursor-dot" #cursorDot></div>

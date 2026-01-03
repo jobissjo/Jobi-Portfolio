@@ -6,11 +6,10 @@ import { CommonModule } from '@angular/common';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
-  selector: 'app-experience',
-  standalone: true,
-  imports: [CommonModule, ScrollAnimationDirective],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss'
+    selector: 'app-experience',
+    imports: [CommonModule, ScrollAnimationDirective],
+    templateUrl: './experience.component.html',
+    styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent implements OnInit {
   @Input() darkMode: boolean = false;

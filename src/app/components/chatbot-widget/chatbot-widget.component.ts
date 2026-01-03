@@ -12,7 +12,6 @@ interface ChatMessage {
 
 @Component({
     selector: 'app-chatbot-widget',
-    standalone: true,
     imports: [CommonModule, FormsModule],
     templateUrl: './chatbot-widget.component.html',
     styleUrl: './chatbot-widget.component.scss'
