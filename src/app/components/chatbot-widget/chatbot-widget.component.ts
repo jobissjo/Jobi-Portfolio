@@ -93,7 +93,7 @@ export class ChatbotWidgetComponent implements AfterViewChecked, OnInit {
             } else {
                 clearInterval(intervalId);
             }
-        }, 10); // Adjust typing speed (ms per character)
+        }, 30); // Adjust typing speed (ms per character) - increased to 30ms for performance
     }
 
     ngAfterViewChecked() {
@@ -101,11 +101,13 @@ export class ChatbotWidgetComponent implements AfterViewChecked, OnInit {
     }
 
     private scrollToBottom(): void {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             try {
-                this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+                if (this.scrollContainer) {
+                    this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+                }
             } catch (err) { }
-        }, 50);
+        });
     }
 
     private focusInput(): void {
