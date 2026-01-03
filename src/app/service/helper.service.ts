@@ -1,7 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, NgZone, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Article, ArticleCategory, Certification, Contact, Experience, Project, Resume, Skill, SkillCategory } from '../datatypes.types';
 import { ViewportScroller } from '@angular/common';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { BehaviorSubject, fromEvent, Subscription } from 'rxjs';
+import { throttleTime, auditTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,40 +22,58 @@ export class HelperService {
   private isFastScrollSubject = new BehaviorSubject<boolean>(false);
   isFastScroll$ = this.isFastScrollSubject.asObservable();
 
+  private scrollSubscription: Subscription | undefined;
   private scrollTimeout: any;
 
-  constructor() {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private ngZone: NgZone
+  ) {
     this.initTheme();
     this.initScrollTracking();
   }
 
+  ngOnDestroy() {
+    if (this.scrollSubscription) {
+      this.scrollSubscription.unsubscribe();
+    }
+  }
+
   private initScrollTracking() {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => {
-        const st = window.pageYOffset || document.documentElement.scrollTop;
-        const speed = Math.abs(st - this.lastScrollTop);
+    if (isPlatformBrowser(this.platformId)) {
+      this.ngZone.runOutsideAngular(() => {
+        this.scrollSubscription = fromEvent(window, 'scroll', { passive: true })
+          .pipe(
+            throttleTime(50, undefined, { leading: true, trailing: true })
+          )
+          .subscribe(() => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const speed = Math.abs(st - this.lastScrollTop);
 
-        // Determine direction
-        if (st > this.lastScrollTop) {
-          this.scrollDirectionSubject.next('down');
-        } else if (st < this.lastScrollTop) {
-          this.scrollDirectionSubject.next('up');
-        }
+            this.ngZone.run(() => {
+              // Determine direction
+              if (st > this.lastScrollTop) {
+                this.scrollDirectionSubject.next('down');
+              } else if (st < this.lastScrollTop) {
+                this.scrollDirectionSubject.next('up');
+              }
 
-        // Determine fast scroll (threshold can be adjusted)
-        if (speed > 50) {
-          this.isFastScrollSubject.next(true);
-        } else {
-          this.isFastScrollSubject.next(false);
-        }
+              // Determine fast scroll (threshold can be adjusted)
+              if (speed > 50) {
+                this.isFastScrollSubject.next(true);
+              } else {
+                this.isFastScrollSubject.next(false);
+              }
 
-        clearTimeout(this.scrollTimeout);
-        this.scrollTimeout = setTimeout(() => {
-          this.isFastScrollSubject.next(false);
-        }, 100);
+              clearTimeout(this.scrollTimeout);
+              this.scrollTimeout = setTimeout(() => {
+                this.ngZone.run(() => this.isFastScrollSubject.next(false));
+              }, 100);
 
-        this.lastScrollTop = st <= 0 ? 0 : st;
-      }, { passive: true });
+              this.lastScrollTop = st <= 0 ? 0 : st;
+            });
+          });
+      });
     }
   }
 
