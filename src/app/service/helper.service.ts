@@ -146,103 +146,103 @@ export class HelperService {
   private readonly skills: Skill[] = [
     {
       name: 'Python',
-      imageUrl: 'img/skills/python.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/python_s2svw0.png',
       level: 90,
       category: SkillCategory.Programming
     },
     {
       name: 'Django',
-      imageUrl: 'img/skills/django.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/django_yw6a6l.png',
       level: 70,
       category: SkillCategory.Framework
     },
     {
       name: 'DRF',
-      imageUrl: 'img/skills/drf.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/drf_gppf24.png',
       level: 85,
       category: SkillCategory.Framework
     },
     {
       name: 'JavaScript',
-      imageUrl: 'img/skills/js.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/js_wr62dr.png',
       level: 70,
       category: SkillCategory.Programming
     },
     {
       name: 'TypeScript',
-      imageUrl: 'img/skills/ts.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510811/ts_o49zqf.png',
       level: 60,
       category: SkillCategory.Programming
     },
     {
       name: 'Angular',
-      imageUrl: 'img/skills/angular.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/angular_q2ot0e.png',
       level: 70,
       category: SkillCategory.Framework
     },
     {
       name: 'Sqlite',
-      imageUrl: 'img/skills/sqlite.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510811/sqlite_i1tcck.png',
       level: 80,
       category: SkillCategory.Database
     },
     {
       name: 'PostgreSQL',
-      imageUrl: 'img/skills/postgreSQL.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/postgreSQL_m3zqa7.png',
       level: 75,
       category: SkillCategory.Database
     },
     {
       name: 'MongoDB',
-      imageUrl: 'img/skills/mongodb.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/mongodb_l9hduz.png',
       level: 50,
       category: SkillCategory.Database
     },
     {
       name: 'HTML',
-      imageUrl: 'img/skills/html.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/html_mq9cgt.png',
       level: 80,
       category: SkillCategory.TechStack,
     },
     {
       name: 'CSS',
-      imageUrl: 'img/skills/css.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/css_hogv3t.png',
       level: 70,
       category: SkillCategory.TechStack
     },
     {
       name: 'Bootstrap',
-      imageUrl: 'img/skills/bootstrap.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/bootstrap_yk6fv9.png',
       level: 70,
       category: SkillCategory.TechStack
     },
     {
       name: 'Git',
-      imageUrl: 'img/skills/git.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/git_wgbzbv.png',
       level: 65,
       category: SkillCategory.Tool
     },
     {
       name: 'Docker',
-      imageUrl: 'img/skills/docker.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/docker_fylqpk.png',
       level: 50,
       category: SkillCategory.Tool
     },
     {
       name: 'FastAPI',
-      imageUrl: 'img/skills/fastAPI.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/fastAPI_owj4vl.png',
       level: 70,
       category: SkillCategory.Framework
     },
     {
       name: 'Litestar',
-      imageUrl: 'img/skills/litestar.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/litestar_nlkill.png',
       level: 30,
       category: SkillCategory.Framework
     },
     {
       name: 'React',
-      imageUrl: 'img/skills/react.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/react_mrbkkq.png',
       level: 60,
       category: SkillCategory.Framework
     }

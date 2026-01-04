@@ -19,7 +19,7 @@ import { SectionPlaceholderComponent } from '../section-placeholder/section-plac
 @Component({
     selector: 'app-home',
     imports: [HeaderComponent, AboutComponent, FooterComponent, ExperienceComponent, ContactComponent,
-        ProjectComponent, SkillComponent, MainComponent, CommonModule, PackagesComponent, ArticlesComponent, CertificationComponent,
+        ProjectComponent, SkillComponent, MainComponent, CommonModule,  ArticlesComponent, CertificationComponent,
         ScrollAnimationDirective, SectionPlaceholderComponent
     ],
     templateUrl: './home.component.html',
