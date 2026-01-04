@@ -2,22 +2,18 @@
     <app-header role="banner" #header_component></app-header>
     <app-main role="main" appScrollAnimation></app-main>
     <app-about role="region" aria-label="About Me" appScrollAnimation></app-about>
-    @defer (on idle) {
+
     <app-experience role="region" aria-label="Work Experience" appScrollAnimation
         [darkMode]="isDarkMode"></app-experience>
-    }
-    @placeholder {
-    <app-section-placeholder title="Experience" [isSubtle]="true"></app-section-placeholder>
-    }
-
-    @defer (on idle) {
+    
+    @defer (on immediate) {
     <app-skill role="region" aria-label="Skills" appScrollAnimation [darkMode]="isDarkMode"></app-skill>
     }
     @placeholder {
     <app-section-placeholder title="Skill"></app-section-placeholder>
     }
 
-    @defer (on idle) {
+    @defer (on immediate) {
     <app-certification role="region" aria-label="Certifications" appScrollAnimation
         [darkMode]="isDarkMode"></app-certification>
     }
@@ -31,18 +27,15 @@
     @placeholder {
     <app-section-placeholder title="Articles"></app-section-placeholder>
     }
-    @defer (on viewport) {
+    @defer (on idle) {
     <app-project role="region" aria-label="Projects" appScrollAnimation [darkMode]="isDarkMode"></app-project>
     }
     @placeholder {
     <app-section-placeholder title="Project" [isSubtle]="true"></app-section-placeholder>
     }
-    @defer (on idle) {
+
     <app-contact role="region" aria-label="Contact" appScrollAnimation [darkMode]="isDarkMode"></app-contact>
-    }
-    @placeholder {
-    <app-section-placeholder title="Contact"></app-section-placeholder>
-    }
+    
 
     <app-footer role="contentinfo" appScrollAnimation [darkMode]="isDarkMode"></app-footer>
 
