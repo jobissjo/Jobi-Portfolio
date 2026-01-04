@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-section-placeholder',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './section-placeholder.component.html',
     styleUrl: './section-placeholder.component.scss'
 })

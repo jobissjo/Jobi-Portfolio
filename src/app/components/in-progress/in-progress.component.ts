@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CommonModule } from '@angular/common';
+
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { HelperService } from '../../service/helper.service';
 
 @Component({
     selector: 'app-in-progress',
-    imports: [MatIconModule, MatButtonModule, CommonModule, MatCardModule,
-        RouterModule
-    ],
+    imports: [MatIconModule, MatButtonModule, MatCardModule, RouterModule],
     templateUrl: './in-progress.component.html',
     styleUrl: './in-progress.component.scss'
 })
