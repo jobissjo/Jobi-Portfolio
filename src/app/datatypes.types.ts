@@ -11,6 +11,7 @@ export enum SkillCategory {
 export interface Skill {
   name: string,
   imageUrl: string,
+  mobileImageUrl?: string,
   level: number,
   category: SkillCategory
 }
