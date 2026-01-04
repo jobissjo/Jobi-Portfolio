@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { AtroposDirective } from '../../directives/atropos.directive';
 
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+import { Observable } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'app-skill',
@@ -28,9 +31,27 @@ export class SkillComponent {
       this.hasLoaded = true;
     }
   }
+  isMobile$: Observable<boolean>;
+  isMobile: boolean = false;
+
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.isMobile$ = this.breakpointObserver
+      .observe(Breakpoints.Handset)
+      .pipe(map(result => result.matches));
+
+    this.isMobile$.subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
+
+  }
 
   ngOnInit(): void {
     this.getSkills()
+  }
+
+  decideSkillUrl(skill: Skill){
+    return this.isMobile ? skill.mobileImageUrl : skill.imageUrl
+
   }
 
   getSkills(category: string = 'all') {

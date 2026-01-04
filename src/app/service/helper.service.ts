@@ -147,102 +147,119 @@ export class HelperService {
     {
       name: 'Python',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/python_s2svw0.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767545161/python_ubryrn.png',
       level: 90,
       category: SkillCategory.Programming
     },
     {
       name: 'Django',
-      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/django_yw6a6l.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767546294/django_nakyay.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767545160/django_zdjc8y.png',
       level: 70,
       category: SkillCategory.Framework
     },
     {
       name: 'DRF',
-      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/drf_gppf24.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767546294/drf_kxgd5e.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767545161/drf_h3oi1o.png',
       level: 85,
       category: SkillCategory.Framework
     },
     {
       name: 'JavaScript',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/js_wr62dr.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/js_wr62dr.png',
       level: 70,
       category: SkillCategory.Programming
     },
     {
       name: 'TypeScript',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510811/ts_o49zqf.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510811/ts_o49zqf.png',
       level: 60,
       category: SkillCategory.Programming
     },
     {
       name: 'Angular',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/angular_q2ot0e.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/angular_q2ot0e.png',
       level: 70,
       category: SkillCategory.Framework
     },
     {
       name: 'Sqlite',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510811/sqlite_i1tcck.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510811/sqlite_i1tcck.png',
       level: 80,
       category: SkillCategory.Database
     },
     {
       name: 'PostgreSQL',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/postgreSQL_m3zqa7.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/postgreSQL_m3zqa7.png',
       level: 75,
       category: SkillCategory.Database
     },
     {
       name: 'MongoDB',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/mongodb_l9hduz.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/mongodb_l9hduz.png',
       level: 50,
       category: SkillCategory.Database
     },
     {
       name: 'HTML',
-      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/html_mq9cgt.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767546294/css_tulnua.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/html_mq9cgt.png',
       level: 80,
       category: SkillCategory.TechStack,
     },
     {
       name: 'CSS',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/css_hogv3t.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/css_hogv3t.png',
       level: 70,
       category: SkillCategory.TechStack
     },
     {
       name: 'Bootstrap',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/bootstrap_yk6fv9.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510808/bootstrap_yk6fv9.png',
       level: 70,
       category: SkillCategory.TechStack
     },
     {
       name: 'Git',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/git_wgbzbv.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/git_wgbzbv.png',
       level: 65,
       category: SkillCategory.Tool
     },
     {
       name: 'Docker',
-      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/docker_fylqpk.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767546293/docker_e6uvre.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/docker_fylqpk.png',
       level: 50,
       category: SkillCategory.Tool
     },
     {
       name: 'FastAPI',
-      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/fastAPI_owj4vl.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767546293/fastAPI_xir7y3.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/fastAPI_owj4vl.png',
       level: 70,
       category: SkillCategory.Framework
     },
     {
       name: 'Litestar',
-      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/litestar_nlkill.png',
+      imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767546295/litestar_qcjm4i.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510809/litestar_nlkill.png',
       level: 30,
       category: SkillCategory.Framework
     },
     {
       name: 'React',
       imageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/react_mrbkkq.png',
+      mobileImageUrl: 'https://res.cloudinary.com/donmu4dj1/image/upload/v1767510810/react_mrbkkq.png',
       level: 60,
       category: SkillCategory.Framework
     }
