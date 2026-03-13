@@ -1,9 +1,9 @@
 import { Component, ElementRef, HostListener, Inject, OnInit, PLATFORM_ID, ViewChild, ViewEncapsulation, NgZone, OnDestroy } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-cursor',
-    imports: [CommonModule],
+    imports: [],
     template: `
     <div class="cursor-dot" #cursorDot></div>
     <div class="cursor-outline" #cursorOutline></div>
