@@ -5,7 +5,7 @@
 
     <app-experience role="region" aria-label="Work Experience" appScrollAnimation
         [darkMode]="isDarkMode"></app-experience>
-    
+
     @defer (on immediate) {
     <app-skill role="region" aria-label="Skills" appScrollAnimation [darkMode]="isDarkMode"></app-skill>
     }
@@ -21,13 +21,13 @@
     <app-section-placeholder title="Certification" [isSubtle]="true"></app-section-placeholder>
     }
     <!-- <app-packages [darkMode]="isDarkMode"></app-packages> -->
-    @defer (on idle) {
+    @defer (on immediate) {
     <app-articles role="region" aria-label="Articles" appScrollAnimation [darkMode]="isDarkMode"></app-articles>
     }
     @placeholder {
     <app-section-placeholder title="Articles"></app-section-placeholder>
     }
-    @defer (on idle) {
+    @defer (on immediate) {
     <app-project role="region" aria-label="Projects" appScrollAnimation [darkMode]="isDarkMode"></app-project>
     }
     @placeholder {
@@ -35,7 +35,7 @@
     }
 
     <app-contact role="region" aria-label="Contact" appScrollAnimation [darkMode]="isDarkMode"></app-contact>
-    
+
 
     <app-footer role="contentinfo" appScrollAnimation [darkMode]="isDarkMode"></app-footer>
 

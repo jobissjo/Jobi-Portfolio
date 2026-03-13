@@ -92,7 +92,7 @@ export class ChatbotWidgetComponent implements AfterViewChecked, OnInit {
             } else {
                 clearInterval(intervalId);
             }
-        }, 30); // Adjust typing speed (ms per character) - increased to 30ms for performance
+        }, 5); // Adjust typing speed (ms per character) - increased to 30ms for performance
     }
 
     ngAfterViewChecked() {
