@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { MarkdownPipe } from '../../pipes/markdown.pipe';
 
 interface ChatMessage {
     text: string;
@@ -12,7 +13,7 @@ interface ChatMessage {
 
 @Component({
     selector: 'app-chatbot-widget',
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, MarkdownPipe],
     templateUrl: './chatbot-widget.component.html',
     styleUrl: './chatbot-widget.component.scss'
 })

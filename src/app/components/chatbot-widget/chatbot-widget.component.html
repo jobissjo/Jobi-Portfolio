@@ -31,8 +31,7 @@
       <div class="chat-body" #scrollContainer>
         @for (msg of messages; track msg) {
           <div class="message" [ngClass]="{'bot': msg.isBot, 'user': !msg.isBot}">
-            <div class="bubble">
-              {{ msg.text }}
+            <div class="bubble" [innerHTML]="msg.text | markdown | async">
             </div>
           </div>
         }
