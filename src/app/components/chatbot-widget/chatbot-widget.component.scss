@@ -77,9 +77,8 @@
         pointer-events: all;
     }
 
-    /* Mobile Panel */
     @media (max-width: 480px) {
-        width: calc(100vw - 40px);
+        width: min(400px, calc(100vw - 40px));
         right: 0;
         bottom: 0;
     }
