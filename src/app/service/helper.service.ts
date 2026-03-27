@@ -338,12 +338,34 @@ export class HelperService {
 
   private readonly projects: Project[] = [
     {
-      name: "Personal Blog",
-      description: "This is project is about track learning progress of the user and track the application status",
+      name: "NoteFocus",
+      description: "A premium, minimalist hierarchical note-taking application designed for a 'Flow State', balancing beautiful aesthetics with bank-grade security and granular PIN protection.",
       features: [
-        "Backend built using FastAPI and MongoDB",
-        "Frontend built using React and Tailwind CSS",
-        "Migrated from react to nextjs"
+        "Hierarchical Workspaces for notes, diaries, and long-form stories",
+        "Bank-grade security with personal PIN protection for individual items",
+        "Privacy-first architecture with zero tracking and encrypted storage",
+        "Instant-response interface built with Angular and Tailwind CSS"
+      ],
+      startDate: "February 2026",
+      endDate: "March 2026",
+      projectUrls: [
+        {
+          title: "NoteFocus App",
+          githubUrl: "",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://note-focus.vercel.app/",
+        }
+      ]
+    },
+    {
+      name: "Personal Blog",
+      description: "JoTechBlog is a professional technical blog and backend ecosystem focused on high-quality tutorials, system design, and modern web architectures.",
+      features: [
+        "Built with Angular and Tailwind CSS, hosted on Netlify",
+        "Guided learning series for JWT, Django Bolt, and System Design",
+        "Integrated content management with a secure admin dashboard",
+        "Advanced tutorials covering PostgreSQL replication, Docker, and HAProxy"
       ],
       startDate: "November 2025",
       endDate: "December 2025",
@@ -367,10 +389,10 @@ export class HelperService {
 
     {
       name: 'Job Haunt Project',
-      description: "This is project is about track learning progress of the user and track the application status",
+      description: "A comprehensive job search tracking application that helps users manage their job applications, track interview stages, and store company feedback.",
       features: [
-        "Built using FastAPI, React ",
-        "Built using React and Tailwind CSS"
+        "Built using FastAPI, React",
+        "Interactive dashboard for application status"
       ],
       startDate: "October 2025",
       endDate: "November 2025",
