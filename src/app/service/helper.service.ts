@@ -596,8 +596,8 @@ export class HelperService {
       publishedDate: new Date('2025-11-24'),
       category: ArticleCategory.WEB_DEVELOPMENT,
       tags: ['Django', 'rest', 'python', 'fullstack', 'scalability', 'django rest framework', 'django bolt'],
-      views: 2500,
-      likes: 187,
+      views: 168,
+      likes: 13,
       platform: 'JoTechBlog'
     },
     {
@@ -609,23 +609,23 @@ export class HelperService {
       publishedDate: new Date('2025-12-09'),
       category: ArticleCategory.WEB_DEVELOPMENT,
       tags: ['Django', 'rest', 'python', 'openapi', 'swagger', 'drf', 'django rest framework'],
-      views: 2500,
-      likes: 187,
+      views: 100,
+      likes: 2,
       platform: 'JoTechBlog '
-    }
-    // {
-    //   id: '3',
-    //   title: 'Modern CSS: Grid, Flexbox, and Beyond',
-    //   excerpt: 'Explore the latest CSS features and techniques for creating responsive, modern layouts. This article covers CSS Grid, Flexbox, custom properties, and emerging technologies like container queries.',
-    //   imageUrl: 'assets/images/articles/modern-css.jpg',
-    //   url: 'https://yourblog.com/modern-css-grid-flexbox-beyond',
-    //   publishedDate: new Date('2024-03-10'),
-    //   category: ArticleCategory.WEB_DEVELOPMENT,
-    //   tags: ['css', 'grid', 'flexbox', 'responsive', 'frontend'],
-    //   views: 1800,
-    //   likes: 156,
-    //   platform: 'Personal Blog'
-    // },
+    },
+    {
+      id: '3',
+      title: 'HttpOnly JWT Authentication with Angular + Django REST Framework',
+      excerpt: 'Explore the latest CSS features and techniques for creating responsive, modern layouts. This article covers CSS Grid, Flexbox, custom properties, and emerging technologies like container queries.',
+      imageUrl: 'https://res.cloudinary.com/dyzaihuoa/image/upload/v1769863033/images/gx5iksvaqvn1cr0rzhye.png',
+      url: 'https://jotechblog.netlify.app/blog/httponly-jwt-authentication-with-angular-django-rest-framework',
+      publishedDate: new Date('2025-12-09'),
+      category: ArticleCategory.FRAMEWORKS,
+      tags: ['django', 'http-only', 'jwt', 'angular', 'frontend'],
+      views: 97,
+      likes: 3,
+      platform: 'JoTechBlog'
+    },
     // {
     //   id: '5',
     //   title: 'Data Visualization with D3.js: Interactive Charts and Dashboards',
