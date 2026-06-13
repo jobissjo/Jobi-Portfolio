@@ -38,6 +38,100 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://jobiss.vercel.app/#person",
+        "name": "Jobi S S",
+        "url": "https://jobiss.vercel.app",
+        "image": "https://jobiss.vercel.app/img/jobi.png",
+        "description": "Full-Stack Python and Angular developer specializing in FastAPI, Django, and modern web architectures",
+        "jobTitle": "Full-Stack Developer",
+        "knowsAbout": ["Python", "Django", "FastAPI", "Angular", "Docker", "PostgreSQL", "REST API", "Web Development", "E-commerce", "CRM Systems"],
+        "sameAs": [
+          "https://github.com/jobiss",
+          "https://linkedin.com/in/jobiss"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jobiss.vercel.app/#website",
+        "url": "https://jobiss.vercel.app",
+        "name": "Jobi S S - Portfolio",
+        "description": "Jobi S S is a skilled Full-Stack Python and Angular developer specializing in FastAPI, Django, and modern web architectures. Explore my portfolio for projects in e-commerce, automation, and more.",
+        "publisher": {
+          "@id": "https://jobiss.vercel.app/#person"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://jobiss.vercel.app/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://jobiss.vercel.app/#webpage",
+        "url": "https://jobiss.vercel.app",
+        "name": "Jobi S S - Full-Stack Python and Angular Developer Portfolio",
+        "description": "Experienced developer with expertise in Python, Angular, REST API, and web application development. Explore projects in e-commerce, automation, and more.",
+        "isPartOf": {
+          "@id": "https://jobiss.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://jobiss.vercel.app/#person"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://jobiss.vercel.app/img/jobi.png",
+          "caption": "Jobi S S - Full-Stack Developer"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jobiss.vercel.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://jobiss.vercel.app/about"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://jobiss.vercel.app/projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Experience",
+            "item": "https://jobiss.vercel.app/experience"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Contact",
+            "item": "https://jobiss.vercel.app/contact"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
