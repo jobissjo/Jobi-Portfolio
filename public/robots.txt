@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jobiss.vercel.app/sitemap.xml
+Sitemap: https://jobiss.jotech.in/sitemap.xml
+Host: https://jobiss.jotech.in
