@@ -78,11 +78,13 @@ export class HelperService {
   }
 
   private initTheme() {
-    const isDark = this.darkModeSubject.value;
-    if (isDark) {
-      document.body.classList.add('dark-theme');
-    } else {
-      document.body.classList.remove('dark-theme');
+    if (isPlatformBrowser(this.platformId)) {
+      const isDark = this.darkModeSubject.value;
+      if (isDark) {
+        document.body.classList.add('dark-theme');
+      } else {
+        document.body.classList.remove('dark-theme');
+      }
     }
   }
 
@@ -95,10 +97,12 @@ export class HelperService {
     const newValue = !currentValue;
     this.darkModeSubject.next(newValue);
 
-    if (newValue) {
-      document.body.classList.add('dark-theme');
-    } else {
-      document.body.classList.remove('dark-theme');
+    if (isPlatformBrowser(this.platformId)) {
+      if (newValue) {
+        document.body.classList.add('dark-theme');
+      } else {
+        document.body.classList.remove('dark-theme');
+      }
     }
   }
 
