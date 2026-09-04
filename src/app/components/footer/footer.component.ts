@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { HelperService } from '../../service/helper.service';
 
 @Component({
     selector: 'app-footer',
@@ -9,4 +10,10 @@ import { Component, Input } from '@angular/core';
 })
 export class FooterComponent {
   @Input() darkMode: boolean = false;
+  currentYear: number = new Date().getFullYear();
+  private helperService = inject(HelperService);
+
+  scrollToSection(id: string): void {
+    this.helperService.scrollToElement(id);
+  }
 }

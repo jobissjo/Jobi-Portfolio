@@ -1,9 +1,9 @@
 <div class="section bg-subtle" id="project">
   <div class="container">
     <div class="col-md-12">
-      <h1 class="size-50 animate__animated animate__backInRight">My <br /> Projects</h1>
+      <h2 class="size-50 animate__animated animate__backInRight">Featured <br /> Projects & Ecosystem</h2>
       <div class="section-description">
-        <p>A showcase of my technical projects and applications</p>
+        <p>A showcase of my technical projects, JoTech ecosystem products, and production applications</p>
       </div>
     </div>
 
@@ -39,12 +39,14 @@
             <div class="link-group">
               <span class="link-label">{{ projectUrl.title }}</span>
               <div class="link-buttons">
-                <a [href]="projectUrl.githubUrl" target="_blank" class="btn-link" title="View Source">
+                @if (projectUrl.githubUrl) {
+                <a [href]="projectUrl.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-link" title="View Source">
                   <i [class]="projectUrl.gitIconUrl || 'fab fa-github'"></i> Code
                 </a>
+                }
                 @if(projectUrl.hostingUrl){
-                <a [href]="projectUrl.hostingUrl" target="_blank" class="btn-link btn-live" title="View Live Demo">
-                  <i [class]="projectUrl.demoIcon || 'fas fa-external-link-alt'"></i> Demo
+                <a [href]="projectUrl.hostingUrl" target="_blank" rel="noopener noreferrer" class="btn-link btn-live" [title]="'View ' + projectUrl.title">
+                  <i [class]="projectUrl.demoIcon || 'fas fa-external-link-alt'"></i> {{ projectUrl.title.includes('Home') || projectUrl.title.includes('Ecosystem') || projectUrl.title.includes('Blog') ? 'Visit' : 'Demo' }}
                 </a>
                 } @else {
                 <a routerLink="/in-progress" class="btn-link btn-live" title="View Live Demo">

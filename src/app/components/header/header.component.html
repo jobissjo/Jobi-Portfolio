@@ -9,14 +9,30 @@
                 <li><a [attr.href]="'#'+section"
                     (click)="scrollToSection(section)"> {{section | titlecase}}</a></li>
             }
-        </ul>
-        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" (click)="toggleDarkMode()"
-            [ngClass]="{'bg-change-black': darkMode}">
-            @if (darkMode) {
-                <mat-icon aria-hidden="false" fontIcon="wb_sunny"></mat-icon>
-            } @else {
-                <mat-icon aria-hidden="false" fontIcon="dark_mode"></mat-icon>
+            @if (showJoTech) {
+            <li class="d-md-none">
+                <a href="https://www.jotech.in/" target="_blank" rel="noopener noreferrer" class="jotech-mobile-link">
+                    JoTech Ecosystem <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </li>
             }
-        </button>
+        </ul>
+        <div class="header-right-actions">
+            @if (showJoTech) {
+            <a href="https://www.jotech.in/" target="_blank" rel="noopener noreferrer" class="jotech-nav-badge" title="Visit JoTech Software Ecosystem">
+                <span class="jotech-nav-dot"></span>
+                <span class="jotech-nav-text">JoTech</span>
+                <i class="fa-solid fa-arrow-up-right-from-square jotech-nav-icon"></i>
+            </a>
+            }
+            <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" (click)="toggleDarkMode()"
+                [ngClass]="{'bg-change-black': darkMode}">
+                @if (darkMode) {
+                    <mat-icon aria-hidden="false" fontIcon="wb_sunny"></mat-icon>
+                } @else {
+                    <mat-icon aria-hidden="false" fontIcon="dark_mode"></mat-icon>
+                }
+            </button>
+        </div>
     </nav>
 </header>

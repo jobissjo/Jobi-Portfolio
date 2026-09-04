@@ -1,5 +1,100 @@
-<div class="section" id="footer" [ngClass]="{'dark-footer': darkMode}">
-    <div class="container">
-        <h4>Thank you for visiting😊</h4>
+<footer id="footer" [ngClass]="{'dark-footer': darkMode}">
+  <div class="container">
+    <div class="footer-top">
+      <div class="row g-4">
+        <!-- Brand & Ecosystem Overview -->
+        <div class="col-lg-5 col-md-6">
+          <div class="footer-brand">
+            <h3 class="footer-name">Jobi S S</h3>
+            <p class="footer-title">Full-Stack Python & Angular Developer</p>
+            <p class="footer-bio">
+              Architecting scalable backend systems, responsive web applications, and autonomous AI integrations.
+            </p>
+            <div class="footer-ecosystem mt-3">
+              <a href="https://www.jotech.in/" target="_blank" rel="noopener noreferrer" class="footer-ecosystem-badge">
+                <span class="badge-dot"></span>
+                <span>Part of <strong>JoTech Ecosystem</strong></span>
+                <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- JoTech Ecosystem Backlinks -->
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="footer-links-group">
+            <h5 class="footer-heading">JoTech Ecosystem</h5>
+            <ul class="footer-links">
+              <li>
+                <a href="https://www.jotech.in/" target="_blank" rel="noopener noreferrer">
+                  JoTech Official Home <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://weekly-planner.jotech.in/" target="_blank" rel="noopener noreferrer">
+                  Weekly Planner App <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://pocket-flow.jotech.in/" target="_blank" rel="noopener noreferrer">
+                  PocketFlow Finance <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://blog.jotech.in/" target="_blank" rel="noopener noreferrer">
+                  JoTech Engineering Blog <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Portfolio Navigation -->
+        <div class="col-lg-3 col-md-12 col-sm-6">
+          <div class="footer-links-group">
+            <h5 class="footer-heading">Navigation</h5>
+            <ul class="footer-links two-cols">
+              <li><a href="#about" (click)="scrollToSection('about'); $event.preventDefault()">About</a></li>
+              <li><a href="#experience" (click)="scrollToSection('experience'); $event.preventDefault()">Experience</a></li>
+              <li><a href="#skill" (click)="scrollToSection('skill'); $event.preventDefault()">Skills</a></li>
+              <li><a href="#certification" (click)="scrollToSection('certification'); $event.preventDefault()">Certifications</a></li>
+              <li><a href="#project" (click)="scrollToSection('project'); $event.preventDefault()">Projects</a></li>
+              <li><a href="#articles" (click)="scrollToSection('articles'); $event.preventDefault()">Articles</a></li>
+              <li><a href="#contact" (click)="scrollToSection('contact'); $event.preventDefault()">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-7 text-center text-md-start mb-3 mb-md-0">
+          <p class="copyright-text mb-0">
+            © {{ currentYear }} <strong>Jobi S S</strong>. Built independently under 
+            <a href="https://www.jotech.in/" target="_blank" rel="noopener noreferrer" class="jotech-link">JoTech</a>.
+          </p>
+        </div>
+        <div class="col-md-5 text-center text-md-end">
+          <div class="footer-social-icons">
+            <a href="https://github.com/jobissjo" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://in.linkedin.com/in/jobiss12" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://leetcode.com/u/jobi_s_s/" target="_blank" rel="noopener noreferrer" title="LeetCode" aria-label="LeetCode">
+              <i class="fa-solid fa-code"></i>
+            </a>
+            <a href="https://www.instagram.com/__mr_unknown_/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:jobisjobi1234@gmail.com" title="Email Jobi" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

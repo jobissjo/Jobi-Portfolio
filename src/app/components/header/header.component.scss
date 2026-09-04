@@ -5,7 +5,6 @@ header {
     height: 65px;
     margin-bottom: 1rem;
     position: relative;
-    /* Ensure positioning works for the button */
 }
 
 nav ul {
@@ -16,7 +15,6 @@ nav ul {
     -webkit-transition: all .5s;
     transition: all .5s;
     border-radius: 50px;
-    /* Modern pill look for the menu */
 }
 
 nav li {
@@ -28,7 +26,6 @@ nav li a {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--text-secondary);
-    /* Use var */
     font-size: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -39,48 +36,100 @@ nav li a:hover {
     color: var(--accent-color);
 }
 
-#theme-toggle {
+.header-right-actions {
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--bg-primary);
-    /* Use var */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 20;
+}
+
+.jotech-nav-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: 50px;
     border: 1px solid var(--border-color);
-    /* Subtle border for definition */
+    background: var(--bg-secondary);
+    color: var(--text-primary) !important;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .jotech-nav-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #6366f1;
+        box-shadow: 0 0 8px rgba(99, 102, 241, 0.8);
+    }
+
+    .jotech-nav-icon {
+        font-size: 10px;
+        opacity: 0.7;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        border-color: var(--accent-color);
+        background: var(--bg-primary);
+        color: var(--accent-color) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(var(--accent-color-rgb), 0.25);
+
+        .jotech-nav-icon {
+            transform: translate(1px, -1px);
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 576px) {
+        display: none;
+    }
+}
+
+.jotech-mobile-link {
+    color: var(--accent-color) !important;
+    font-weight: 700 !important;
+}
+
+#theme-toggle {
+    position: relative;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
-    width: 45px;
-    /* Slightly larger */
-    height: 45px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--accent-color);
-    /* Primary brand color */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Floating effect */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* Bouncy transition */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     mat-icon {
-        font-size: 24px;
-        width: 24px;
-        height: 24px;
+        font-size: 22px;
+        width: 22px;
+        height: 22px;
         transition: transform 0.5s ease;
     }
 }
 
 #theme-toggle:hover {
-    transform: translateY(-50%) scale(1.1);
-    /* Pop out effect */
-    box-shadow: 0 8px 16px rgba(var(--accent-color-rgb), 0.25);
-    /* Colored glow */
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(var(--accent-color-rgb), 0.25);
     background-color: var(--bg-primary);
 
     mat-icon {
         transform: rotate(30deg);
-        /* Playful rotation */
     }
 }
 
@@ -107,12 +156,10 @@ a.active {
     color: var(--accent-color);
 }
 
-/* This was the culprit for the black bar. Now updated to follow theme. */
 .bg-change-black {
     background-color: var(--bg-secondary) !important;
     border-color: var(--border-color) !important;
     color: var(--accent-color) !important;
-    /* Accent instead of Gold */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
@@ -123,15 +170,9 @@ a.active {
 
 #menu-toggle {
     display: none;
-    /* Hidden by default */
 }
 
-/* General styling for header remains unchanged */
-
-/* Responsive styling for mobile view */
 @media (max-width: 768px) {
-
-    /* Show the menu toggle button only on mobile */
     #menu-toggle {
         display: block;
         position: absolute;
@@ -153,16 +194,13 @@ a.active {
         background-color: var(--bg-secondary);
     }
 
-    /* Initially hide the menu on mobile */
     nav ul {
         display: none;
-        /* Hidden by default */
         list-style: none;
         padding: 20px;
         margin: 0;
     }
 
-    /* Show menu when toggled */
     nav ul.show-menu {
         display: flex;
         flex-direction: column;
@@ -171,33 +209,22 @@ a.active {
         top: 65px;
         left: 0;
         width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         z-index: 10;
         border-radius: 0;
     }
 
     nav li {
-        margin: 5px 0;
-        /* Reduce spacing for better mobile display */
+        margin: 8px 0;
         text-align: center;
     }
 
     nav li a {
         font-size: 14px;
-        /* Slightly increase font size for mobile readability */
         color: var(--text-primary);
-    }
-
-    /* Ensure theme toggle button remains properly positioned */
-    #theme-toggle {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
     }
 }
 
 .bg-change-black-div {
-    /* Use theme var instead of hardcoded black */
     background-color: var(--bg-secondary) !important;
 }

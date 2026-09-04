@@ -1,8 +1,7 @@
 <div class="section bg-subtle" id="experience">
     <div class="container">
         <div class="col-md-12">
-
-            <h1 class="size-50 animate__animated animate__backInRight">My <br /> Experience</h1>
+            <h2 class="size-50 animate__animated animate__backInRight">My <br /> Experience</h2>
             <div class="h-50"></div>
         </div>
         <div class="col-md-12">
@@ -21,7 +20,15 @@
 
                         </p>
                         <h3 class="width-90">{{experience.position}}</h3>
-                        <h4 class="width-90">{{experience.companyName}}</h4>
+                        <h4 class="width-90">
+                            @if (experience.companyUrl) {
+                                <a [href]="experience.companyUrl" target="_blank" rel="noopener noreferrer" class="company-link" title="Visit {{experience.companyName}}">
+                                    {{experience.companyName}} <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size: 0.8em;"></i>
+                                </a>
+                            } @else {
+                                {{experience.companyName}}
+                            }
+                        </h4>
                         <p class="width-90"><strong>Responsibilities</strong>
                             @for (achievement of experience.workAchievements; track $index) {
                             <br>{{achievement}}

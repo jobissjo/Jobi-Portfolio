@@ -138,3 +138,14 @@
     }
 }
 
+.company-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #425BB5 !important;
+    }
+}
+
