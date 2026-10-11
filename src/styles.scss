@@ -89,6 +89,74 @@ a {
     }
 }
 
+h2.size-50,
+h1.size-50,
+.section-title {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 2.3rem;
+    }
+}
+
+.bio-link {
+    color: var(--accent-color) !important;
+    font-weight: 600;
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: var(--accent-hover) !important;
+    }
+}
+
+.ecosystem-link-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 1px solid var(--accent-color);
+    background: rgba(var(--accent-color-rgb), 0.08);
+    color: var(--text-primary) !important;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    .pulse-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #10b981;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+        display: inline-block;
+        animation: statusPulse 2s infinite;
+    }
+
+    &:hover {
+        background: rgba(var(--accent-color-rgb), 0.16);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(var(--accent-color-rgb), 0.25);
+        color: var(--accent-color) !important;
+    }
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.85);
+    }
+}
+
 /* Utilities */
 .section {
     padding: var(--section-spacing) 0;
@@ -213,7 +281,7 @@ a {
 ::selection { background: var(--accent-color); color: var(--on-accent); }
 :focus-visible { outline: 2px solid var(--accent-color); outline-offset: 5px; }
 [id] { scroll-margin-top: 100px; }
-.section:not(.hero) h1 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -2px; line-height: 1.15; }
+.section:not(.hero) h1, .section:not(.hero) h2 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -2px; line-height: 1.15; }
 .section { border-bottom: 1px solid var(--border-color); }
 .skip-link { position: fixed; top: -80px; left: 20px; z-index: 200; background: var(--accent-color); color: var(--on-accent); padding: 12px 20px; } .skip-link:focus { top: 12px; }
 body { cursor: auto !important; } a, button, [role="button"] { cursor: pointer !important; }

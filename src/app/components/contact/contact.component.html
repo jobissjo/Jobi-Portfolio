@@ -1,7 +1,7 @@
 <div class="section" id="contact" [ngClass]="{'dark-mode-color': darkMode}">
   <div class="container">
     <div class="section-header text-center mb-5">
-      <h1 class="size-50 animate__animated animate__backInDown">Let’s build something<span class="text-accent">.</span></h1>
+      <h2 class="size-50 animate__animated animate__backInDown">Let’s build something<span class="text-accent">.</span></h2>
       <p class="subtitle animate__animated animate__fadeInUp">Let's work together or simply have a chat</p>
     </div>
 
@@ -47,7 +47,7 @@
             <!-- Contact Info -->
             <div class="contact-info-container animate__animated animate__fadeInRight">
               <h3>Contact Information</h3>
-              <p class="info-text">Open for opportunities. Let's connect.</p>
+              <p class="info-text">Open for opportunities, engineering collaborations, and partnerships.</p>
 
               @if (emailContact) {
                 <div class="info-item">
@@ -61,6 +61,18 @@
                 </div>
               }
 
+              @if (showJoTech) {
+              <div class="info-item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="info-content">
+                  <span class="label">Ecosystem</span>
+                  <a href="https://www.jotech.in/" target="_blank" rel="noopener noreferrer" class="value">jotech.in</a>
+                </div>
+              </div>
+              }
+
               <div class="info-item">
                 <div class="icon-box">
                   <i class="fa-solid fa-location-dot"></i>
@@ -72,13 +84,13 @@
               </div>
 
               <div class="social-links mt-4">
-                <h4>Follow Me</h4>
+                <h4>Connect & Follow</h4>
                 <div class="social-icons">
                   @for (contact of contacts; track contact.name){
                     @if (!contact.name.toLowerCase().includes('mail')) {
-                      <a [href]="contact.link" [title]="contact.title" target="_blank" rel="noopener" class="social-btn">
+                      <a [href]="contact.link" [title]="contact.title" target="_blank" rel="noopener noreferrer" class="social-btn">
                         @if (contact.iconImageUrl) {
-                          <img [src]="contact.iconImageUrl" alt="contact.title" class="icon" width="24" height="24">
+                          <img [src]="contact.iconImageUrl" [alt]="contact.title" class="icon" width="24" height="24">
                         }
                         @else {
                         <i [class]="contact.iconStyle"></i>

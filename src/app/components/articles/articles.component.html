@@ -1,5 +1,5 @@
 <section class="section" id="articles" aria-labelledby="articles-heading"><div class="container">
-<h1 id="articles-heading">Notes from the build<span class="text-accent">.</span></h1>
+<h2 id="articles-heading">Notes from the build<span class="text-accent">.</span></h2>
 <p class="section-description">Ideas, practical guides, and lessons from working with the web.</p>
 <nav class="categories" aria-label="Filter articles"><ul class="portfolio_filter">
 @for (category of articleCategories; track category) { <li><button type="button" (click)="changeCategory(category)" [class.active]="selectedArticleCategory === category" [attr.aria-pressed]="selectedArticleCategory === category">{{category | titlecase}}</button></li> }

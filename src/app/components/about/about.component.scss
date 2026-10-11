@@ -89,7 +89,13 @@
         justify-content: center;
     }
 
-    h1 {
+    h1,
+    h2,
+    .section-title {
+        text-align: center;
+    }
+
+    .ecosystem-callout {
         text-align: center;
     }
 

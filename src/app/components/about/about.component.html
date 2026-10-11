@@ -3,17 +3,27 @@
         <div class="row display-flex align-items-center">
             <!-- Content Side -->
             <div class="col-md-7" data-aos="fade-up">
-                <h1 class="animate__animated animate__backInLeft">A developer.<br><span class="text-accent">A problem solver.</span>
-                </h1>
+                <h2 class="animate__animated animate__backInLeft">A developer.<br><span class="text-accent">A problem solver.</span>
+                </h2>
                 <div class="spacer-sm"></div>
 
                 <div class="bio-content">
                     @for(about of abouts; track about){
-                    <p class="bio-text">{{about}}</p>
+                    <p class="bio-text" [innerHTML]="about"></p>
                     }
                 </div>
 
-                <div class="spacer-md"></div>
+                @if (showJoTech) {
+                <div class="ecosystem-callout mt-4 mb-4">
+                    <a href="https://www.jotech.in/" target="_blank" rel="noopener noreferrer" class="ecosystem-link-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Explore <strong>JoTech Software Ecosystem</strong></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                    </a>
+                </div>
+                }
+
+                <div class="spacer-sm"></div>
 
                 <!-- Skills Highlights -->
                 <div class="skills-wrapper">
@@ -26,9 +36,8 @@
                 </div>
             </div>
 
-            <!-- Visual Side (Optional: Abstract decoration or just whitespace for balance) -->
+            <!-- Visual Side -->
             <div class="col-md-5 d-none d-md-block position-relative">
-                <!-- Abstract geometric decoration -->
                 <div class="about-decoration"></div>
             </div>
         </div>

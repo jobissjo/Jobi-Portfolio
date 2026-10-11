@@ -4,11 +4,13 @@ import { Article, ArticleCategory, Certification, Contact, Experience, Project, 
 import { ViewportScroller } from '@angular/common';
 import { BehaviorSubject, fromEvent, Subscription } from 'rxjs';
 import { throttleTime, auditTime, distinctUntilChanged } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelperService {
+  readonly showJoTech: boolean = environment.showJoTech ?? false;
   private readonly viewportScroller: ViewportScroller = inject(ViewportScroller);
   private readonly darkModeSubject = new BehaviorSubject<boolean>(true);
   darkMode$ = this.darkModeSubject.asObservable();
@@ -110,21 +112,28 @@ export class HelperService {
     return this.darkModeSubject.value;
   }
 
-  getProjects() {
-    return this.projects
+  getProjects(): Project[] {
+    if (!this.showJoTech) {
+      return this.projects.filter(p => !p.name.toLowerCase().includes('jotech'));
+    }
+    return this.projects;
   }
 
-
-
-  getExperience() {
+  getExperience(): Experience[] {
+    if (!this.showJoTech) {
+      return this.experiences.filter(exp => !exp.companyName.toLowerCase().includes('jotech'));
+    }
     return this.experiences;
   }
 
-  getContacts() {
+  getContacts(): Contact[] {
+    if (!this.showJoTech) {
+      return this.contacts.filter(c => !c.name.toLowerCase().includes('jotech'));
+    }
     return this.contacts;
   }
 
-  getResume() {
+  getResume(): Resume {
     return this.resume;
   }
 
@@ -283,7 +292,7 @@ export class HelperService {
       position: 'Python Developer',
       companyName: 'Mentor Thesis',
       startedDate: new Date('2023-03-06'),
-      endedDate: new Date('2023-04-15'),
+      endedDate: new Date('2024-04-15'),
       workAchievements: [
         "Implemented a movie recommendation system."
       ]
@@ -298,10 +307,28 @@ export class HelperService {
         "Collaborated with Angular and React developers."
       ]
     },
+    {
+      position: 'Founder & Systems Engineer',
+      companyName: 'JoTech',
+      companyUrl: 'https://www.jotech.in/',
+      startedDate: new Date('2024-06-01'),
+      endedDate: new Date(),
+      workAchievements: [
+        "Founded and engineered the JoTech independent software ecosystem (https://www.jotech.in).",
+        "Built production web applications and tools including Weekly Planner, PocketFlow, and JoTech Blog.",
+        "Architected scalable backend microservices, autonomous AI workflows, and cloud infrastructure."
+      ]
+    }
 
   ]
 
   private readonly contacts: Contact[] = [
+    {
+      name: 'JoTech',
+      link: 'https://www.jotech.in/',
+      iconStyle: 'fa-solid fa-globe',
+      title: "JoTech - Independent Software Ecosystem"
+    },
     {
       name: 'mail',
       link: 'mailto:jobisjobi1234@gmail.com',
@@ -341,6 +368,47 @@ export class HelperService {
   }
 
   private readonly projects: Project[] = [
+    {
+      name: "JoTech Ecosystem",
+      description: "Production ecosystem and software suite engineered by Jobi S S, encompassing live applications including Weekly Planner, PocketFlow, JoTech Blog, and AI systems.",
+      features: [
+        "Independent production suite: Weekly Planner, PocketFlow, and JoTech Blog",
+        "Sub-100ms API response designs, event pipelines, and client-side encryption",
+        "Continuous delivery with live telemetry, Docker containerization, and modern UI"
+      ],
+      startDate: "2024",
+      endDate: "Present",
+      projectUrls: [
+        {
+          title: "JoTech Home",
+          githubUrl: "",
+          gitIconUrl: "",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://www.jotech.in/",
+        },
+        {
+          title: "Weekly Planner",
+          githubUrl: "",
+          gitIconUrl: "",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://weekly-planner.jotech.in/",
+        },
+        {
+          title: "PocketFlow",
+          githubUrl: "",
+          gitIconUrl: "",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://pocket-flow.jotech.in/",
+        },
+        {
+          title: "JoTech Blog",
+          githubUrl: "",
+          gitIconUrl: "",
+          demoIcon: "fa-solid fa-newspaper",
+          hostingUrl: "https://blog.jotech.in/",
+        }
+      ]
+    },
     {
       name: "NoteFocus",
       description: "A premium, minimalist hierarchical note-taking application designed for a 'Flow State', balancing beautiful aesthetics with bank-grade security and granular PIN protection.",

@@ -1,0 +1,26 @@
+{
+  "name": "Jobi S S | Full-Stack Developer & Founder of JoTech",
+  "short_name": "Jobi S S",
+  "description": "Portfolio of Jobi S S, Full-Stack Python & Angular Developer and Founder of JoTech ecosystem.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

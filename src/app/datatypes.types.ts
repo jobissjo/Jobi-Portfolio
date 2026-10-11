@@ -19,6 +19,7 @@ export interface Skill {
 export interface Experience {
   position: string,
   companyName: string,
+  companyUrl?: string,
   startedDate: Date,
   endedDate: Date,
   workAchievements: string[]

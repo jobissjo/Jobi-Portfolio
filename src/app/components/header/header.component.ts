@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class HeaderComponent {
   private readonly helperService: HelperService = inject(HelperService);
+  readonly showJoTech: boolean = this.helperService.showJoTech;
   sections: string[] = [
     'about',
     'experience',

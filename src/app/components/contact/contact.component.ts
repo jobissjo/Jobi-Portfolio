@@ -20,6 +20,7 @@ export class ContactComponent implements OnInit {
   isSubmitting: boolean = false;
 
   private helperService: HelperService = inject(HelperService);
+  readonly showJoTech: boolean = this.helperService.showJoTech;
   private fb: FormBuilder = inject(FormBuilder);
   private apiService: ApiService = inject(ApiService);
 
