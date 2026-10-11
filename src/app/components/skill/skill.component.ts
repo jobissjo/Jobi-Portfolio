@@ -2,7 +2,6 @@ import { Component, inject, Input } from '@angular/core';
 import { HelperService } from '../../service/helper.service';
 import { Skill, SkillCategory } from '../../datatypes.types';
 import { CommonModule } from '@angular/common';
-import { AtroposDirective } from '../../directives/atropos.directive';
 
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 import { Observable } from 'rxjs';
@@ -11,7 +10,7 @@ import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'app-skill',
-    imports: [CommonModule, AtroposDirective, ScrollAnimationDirective],
+    imports: [CommonModule, ScrollAnimationDirective],
     templateUrl: './skill.component.html',
     styleUrl: './skill.component.scss'
 })

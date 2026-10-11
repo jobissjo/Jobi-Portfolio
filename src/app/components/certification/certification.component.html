@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col-md-12">
             <!-- Title with consistent animation -->
-            <h1 class="size-50 animate__animated animate__backInLeft">My <br /> Certifications</h1>
+            <h1 class="size-50 animate__animated animate__backInLeft">Learning, put into practice<span class="text-accent">.</span></h1>
             <div class="section-description">
                 <p>Professional certifications and credentials earned along my journey</p>
             </div>
@@ -13,7 +13,7 @@
                 @for (cert of certifications; track cert.name) {
                 <div class="certification-card" [ngClass]="{'dark-card': darkMode}">
                     <div class="cert-image-wrapper">
-                        <img [src]="cert.imageUrl" [alt]="cert.name" class="cert-image">
+                        <img [src]="cert.imageUrl" [alt]="cert.name" class="cert-image" loading="lazy">
                     </div>
                     <div class="cert-content">
                         <span class="cert-issuer">{{cert.issuer}}</span>
@@ -26,7 +26,7 @@
                             }
                         </div>
 
-                        <a [href]="cert.url" target="_blank" class="verify-btn">
+                        <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="verify-btn">
                             Verify Credential <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>

@@ -1,9 +1,9 @@
 <div class="section bg-subtle" id="project">
   <div class="container">
     <div class="col-md-12">
-      <h1 class="size-50 animate__animated animate__backInRight">My <br /> Projects</h1>
+      <h1 class="size-50 animate__animated animate__backInRight">Selected work<span class="text-accent">.</span></h1>
       <div class="section-description">
-        <p>A showcase of my technical projects and applications</p>
+        <p>A selection of applications, experiments, and ideas brought to life.</p>
       </div>
     </div>
 
@@ -39,11 +39,11 @@
             <div class="link-group">
               <span class="link-label">{{ projectUrl.title }}</span>
               <div class="link-buttons">
-                <a [href]="projectUrl.githubUrl" target="_blank" class="btn-link" title="View Source">
+                <a [href]="projectUrl.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-link" title="View Source">
                   <i [class]="projectUrl.gitIconUrl || 'fab fa-github'"></i> Code
                 </a>
                 @if(projectUrl.hostingUrl){
-                <a [href]="projectUrl.hostingUrl" target="_blank" class="btn-link btn-live" title="View Live Demo">
+                <a [href]="projectUrl.hostingUrl" target="_blank" rel="noopener noreferrer" class="btn-link btn-live" title="View Live Demo">
                   <i [class]="projectUrl.demoIcon || 'fas fa-external-link-alt'"></i> Demo
                 </a>
                 } @else {
