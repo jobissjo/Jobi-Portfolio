@@ -10,6 +10,9 @@
     "serve:ssr:jobi-portfolio": "node dist/jobi-portfolio/server/server.mjs"
   },
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@angular/animations": "^20.3.15",
     "@angular/cdk": "^20.2.14",
