@@ -1,6 +1,14 @@
 <div class="app-container" [ngClass]="{'dark-mode-color': isDarkMode}">
+    <a class="skip-link" href="#home">Skip to content</a>
     <app-header role="banner" #header_component></app-header>
-    <app-main role="main" appScrollAnimation></app-main>
+    <app-main role="main"></app-main>
+    @defer (on immediate) {
+    <app-project role="region" aria-label="Projects" appScrollAnimation [darkMode]="isDarkMode"></app-project>
+    }
+    @placeholder {
+    <app-section-placeholder title="Project" [isSubtle]="true"></app-section-placeholder>
+    }
+
     <app-about role="region" aria-label="About Me" appScrollAnimation></app-about>
 
     <app-experience role="region" aria-label="Work Experience" appScrollAnimation
@@ -27,13 +35,6 @@
     @placeholder {
     <app-section-placeholder title="Articles"></app-section-placeholder>
     }
-    @defer (on immediate) {
-    <app-project role="region" aria-label="Projects" appScrollAnimation [darkMode]="isDarkMode"></app-project>
-    }
-    @placeholder {
-    <app-section-placeholder title="Project" [isSubtle]="true"></app-section-placeholder>
-    }
-
     <app-contact role="region" aria-label="Contact" appScrollAnimation [darkMode]="isDarkMode"></app-contact>
 
 

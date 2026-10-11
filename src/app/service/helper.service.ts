@@ -292,7 +292,7 @@ export class HelperService {
       position: 'Python Developer',
       companyName: 'Mentor Thesis',
       startedDate: new Date('2023-03-06'),
-      endedDate: new Date('2023-04-15'),
+      endedDate: new Date('2024-04-15'),
       workAchievements: [
         "Implemented a movie recommendation system."
       ]

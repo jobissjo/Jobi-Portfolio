@@ -38,7 +38,7 @@ export class HeaderComponent {
 
   scrollToSection(section: string) {
     this.helperService.scrollToElement(section);
-    this.menuOpen = !this.menuOpen;
+    this.menuOpen = false;
   }
 
   // removed redundant manual emission since service handles state

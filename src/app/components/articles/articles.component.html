@@ -1,117 +1,18 @@
-<div class="section" id="articles">
-    <div class="container">
-        <div class="col-md-12">
-            <!-- <h4>05</h4> -->
-            <h2 class="size-50 animate__animated animate__backInLeft">My <br /> Articles</h2>
-            <div class="section-description">
-                <p>Explore my thoughts and insights on technology, development, and industry trends</p>
-            </div>
-        </div>
-        <!-- main container -->
-        <div class="main-container portfolio-inner clearfix">
-            <!-- portfolio div -->
-            <div class="portfolio-div">
-                <div class="portfolio">
-                    <!-- portfolio_filter -->
-                    <div class="categories-grid wow fadeInLeft">
-                        <nav class="categories">
-                            <ul class="portfolio_filter">
-                                @for (category of articleCategories; track category){
-                                <li><a [attr.href]="'#article-' + category" (click)="changeCategory(category)"
-                                        [ngClass]="{'active': selectedArticleCategory==category}">{{category |
-                                        titlecase}}</a></li>
-                                }
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- portfolio_filter -->
-
-                    <!-- article_container -->
-                    <div class="article-container">
-                        @for (article of articles; track article.id; let i = $index){
-                        <div class="article" appScrollAnimation [animationDelay]="i * 100">
-                            <div class="atropos" appAtropos style="width: 100%; height: 100%;">
-                                <div class="atropos-scale">
-                                    <div class="atropos-rotate">
-                                        <div class="atropos-inner">
-                                            <article class="article-item" [ngClass]="{'dark-mode-color': darkMode}"
-                                                (click)="openArticle(article.url)">
-                                                <!-- Article Image -->
-                                                <div class="article-image-container">
-                                                    <img [src]="article.imageUrl" [alt]="article.title"
-                                                        class="article-image" />
-                                                    <div class="article-overlay">
-                                                        <span class="article-category-badge">{{article.category |
-                                                            titlecase}}</span>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Article Content -->
-                                                <div class="article-content">
-                                                    <div class="article-meta">
-                                                        <span
-                                                            class="article-date">{{formatDate(article.publishedDate)}}</span>
-                                                        <span class="article-reading-time">
-                                                            {{getReadingTime(article.excerpt)}} min read
-                                                        </span>
-                                                    </div>
-
-                                                    <h3 class="article-title">{{article.title}}</h3>
-                                                    <p class="article-excerpt">{{article.excerpt}}</p>
-
-                                                    <div class="article-tags">
-                                                        @for (tag of article.tags; track tag) {
-                                                        <span class="article-tag">#{{tag}}</span>
-                                                        }
-                                                    </div>
-
-                                                    <div class="article-stats">
-                                                        <div class="article-stat">
-                                                            <i class="fas fa-eye"></i>
-                                                            <span>{{article.views}}</span>
-                                                        </div>
-                                                        <div class="article-stat">
-                                                            <i class="fas fa-heart"></i>
-                                                            <span>{{article.likes}}</span>
-                                                        </div>
-                                                        @if (article.platform) {
-                                                        <div class="article-platform">
-                                                            <span>on {{article.platform}}</span>
-                                                        </div>
-                                                        }
-                                                    </div>
-                                                </div>
-
-                                                <!-- Hover Effect -->
-                                                <div class="article-item-hover">
-                                                    <div class="article-hover-content">
-                                                        <h4>{{article.title}}</h4>
-                                                        <p>{{article.excerpt}}</p>
-                                                        <button class="read-more-btn">
-                                                            <i class="fas fa-external-link-alt"></i>
-                                                            Read Full Article
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        }@empty {
-                        <div class="no-articles">
-                            <i class="fas fa-file-alt"></i>
-                            <p>No articles published yet</p>
-                        </div>
-                        }
-                    </div>
-
-                    <!-- portfolio -->
-                </div>
-                <!-- end portfolio div -->
-            </div>
-            <!-- end main container -->
-        </div>
-    </div>
-</div>
+<section class="section" id="articles" aria-labelledby="articles-heading"><div class="container">
+<h2 id="articles-heading">Notes from the build<span class="text-accent">.</span></h2>
+<p class="section-description">Ideas, practical guides, and lessons from working with the web.</p>
+<nav class="categories" aria-label="Filter articles"><ul class="portfolio_filter">
+@for (category of articleCategories; track category) { <li><button type="button" (click)="changeCategory(category)" [class.active]="selectedArticleCategory === category" [attr.aria-pressed]="selectedArticleCategory === category">{{category | titlecase}}</button></li> }
+</ul></nav>
+<div class="article-container">
+@for (article of articles; track article.id; let i = $index) {
+<article class="article-item" appScrollAnimation [animationDelay]="i * 100">
+<div class="article-image-container"><img [src]="article.imageUrl" [alt]="article.title" class="article-image" loading="lazy" /><span class="article-category-badge">{{article.category | titlecase}}</span></div>
+<div class="article-content"><div class="article-meta"><span>{{formatDate(article.publishedDate)}}</span><span>{{article.platform}}</span></div>
+<h3 class="article-title"><a [href]="article.url" target="_blank" rel="noopener noreferrer">{{article.title}}</a></h3>
+<p class="article-excerpt">{{article.excerpt}}</p>
+<div class="article-tags">@for (tag of article.tags; track tag) { <span class="article-tag">#{{tag}}</span> }</div>
+<div class="article-footer"><span class="article-stats">{{article.views}} views · {{article.likes}} likes</span><a class="read-more-btn" [href]="article.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Read ' + article.title">Read article <span aria-hidden="true">↗</span></a></div>
+</div></article>
+} @empty { <p>No articles in this category yet.</p> }
+</div></div></section>

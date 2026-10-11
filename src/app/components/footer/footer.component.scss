@@ -11,7 +11,7 @@
   }
 
   .footer-name {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -37,7 +37,7 @@
     align-items: center;
     gap: 8px;
     padding: 8px 18px;
-    border-radius: 50px;
+    border-radius: 5px;
     border: 1px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary) !important;
@@ -50,8 +50,8 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background-color: #6366f1;
-      box-shadow: 0 0 6px rgba(99, 102, 241, 0.8);
+      background-color: var(--accent-color);
+
     }
 
     &:hover {
@@ -157,7 +157,7 @@
 
         &:hover {
           background-color: var(--accent-color);
-          color: #ffffff !important;
+          color: var(--on-accent);
           border-color: var(--accent-color);
           transform: translateY(-2px);
           box-shadow: 0 4px 10px rgba(var(--accent-color-rgb), 0.3);
@@ -172,3 +172,4 @@
   color: var(--text-secondary) !important;
   border-top-color: var(--border-color) !important;
 }
+:host { display: block; }

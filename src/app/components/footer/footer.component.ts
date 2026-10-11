@@ -12,6 +12,7 @@ export class FooterComponent {
   @Input() darkMode: boolean = false;
   currentYear: number = new Date().getFullYear();
   private helperService = inject(HelperService);
+  readonly showJoTech = this.helperService.showJoTech;
 
   scrollToSection(id: string): void {
     this.helperService.scrollToElement(id);

@@ -1,69 +1,15 @@
-<div class="section" id="skill">
-    <div class="container">
-        <div class="col-md-12">
-            <!-- <h4>03</h4> -->
-            <h2 class="size-50 animate__animated animate__backInLeft">My <br /> Skills</h2>
-        </div>
-        <!-- main container -->
-        <div class="main-container portfolio-inner clearfix">
-            <!-- portfolio div -->
-            <div class="portfolio-div">
-                <div class="portfolio">
-                    <!-- portfolio_filter -->
-                    <div class="categories-grid wow fadeInLeft">
-                        <nav class="categories">
-                            <ul class="portfolio_filter">
-                                @for (category of skillCategories; track category){
-                                <li><a [attr.href]="'#skill-' + category" (click)="changeCategory(category)"
-                                        [ngClass]="{'active': selectedSkillCategory==category}">{{category |
-                                        titlecase}}</a></li>
-                                }
-
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- portfolio_filter -->
-
-                    <!-- portfolio_container -->
-                    <div class="skill-container">
-                        @for (skill of skills; track skill.name; let i = $index){
-                        <div class="skill" appScrollAnimation [animationDelay]="i * 50">
-                            <div class="atropos" appAtropos style="width: 100%; height: 100%;">
-                                <div class="atropos-scale">
-                                    <div class="atropos-rotate">
-                                        <div class="atropos-inner">
-                                            <a class="skill-item" [ngClass]="{'dark-mode-color': darkMode}">
-                                                <img [src]="decideSkillUrl(skill)" [alt]="skill.name" class="skill-logo"
-                                                    [ngClass]="{'dark-mode-color': darkMode}"  loading="lazy" />
-                                                <div class="skill-item-hover">
-                                                    <div class="portfolio-border">
-                                                        <div class="skill-info">
-                                                            <span>{{skill.name}}</span>
-                                                            <div class="skill-level">
-                                                                <div class="skill-level-indicator"
-                                                                    [style.width.%]="skill.level"></div>
-                                                                <span class="skill-level-text">{{skill.level}}%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        }@empty {
-                        <div>
-                            <p>No skills added yet</p>
-                        </div>
-                        }
-                    </div>
-
-                    <!-- portfolio -->
-                </div>
-                <!-- end portfolio div -->
-            </div>
-            <!-- end main container -->
-        </div>
-    </div>
+<section class="section" id="skill" aria-labelledby="skills-heading"><div class="container">
+<h2 id="skills-heading">Tools of the trade<span class="text-accent">.</span></h2>
+<p class="section-description">The languages, frameworks, and tools behind my work.</p>
+<nav class="categories" aria-label="Filter skills"><ul class="portfolio_filter">
+@for (category of skillCategories; track category) { <li><button type="button" (click)="changeCategory(category)" [class.active]="selectedSkillCategory === category" [attr.aria-pressed]="selectedSkillCategory === category">{{category | titlecase}}</button></li> }
+</ul></nav>
+<div class="skill-container">
+@for (skill of skills; track skill.name; let i = $index) {
+<article class="skill" appScrollAnimation [animationDelay]="i * 50">
+<div class="skill-logo-wrapper"><img [src]="decideSkillUrl(skill)" [alt]="skill.name" class="skill-logo" loading="lazy" /></div>
+<div class="skill-info"><h3>{{skill.name}}</h3><span class="skill-level-text">{{skill.level}}%</span></div>
+<div class="skill-level" role="meter" [attr.aria-label]="skill.name + ' proficiency'" aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="skill.level"><div class="skill-level-indicator" [style.width.%]="skill.level"></div></div>
+</article>
+} @empty { <p>No skills in this category.</p> }
+</div></div></section>
