@@ -3,13 +3,13 @@
         <div class="col-md-12">
 
             <h2 class="size-50 animate__animated animate__backInRight">The journey so far<span class="text-accent">.</span></h2>
-            <div class="h-50"></div>
+
         </div>
         <div class="col-md-12">
             <ul class="timeline">
                 @for (experience of experiences; track experience.companyName; let i = $index){
                 <li class="timeline-event" appScrollAnimation [animationDelay]="i * 150">
-                    <label class="timeline-event-icon"></label>
+                    <span class="timeline-event-icon" aria-hidden="true"></span>
                     <div class="timeline-event-copy">
                         <p class="timeline-event-thumbnail">{{experience.startedDate | date : 'MMMM yyyy'}} -
                             @if (experience.endedDate.getMonth() == todayDate.getMonth()){
@@ -20,8 +20,8 @@
                             }
 
                         </p>
-                        <h3 class="width-90">{{experience.position}}</h3>
-                        <h4 class="width-90">
+                        <h3>{{experience.position}}</h3>
+                        <h4>
                             @if (experience.companyUrl) {
                                 <a [href]="experience.companyUrl" target="_blank" rel="noopener noreferrer" class="company-link" title="Visit {{experience.companyName}}">
                                     {{experience.companyName}} <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size: 0.8em;"></i>
@@ -30,15 +30,16 @@
                                 {{experience.companyName}}
                             }
                         </h4>
-                        <p class="width-90"><strong>Responsibilities</strong>
+                        <p class="responsibilities-label">Responsibilities</p>
+                        <ul class="responsibilities">
                             @for (achievement of experience.workAchievements; track $index) {
-                            <br>{{achievement}}
+                            <li>{{achievement}}</li>
                             }
-                        </p>
+                        </ul>
                     </div>
                 </li>
                 }@empty {
-                <li>Not have any work Experience</li>
+                <li>No work experience to display.</li>
                 }
             </ul>
         </div>
