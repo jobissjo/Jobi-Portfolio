@@ -369,7 +369,37 @@ export class HelperService {
 
   private readonly projects: Project[] = [
     {
+      name: "Weekly Zen Planner",
+      is_highlight: true,
+      description: "A weekly planning and productivity application for organizing tasks, building habits, and tracking progress, backed by a FastAPI API.",
+      features: [
+        "Weekly planner with daily task organization and pending task management",
+        "Dashboard with completion statistics and weekly progress",
+        "Habit Vault, streak activity heatmap, and weekly rewards",
+        "Integrated notes and a dark-mode interface"
+      ],
+      startDate: "2026",
+      endDate: "Present",
+      projectUrls: [
+        {
+          title: "Frontend",
+          githubUrl: "https://github.com/syntaxnexuspython/weekly-zen-planner",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://weekly-zen-planner.jotech.in/",
+        },
+        {
+          title: "Backend API",
+          githubUrl: "https://github.com/jobissjo/weekly-planner-fastapi",
+          gitIconUrl: "fa-brands fa-github",
+          demoIcon: "fa-solid fa-arrow-up-right-from-square",
+          hostingUrl: "https://weekly-planner-fastapi.onrender.com/api/v1/tasks",
+        }
+      ]
+    },
+    {
       name: "JoTech Ecosystem",
+      is_highlight: true,
       description: "Production ecosystem and software suite engineered by Jobi S S, encompassing live applications including Weekly Planner, PocketFlow, JoTech Blog, and AI systems.",
       features: [
         "Independent production suite: Weekly Planner, PocketFlow, and JoTech Blog",
@@ -411,6 +441,7 @@ export class HelperService {
     },
     {
       name: "NoteFocus",
+      is_highlight: true,
       description: "A premium, minimalist hierarchical note-taking application designed for a 'Flow State', balancing beautiful aesthetics with bank-grade security and granular PIN protection.",
       features: [
         "Hierarchical Workspaces for notes, diaries, and long-form stories",
@@ -432,6 +463,7 @@ export class HelperService {
     },
     {
       name: "Personal Blog",
+      is_highlight: true,
       description: "JoTechBlog is a professional technical blog and backend ecosystem focused on high-quality tutorials, system design, and modern web architectures.",
       features: [
         "Built with Angular and Tailwind CSS, hosted on Netlify",
@@ -461,6 +493,7 @@ export class HelperService {
 
     {
       name: 'Job Haunt Project',
+      is_highlight: false,
       description: "A comprehensive job search tracking application that helps users manage their job applications, track interview stages, and store company feedback.",
       features: [
         "Built using FastAPI, React",
@@ -522,6 +555,7 @@ export class HelperService {
 
     {
       name: "MERN Real Time Chat Project",
+      is_highlight: false,
       projectUrls: [
         {
           title: "Quick Chat Server",
@@ -548,6 +582,7 @@ export class HelperService {
     },
     {
       name: "Job Portal Project",
+      is_highlight: false,
       description: "This Job Portal project is a using frontend angular and backend fastapi",
       features: [
         "Angular 16 to Angular 18 upgraded",
@@ -574,6 +609,7 @@ export class HelperService {
     },
     {
       name: "Ecommerce Project",
+      is_highlight: false,
       projectUrls: [
         {
           title: "Ecommerce Frontend",
@@ -595,6 +631,7 @@ export class HelperService {
 
     {
       name: "Todo App",
+      is_highlight: false,
       description: "This Todo App project is a using mvt architecture in django",
       features: [
         "Django 4.2 to Django 5.0 upgraded",

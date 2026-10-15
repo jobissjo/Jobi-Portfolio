@@ -48,6 +48,7 @@ interface ProjectUrl {
 
 export interface Project {
   name: string,
+  is_highlight: boolean,
   description: string,
   features: string[],
   startDate: string,

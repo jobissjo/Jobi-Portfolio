@@ -17,7 +17,7 @@ export class ProjectComponent implements OnInit {
   projects: Project[] = []
   private readonly helperService: HelperService = inject(HelperService);
   ngOnInit(): void {
-    this.projects = this.helperService.getProjects();
+    this.projects = this.helperService.getProjects().filter(project => project.is_highlight);
   }
 
 }
